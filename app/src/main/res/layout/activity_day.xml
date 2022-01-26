@@ -11,13 +11,22 @@
     <TextView
         android:id="@+id/dayTextView"
         android:layout_width="72dp"
-        android:layout_height="24dp"
+        android:layout_height="28dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="30dp"
         android:text="3월 1일"
         android:fontFamily="@font/zzanggu"
         android:textSize="24sp"
         android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/dailyPie"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
