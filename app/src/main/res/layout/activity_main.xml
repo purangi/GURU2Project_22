@@ -26,6 +26,18 @@
         app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
         app:layout_constraintTop_toTopOf="parent">
 
+        <ImageButton
+            android:id="@+id/mypagebutton"
+            android:layout_width="wrap_content"
+            android:layout_height="33dp"
+            android:layout_marginTop="23dp"
+            android:layout_marginLeft="25dp"
+            app:srcCompat="@drawable/cat"
+            android:background="@null"
+            android:backgroundTint="#FFEECD"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"/>
+
         <CalendarView
             android:id="@+id/calendarView"
             android:layout_width="match_parent"
@@ -47,6 +59,8 @@
             android:text="하루 실천 리스트"
             android:textColor="@color/black"
             android:textSize="18dp" />
+
+
 
     </FrameLayout>
 
