@@ -13,10 +13,10 @@ class Loading : AppCompatActivity() {
         setContentView(R.layout.activity_loading)
 
         Handler().postDelayed({
-            val intent = Intent(this, Login::class.java)
-            intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
-            startActivity(intent)
-            finish()
+                val intent = Intent(this, Login::class.java)
+                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+                startActivity(intent)
+                finish()
         }, DURATION)
     }
 
