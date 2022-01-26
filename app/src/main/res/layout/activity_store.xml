@@ -7,7 +7,7 @@
     tools:context=".Store">
 
     <ScrollView
-        android:layout_width="323dp"
+        android:layout_width="320dp"
         android:layout_height="499dp"
         android:background="@drawable/roundbeige"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -19,118 +19,395 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+            //1행
+
             <TableRow>
-                <ImageView
-                    android:layout_width="105dp"
-                    android:layout_height="100dp"
-                    android:src="@drawable/catfood"/>
 
                 <ImageView
-                    android:layout_width="105dp"
+                    android:layout_width="103dp"
                     android:layout_height="100dp"
-                    android:src="@drawable/smallplant"/>
+                    android:src="@drawable/catfood" />
 
                 <ImageView
-                    android:layout_width="105dp"
+                    android:layout_width="103dp"
                     android:layout_height="100dp"
-                    android:src="@drawable/bigplant"/>
+                    android:src="@drawable/smallplant" />
+
+                <ImageView
+                    android:layout_width="103dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/bigplant" />
             </TableRow>
 
-            <!--<TableRow>
+            <TableRow>
+
                 <TableRow>
+
                     <ImageView
-                        android:layout_width="60dp"
-                        android:layout_height="20dp"
-                        android:src="@drawable/coin"/>
+                        android:layout_width="20dp"
+                        android:layout_height="18dp"
+                        android:layout_marginLeft="35dp"
+                        android:layout_marginRight="3dp"
+                        android:src="@drawable/coin" />
+
                     <TextView
                         android:layout_width="50dp"
-                        android:layout_height="20dp"
-                        android:text="10" />
+                        android:layout_height="18dp"
+                        android:fontFamily="@font/zzanggu"
+                        android:text="10"
+                        android:textSize="18sp" />
                 </TableRow>
+
                 <TableRow>
+
                     <ImageView
-                        android:layout_width="60dp"
-                        android:layout_height="20dp"
-                        android:src="@drawable/coin"/>
+                        android:layout_width="20dp"
+                        android:layout_height="18dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="3dp"
+                        android:src="@drawable/coin" />
+
                     <TextView
                         android:layout_width="50dp"
-                        android:layout_height="20dp"
-                        android:text="10" />
+                        android:layout_height="18dp"
+                        android:fontFamily="@font/zzanggu"
+                        android:text="50"
+                        android:textSize="18sp" />
                 </TableRow>
+
                 <TableRow>
+
                     <ImageView
-                        android:layout_width="60dp"
-                        android:layout_height="20dp"
-                        android:src="@drawable/coin"/>
+                        android:layout_width="20dp"
+                        android:layout_height="18dp"
+                        android:layout_marginLeft="27dp"
+                        android:layout_marginRight="3dp"
+                        android:src="@drawable/coin" />
+
                     <TextView
                         android:layout_width="50dp"
-                        android:layout_height="20dp"
-                        android:text="10" />
+                        android:layout_height="18dp"
+                        android:fontFamily="@font/zzanggu"
+                        android:text="50"
+                        android:textSize="18sp" />
+                </TableRow>
+            </TableRow>
+
+
+            //2행
+
+            <TableRow>
+
+                <ImageView
+                    android:layout_width="103dp"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/catbathroom" />
+
+                <ImageView
+                    android:layout_width="103dp"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/catplaying" />
+
+                <ImageView
+                    android:layout_width="103dp"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/light" />
+            </TableRow>
+
+            <TableRow>
+
+                <TableRow>
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="18dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="3dp"
+                        android:src="@drawable/coin" />
+
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="18dp"
+                        android:fontFamily="@font/zzanggu"
+                        android:text="80"
+                        android:textSize="18sp" />
                 </TableRow>
 
+                <TableRow>
 
-            </TableRow> !-->
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="18dp"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="3dp"
+                        android:src="@drawable/coin" />
+
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="18dp"
+                        android:fontFamily="@font/zzanggu"
+                        android:text="100"
+                        android:textSize="18sp" />
+                </TableRow>
+
+                <TableRow>
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="18dp"
+                        android:layout_marginLeft="25dp"
+
+                        android:layout_marginRight="3dp"
+                        android:src="@drawable/coin" />
+
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="18dp"
+                        android:fontFamily="@font/zzanggu"
+                        android:text="150"
+                        android:textSize="18sp" />
+                </TableRow>
+            </TableRow>
 
 
+            //3행
 
             <TableRow>
+
                 <ImageView
-                    android:layout_width="105dp"
+                    android:layout_width="103dp"
                     android:layout_height="100dp"
-                    android:src="@drawable/catbathroom"/>
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/window" />
+
                 <ImageView
-                    android:layout_width="105dp"
+                    android:layout_width="103dp"
                     android:layout_height="100dp"
-                    android:src="@drawable/catplaying"/>
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/cathome" />
+
                 <ImageView
-                    android:layout_width="105dp"
+                    android:layout_width="103dp"
                     android:layout_height="100dp"
-                    android:src="@drawable/light"/>
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/cattable" />
             </TableRow>
 
             <TableRow>
+
+                <TableRow>
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="18dp"
+                        android:layout_marginLeft="27dp"
+                        android:layout_marginRight="3dp"
+                        android:src="@drawable/coin" />
+
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="18dp"
+                        android:fontFamily="@font/zzanggu"
+                        android:text="200"
+                        android:textSize="18sp" />
+                </TableRow>
+
+                <TableRow>
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="18dp"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="3dp"
+                        android:src="@drawable/coin" />
+
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="18dp"
+                        android:fontFamily="@font/zzanggu"
+                        android:text="250"
+                        android:textSize="18sp" />
+                </TableRow>
+
+                <TableRow>
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="18dp"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="3dp"
+                        android:src="@drawable/coin" />
+
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="18dp"
+                        android:fontFamily="@font/zzanggu"
+                        android:text="300"
+                        android:textSize="18sp" />
+                </TableRow>
+            </TableRow>
+
+            //4행
+
+            <TableRow>
+
                 <ImageView
-                    android:layout_width="105dp"
+                    android:layout_width="103dp"
                     android:layout_height="100dp"
-                    android:src="@drawable/window"/>
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/bookshelf" />
+
                 <ImageView
-                    android:layout_width="105dp"
+                    android:layout_width="103dp"
                     android:layout_height="100dp"
-                    android:src="@drawable/cathome"/>
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/catcircle" />
+
                 <ImageView
-                    android:layout_width="105dp"
+                    android:layout_width="103dp"
                     android:layout_height="100dp"
-                    android:src="@drawable/cattable"/>
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/cattower" />
             </TableRow>
 
             <TableRow>
+
+                <TableRow>
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="18dp"
+                        android:layout_marginLeft="27dp"
+                        android:layout_marginRight="3dp"
+                        android:src="@drawable/coin" />
+
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="18dp"
+                        android:fontFamily="@font/zzanggu"
+                        android:text="450"
+                        android:textSize="18sp" />
+                </TableRow>
+
+                <TableRow>
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="18dp"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="3dp"
+                        android:src="@drawable/coin" />
+
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="18dp"
+                        android:fontFamily="@font/zzanggu"
+                        android:text="500"
+                        android:textSize="18sp" />
+                </TableRow>
+
+                <TableRow>
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="18dp"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="3dp"
+                        android:src="@drawable/coin" />
+
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="18dp"
+                        android:fontFamily="@font/zzanggu"
+                        android:text="600"
+                        android:textSize="18sp" />
+                </TableRow>
+            </TableRow>
+
+            //5행
+
+            <TableRow>
+
                 <ImageView
-                    android:layout_width="105dp"
+                    android:layout_width="103dp"
                     android:layout_height="100dp"
-                    android:src="@drawable/bookshelf"/>
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/catsofa" />
+
                 <ImageView
-                    android:layout_width="105dp"
+                    android:layout_width="103dp"
                     android:layout_height="100dp"
-                    android:src="@drawable/catcircle"/>
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/catbed" />
+
                 <ImageView
-                    android:layout_width="105dp"
+                    android:layout_width="103dp"
                     android:layout_height="100dp"
-                    android:src="@drawable/cattower"/>
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/cattv" />
             </TableRow>
 
             <TableRow>
-                <ImageView
-                    android:layout_width="105dp"
-                    android:layout_height="100dp"
-                    android:src="@drawable/catsofa"/>
-                <ImageView
-                    android:layout_width="105dp"
-                    android:layout_height="100dp"
-                    android:src="@drawable/catbed"/>
-                <ImageView
-                    android:layout_width="105dp"
-                    android:layout_height="100dp"
-                    android:src="@drawable/cattv"/>
+
+                <TableRow>
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="18dp"
+                        android:layout_marginLeft="27dp"
+                        android:layout_marginRight="3dp"
+                        android:layout_marginBottom="10dp"
+                        android:src="@drawable/coin" />
+
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="18dp"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/zzanggu"
+                        android:text="700"
+                        android:textSize="18sp" />
+                </TableRow>
+
+                <TableRow>
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="18dp"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="3dp"
+                        android:layout_marginBottom="10dp"
+                        android:src="@drawable/coin" />
+
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="18dp"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/zzanggu"
+                        android:text="800"
+                        android:textSize="18sp" />
+                </TableRow>
+
+                <TableRow>
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="18dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="3dp"
+                        android:layout_marginBottom="10dp"
+                        android:src="@drawable/coin" />
+
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="18dp"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/zzanggu"
+                        android:text="1000"
+                        android:textSize="18sp" />
+                </TableRow>
             </TableRow>
 
         </TableLayout>
@@ -138,10 +415,10 @@
 
     <ImageButton
         android:id="@+id/imageButton4"
-        android:layout_width="50dp"
-        android:layout_height="40dp"
+        android:layout_width="40dp"
+        android:layout_height="35dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="18dp"
         android:layout_marginEnd="333dp"
         android:background="@android:color/transparent"
         android:scaleType="centerInside"
