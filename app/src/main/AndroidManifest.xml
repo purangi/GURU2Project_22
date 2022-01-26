@@ -11,13 +11,15 @@
         android:theme="@style/Theme.GURU2Project_22">
         <activity android:name=".Login"></activity>
         <activity android:name=".MainActivity" />
-        <activity android:name=".Loading">
+        <activity android:name=".Loading"/>
+        <activity android:name=".Store">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".CatRoom"/>
     </application>
 
 </manifest>
