@@ -61,6 +61,7 @@ class DayActivity : AppCompatActivity() {
         data.setValueFormatter(PercentFormatter())
         dataSet.sliceSpace = 3f
         dataSet.colors = colors
+
         dailyPie.data = data
         data.setValueTextSize(15f)
         dailyPie.setExtraOffsets(5f, 10f, 5f, 5f)
