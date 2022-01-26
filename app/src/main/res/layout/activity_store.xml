@@ -7,7 +7,7 @@
     tools:context=".Store">
 
     <ScrollView
-        android:layout_width="320dp"
+        android:layout_width="wrap_content"
         android:layout_height="499dp"
         android:background="@drawable/roundbeige"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -24,18 +24,18 @@
             <TableRow>
 
                 <ImageView
-                    android:layout_width="103dp"
-                    android:layout_height="100dp"
+                    android:layout_width="113dp"
+                    android:layout_height="108dp"
                     android:src="@drawable/catfood" />
 
                 <ImageView
-                    android:layout_width="103dp"
-                    android:layout_height="100dp"
+                    android:layout_width="113dp"
+                    android:layout_height="108dp"
                     android:src="@drawable/smallplant" />
 
                 <ImageView
-                    android:layout_width="103dp"
-                    android:layout_height="100dp"
+                    android:layout_width="113dp"
+                    android:layout_height="108dp"
                     android:src="@drawable/bigplant" />
             </TableRow>
 
@@ -99,20 +99,20 @@
             <TableRow>
 
                 <ImageView
-                    android:layout_width="103dp"
-                    android:layout_height="100dp"
+                    android:layout_width="115dp"
+                    android:layout_height="108dp"
                     android:layout_marginTop="15dp"
                     android:src="@drawable/catbathroom" />
 
                 <ImageView
-                    android:layout_width="103dp"
-                    android:layout_height="100dp"
+                    android:layout_width="115dp"
+                    android:layout_height="108dp"
                     android:layout_marginTop="15dp"
                     android:src="@drawable/catplaying" />
 
                 <ImageView
-                    android:layout_width="103dp"
-                    android:layout_height="100dp"
+                    android:layout_width="115dp"
+                    android:layout_height="108dp"
                     android:layout_marginTop="15dp"
                     android:src="@drawable/light" />
             </TableRow>
@@ -141,7 +141,7 @@
                     <ImageView
                         android:layout_width="20dp"
                         android:layout_height="18dp"
-                        android:layout_marginLeft="25dp"
+                        android:layout_marginLeft="28dp"
                         android:layout_marginRight="3dp"
                         android:src="@drawable/coin" />
 
@@ -158,7 +158,7 @@
                     <ImageView
                         android:layout_width="20dp"
                         android:layout_height="18dp"
-                        android:layout_marginLeft="25dp"
+                        android:layout_marginLeft="28dp"
 
                         android:layout_marginRight="3dp"
                         android:src="@drawable/coin" />
@@ -178,20 +178,20 @@
             <TableRow>
 
                 <ImageView
-                    android:layout_width="103dp"
-                    android:layout_height="100dp"
+                    android:layout_width="115dp"
+                    android:layout_height="108dp"
                     android:layout_marginTop="15dp"
                     android:src="@drawable/window" />
 
                 <ImageView
-                    android:layout_width="103dp"
-                    android:layout_height="100dp"
+                    android:layout_width="115dp"
+                    android:layout_height="108dp"
                     android:layout_marginTop="15dp"
                     android:src="@drawable/cathome" />
 
                 <ImageView
-                    android:layout_width="103dp"
-                    android:layout_height="100dp"
+                    android:layout_width="115dp"
+                    android:layout_height="108dp"
                     android:layout_marginTop="15dp"
                     android:src="@drawable/cattable" />
             </TableRow>
@@ -220,7 +220,7 @@
                     <ImageView
                         android:layout_width="20dp"
                         android:layout_height="18dp"
-                        android:layout_marginLeft="25dp"
+                        android:layout_marginLeft="28dp"
                         android:layout_marginRight="3dp"
                         android:src="@drawable/coin" />
 
@@ -237,7 +237,7 @@
                     <ImageView
                         android:layout_width="20dp"
                         android:layout_height="18dp"
-                        android:layout_marginLeft="25dp"
+                        android:layout_marginLeft="28dp"
                         android:layout_marginRight="3dp"
                         android:src="@drawable/coin" />
 
@@ -255,20 +255,20 @@
             <TableRow>
 
                 <ImageView
-                    android:layout_width="103dp"
-                    android:layout_height="100dp"
+                    android:layout_width="115dp"
+                    android:layout_height="108dp"
                     android:layout_marginTop="15dp"
                     android:src="@drawable/bookshelf" />
 
                 <ImageView
-                    android:layout_width="103dp"
-                    android:layout_height="100dp"
+                    android:layout_width="115dp"
+                    android:layout_height="108dp"
                     android:layout_marginTop="15dp"
                     android:src="@drawable/catcircle" />
 
                 <ImageView
-                    android:layout_width="103dp"
-                    android:layout_height="100dp"
+                    android:layout_width="115dp"
+                    android:layout_height="108dp"
                     android:layout_marginTop="15dp"
                     android:src="@drawable/cattower" />
             </TableRow>
@@ -297,7 +297,7 @@
                     <ImageView
                         android:layout_width="20dp"
                         android:layout_height="18dp"
-                        android:layout_marginLeft="25dp"
+                        android:layout_marginLeft="28dp"
                         android:layout_marginRight="3dp"
                         android:src="@drawable/coin" />
 
@@ -314,7 +314,7 @@
                     <ImageView
                         android:layout_width="20dp"
                         android:layout_height="18dp"
-                        android:layout_marginLeft="25dp"
+                        android:layout_marginLeft="28dp"
                         android:layout_marginRight="3dp"
                         android:src="@drawable/coin" />
 
@@ -332,20 +332,20 @@
             <TableRow>
 
                 <ImageView
-                    android:layout_width="103dp"
-                    android:layout_height="100dp"
+                    android:layout_width="115dp"
+                    android:layout_height="108dp"
                     android:layout_marginTop="15dp"
                     android:src="@drawable/catsofa" />
 
                 <ImageView
-                    android:layout_width="103dp"
-                    android:layout_height="100dp"
+                    android:layout_width="115dp"
+                    android:layout_height="108dp"
                     android:layout_marginTop="15dp"
                     android:src="@drawable/catbed" />
 
                 <ImageView
-                    android:layout_width="103dp"
-                    android:layout_height="100dp"
+                    android:layout_width="115dp"
+                    android:layout_height="108dp"
                     android:layout_marginTop="15dp"
                     android:src="@drawable/cattv" />
             </TableRow>
@@ -376,7 +376,7 @@
                     <ImageView
                         android:layout_width="20dp"
                         android:layout_height="18dp"
-                        android:layout_marginLeft="25dp"
+                        android:layout_marginLeft="28dp"
                         android:layout_marginRight="3dp"
                         android:layout_marginBottom="10dp"
                         android:src="@drawable/coin" />
@@ -395,7 +395,7 @@
                     <ImageView
                         android:layout_width="20dp"
                         android:layout_height="18dp"
-                        android:layout_marginLeft="20dp"
+                        android:layout_marginLeft="23dp"
                         android:layout_marginRight="3dp"
                         android:layout_marginBottom="10dp"
                         android:src="@drawable/coin" />
@@ -414,11 +414,11 @@
     </ScrollView>
 
     <ImageButton
-        android:id="@+id/imageButton4"
-        android:layout_width="40dp"
-        android:layout_height="35dp"
+        android:id="@+id/backbtn"
+        android:layout_width="37dp"
+        android:layout_height="27dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="333dp"
         android:background="@android:color/transparent"
         android:scaleType="centerInside"
@@ -439,7 +439,7 @@
         android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.362"
-        app:layout_constraintStart_toEndOf="@+id/imageButton4"
+        app:layout_constraintStart_toEndOf="@+id/backbtn"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
@@ -448,11 +448,11 @@
         android:layout_height="32dp"
         android:layout_marginBottom="24dp"
         android:background="@drawable/roundorange"
+        android:elevation="20dp"
         android:fontFamily="@font/zzanggu"
-        android:text="완료"
+        android:text="구매"
         android:textColor="#000000"
         android:textSize="18sp"
-        android:elevation="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
