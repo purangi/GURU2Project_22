@@ -15,11 +15,125 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
+        <TableLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" />
+            android:layout_height="wrap_content">
 
+            <TableRow>
+                <ImageView
+                    android:layout_width="105dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/catfood"/>
+
+                <ImageView
+                    android:layout_width="105dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/smallplant"/>
+
+                <ImageView
+                    android:layout_width="105dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/bigplant"/>
+            </TableRow>
+
+            <!--<TableRow>
+                <TableRow>
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/coin"/>
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="20dp"
+                        android:text="10" />
+                </TableRow>
+                <TableRow>
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/coin"/>
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="20dp"
+                        android:text="10" />
+                </TableRow>
+                <TableRow>
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/coin"/>
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="20dp"
+                        android:text="10" />
+                </TableRow>
+
+
+            </TableRow> !-->
+
+
+
+            <TableRow>
+                <ImageView
+                    android:layout_width="105dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/catbathroom"/>
+                <ImageView
+                    android:layout_width="105dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/catplaying"/>
+                <ImageView
+                    android:layout_width="105dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/light"/>
+            </TableRow>
+
+            <TableRow>
+                <ImageView
+                    android:layout_width="105dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/window"/>
+                <ImageView
+                    android:layout_width="105dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/cathome"/>
+                <ImageView
+                    android:layout_width="105dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/cattable"/>
+            </TableRow>
+
+            <TableRow>
+                <ImageView
+                    android:layout_width="105dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/bookshelf"/>
+                <ImageView
+                    android:layout_width="105dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/catcircle"/>
+                <ImageView
+                    android:layout_width="105dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/cattower"/>
+            </TableRow>
+
+            <TableRow>
+                <ImageView
+                    android:layout_width="105dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/catsofa"/>
+                <ImageView
+                    android:layout_width="105dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/catbed"/>
+                <ImageView
+                    android:layout_width="105dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/cattv"/>
+            </TableRow>
+
+        </TableLayout>
     </ScrollView>
 
     <ImageButton
