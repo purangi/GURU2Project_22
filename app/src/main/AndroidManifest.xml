@@ -20,8 +20,11 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
-        <activity android:name=".CatRoom" />
+        <activity android:name=".CatRoom">
+
+        </activity>
     </application>
 
 </manifest>
