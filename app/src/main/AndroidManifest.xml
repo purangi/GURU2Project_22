@@ -12,8 +12,8 @@
         <activity android:name=".HabitActivity"></activity>
         <activity android:name=".Login" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".Loading" />
-        <activity android:name=".Store">
+        <activity android:name=".Store" />
+        <activity android:name=".Loading">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
