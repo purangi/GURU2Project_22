@@ -1,5 +1,5 @@
 package com.example.guru2project_22
-
+/*
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -81,4 +81,4 @@ class DayActivity : AppCompatActivity() {
         dailyPie.invalidate()
     }
 
-}
+}*/
