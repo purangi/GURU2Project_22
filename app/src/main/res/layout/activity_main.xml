@@ -4,15 +4,62 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFEECD"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="5dp"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Guru"
+        android:background="#FFB78E"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintLeft_toRightOf="parent"
+        app:menu="@menu/menu"></com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/mypagebutton"
+            android:layout_width="wrap_content"
+            android:layout_height="33dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="22dp"
+            app:srcCompat="@drawable/cat"
+            android:background="@null"
+            android:backgroundTint="#FFEECD"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"/>
+
+        <CalendarView
+            android:id="@+id/calendarView"
+            android:layout_width="match_parent"
+            android:layout_height="335dp"
+            android:layout_marginLeft="29dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginRight="29dp"
+            android:background="@drawable/calenderrounded_corner">
+
+        </CalendarView>
+
+        <TextView
+            android:id="@+id/todaylist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="38dp"
+            android:layout_marginTop="433dp"
+            android:fontFamily="@font/zzanggu"
+            android:text="하루 실천 리스트"
+            android:textColor="@color/black"
+            android:textSize="18dp" />
+
+    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
