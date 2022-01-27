@@ -15,27 +15,38 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+
+
+
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             //1행
-
             <TableRow>
 
-                <ImageView
+                <ImageButton
+                    android:id="@+id/catfood"
                     android:layout_width="113dp"
                     android:layout_height="108dp"
+                    android:scaleType="centerInside"
+                    android:background="@android:color/transparent"
                     android:src="@drawable/catfood" />
 
-                <ImageView
+                <ImageButton
+                    android:id="@+id/smallplant"
                     android:layout_width="113dp"
                     android:layout_height="108dp"
+                    android:scaleType="centerInside"
+                    android:background="@android:color/transparent"
                     android:src="@drawable/smallplant" />
 
-                <ImageView
+                <ImageButton
+                    android:id="@+id/bigplant"
                     android:layout_width="113dp"
                     android:layout_height="108dp"
+                    android:scaleType="centerInside"
+                    android:background="@android:color/transparent"
                     android:src="@drawable/bigplant" />
             </TableRow>
 
@@ -98,22 +109,31 @@
 
             <TableRow>
 
-                <ImageView
+                <ImageButton
+                    android:id="@+id/catbathroom"
                     android:layout_width="115dp"
                     android:layout_height="108dp"
                     android:layout_marginTop="15dp"
+                    android:scaleType="centerInside"
+                    android:background="@android:color/transparent"
                     android:src="@drawable/catbathroom" />
 
-                <ImageView
+                <ImageButton
+                    android:id="@+id/catplaying"
                     android:layout_width="115dp"
                     android:layout_height="108dp"
                     android:layout_marginTop="15dp"
+                    android:scaleType="centerInside"
+                    android:background="@android:color/transparent"
                     android:src="@drawable/catplaying" />
 
-                <ImageView
+                <ImageButton
+                    android:id="@+id/light"
                     android:layout_width="115dp"
                     android:layout_height="108dp"
                     android:layout_marginTop="15dp"
+                    android:scaleType="centerInside"
+                    android:background="@android:color/transparent"
                     android:src="@drawable/light" />
             </TableRow>
 
@@ -177,22 +197,31 @@
 
             <TableRow>
 
-                <ImageView
+                <ImageButton
+                    android:id="@+id/window"
                     android:layout_width="115dp"
                     android:layout_height="108dp"
                     android:layout_marginTop="15dp"
+                    android:scaleType="centerInside"
+                    android:background="@android:color/transparent"
                     android:src="@drawable/window" />
 
-                <ImageView
+                <ImageButton
+                    android:id="@+id/cathome"
                     android:layout_width="115dp"
                     android:layout_height="108dp"
                     android:layout_marginTop="15dp"
+                    android:scaleType="centerInside"
+                    android:background="@android:color/transparent"
                     android:src="@drawable/cathome" />
 
-                <ImageView
+                <ImageButton
+                    android:id="@+id/cattable"
                     android:layout_width="115dp"
                     android:layout_height="108dp"
                     android:layout_marginTop="15dp"
+                    android:scaleType="centerInside"
+                    android:background="@android:color/transparent"
                     android:src="@drawable/cattable" />
             </TableRow>
 
@@ -254,22 +283,28 @@
 
             <TableRow>
 
-                <ImageView
+                <ImageButton
                     android:layout_width="115dp"
                     android:layout_height="108dp"
                     android:layout_marginTop="15dp"
+                    android:scaleType="centerInside"
+                    android:background="@android:color/transparent"
                     android:src="@drawable/bookshelf" />
 
-                <ImageView
+                <ImageButton
                     android:layout_width="115dp"
                     android:layout_height="108dp"
                     android:layout_marginTop="15dp"
+                    android:scaleType="centerInside"
+                    android:background="@android:color/transparent"
                     android:src="@drawable/catcircle" />
 
-                <ImageView
+                <ImageButton
                     android:layout_width="115dp"
                     android:layout_height="108dp"
                     android:layout_marginTop="15dp"
+                    android:scaleType="centerInside"
+                    android:background="@android:color/transparent"
                     android:src="@drawable/cattower" />
             </TableRow>
 
@@ -331,22 +366,28 @@
 
             <TableRow>
 
-                <ImageView
+                <ImageButton
                     android:layout_width="115dp"
                     android:layout_height="108dp"
                     android:layout_marginTop="15dp"
+                    android:scaleType="centerInside"
+                    android:background="@android:color/transparent"
                     android:src="@drawable/catsofa" />
 
-                <ImageView
+                <ImageButton
                     android:layout_width="115dp"
                     android:layout_height="108dp"
                     android:layout_marginTop="15dp"
+                    android:scaleType="centerInside"
+                    android:background="@android:color/transparent"
                     android:src="@drawable/catbed" />
 
-                <ImageView
+                <ImageButton
                     android:layout_width="115dp"
                     android:layout_height="108dp"
                     android:layout_marginTop="15dp"
+                    android:scaleType="centerInside"
+                    android:background="@android:color/transparent"
                     android:src="@drawable/cattv" />
             </TableRow>
 
