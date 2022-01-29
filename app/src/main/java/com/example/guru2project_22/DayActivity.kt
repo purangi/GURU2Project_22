@@ -1,9 +1,11 @@
 package com.example.guru2project_22
 
+import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import com.github.mikephil.charting.animation.Easing
 import com.github.mikephil.charting.charts.PieChart
 import com.github.mikephil.charting.components.Legend
@@ -14,16 +16,30 @@ import com.github.mikephil.charting.formatter.PercentFormatter
 
 class DayActivity : AppCompatActivity() {
     private lateinit var dailyPie: PieChart
-
+    lateinit var btnHabit : Button
+    lateinit var btnSleep : Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_day)
 
         dailyPie = findViewById(R.id.dailyPie) //파이차트 생성
+        btnHabit = findViewById<Button>(R.id.btnHabit) //나의 습관 버튼 생성
+        btnSleep = findViewById(R.id.btnSleep) //수면 시간 버튼 생성
 
         initPieChart()
         setDataToPieChart()
+
+        btnHabit.setOnClickListener{
+            val habitIntent = Intent(this, HabitActivity::class.java)
+            startActivity(habitIntent)
+        }
+
+        btnSleep.setOnClickListener{
+            val sleepIntent = Intent(this, SleepActivity::class.java)
+            startActivity(sleepIntent)
+        }
+
     }
 
     private fun initPieChart() {

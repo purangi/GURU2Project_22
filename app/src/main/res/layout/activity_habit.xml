@@ -69,7 +69,7 @@
         app:layout_constraintStart_toEndOf="@+id/imageClock"
         app:layout_constraintTop_toBottomOf="@+id/editHabit" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnStart"
         android:layout_width="110dp"
         android:layout_height="30dp"
@@ -99,7 +99,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editHabit" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnEnd"
         android:layout_width="110dp"
         android:layout_height="30dp"
@@ -139,15 +139,15 @@
         app:layout_constraintStart_toEndOf="@+id/imageClock"
         app:layout_constraintTop_toBottomOf="@+id/btnStart" />
 
-    <CheckBox
-        android:id="@+id/checkEveryDay"
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/cbEveryDay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
         android:layout_marginStart="52dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="8dp"
         android:button="@drawable/custom_checkbox"
         android:fontFamily="@font/zzanggu"
         android:text=" 매일"
@@ -156,147 +156,139 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageRepeat" />
 
-    <CheckBox
-        android:id="@+id/checkEveryWeek"
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/cbEveryWeek"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
         android:layout_marginStart="60dp"
-        android:layout_marginTop="20dp"
         android:button="@drawable/custom_checkbox"
         android:fontFamily="@font/zzanggu"
         android:text=" 매주"
         android:textColor="@color/black"
         android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/checkEveryDay"
-        app:layout_constraintTop_toBottomOf="@+id/imageRepeat" />
+        app:layout_constraintStart_toEndOf="@+id/cbEveryDay"
+        app:layout_constraintTop_toTopOf="@+id/cbEveryDay" />
 
-    <CheckBox
-        android:id="@+id/checkEveryMonth"
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/cbEveryMonth"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
         android:layout_marginStart="60dp"
-        android:layout_marginTop="20dp"
         android:button="@drawable/custom_checkbox"
         android:fontFamily="@font/zzanggu"
         android:text=" 매달"
         android:textColor="@color/black"
         android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/checkEveryWeek"
-        app:layout_constraintTop_toBottomOf="@+id/imageRepeat" />
+        app:layout_constraintStart_toEndOf="@+id/cbEveryWeek"
+        app:layout_constraintTop_toTopOf="@+id/cbEveryWeek" />
 
-    <CheckBox
-        android:id="@+id/rbDays"
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/cbDays"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="52dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="8dp"
+        android:button="@drawable/custom_checkbox"
         android:enabled="false"
         android:fontFamily="@font/zzanggu"
         android:text=" 요일"
         android:textColor="@color/black"
         android:textSize="20sp"
-        android:button="@drawable/custom_checkbox"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkEveryDay" />
+        app:layout_constraintTop_toBottomOf="@+id/cbEveryDay" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnSun"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginStart="52dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="4dp"
         android:background="@drawable/daybutton_pressed"
         android:fontFamily="@font/zzanggu"
         android:text="일"
-        android:textSize="20sp"
         android:textColor="#FF0000"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rbDays" />
+        app:layout_constraintTop_toBottomOf="@+id/cbDays" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnMon"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginStart="5dp"
-        android:layout_marginTop="20dp"
         android:background="@drawable/daybutton_pressed"
         android:fontFamily="@font/zzanggu"
         android:text="월"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/btnSun"
-        app:layout_constraintTop_toBottomOf="@+id/rbDays" />
+        app:layout_constraintTop_toTopOf="@+id/btnSun" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnTues"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginStart="5dp"
-        android:layout_marginTop="20dp"
         android:background="@drawable/daybutton_pressed"
         android:fontFamily="@font/zzanggu"
         android:text="화"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/btnMon"
-        app:layout_constraintTop_toBottomOf="@+id/rbDays" />
+        app:layout_constraintTop_toTopOf="@+id/btnMon" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnWed"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginStart="5dp"
-        android:layout_marginTop="20dp"
         android:background="@drawable/daybutton_pressed"
         android:fontFamily="@font/zzanggu"
         android:text="수"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/btnTues"
-        app:layout_constraintTop_toBottomOf="@+id/rbDays" />
+        app:layout_constraintTop_toTopOf="@+id/btnTues" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnThur"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginStart="5dp"
-        android:layout_marginTop="20dp"
         android:background="@drawable/daybutton_pressed"
         android:fontFamily="@font/zzanggu"
         android:text="목"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/btnWed"
-        app:layout_constraintTop_toBottomOf="@+id/rbDays" />
+        app:layout_constraintTop_toTopOf="@+id/btnWed" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnFri"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginStart="5dp"
-        android:layout_marginTop="20dp"
         android:background="@drawable/daybutton_pressed"
         android:fontFamily="@font/zzanggu"
         android:text="금"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/btnThur"
-        app:layout_constraintTop_toBottomOf="@+id/rbDays" />
+        app:layout_constraintTop_toTopOf="@+id/btnThur" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnSat"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginStart="5dp"
-        android:layout_marginTop="20dp"
         android:background="@drawable/daybutton_pressed"
         android:fontFamily="@font/zzanggu"
         android:text="토"
-        android:textSize="20sp"
         android:textColor="#FF0000"
+        android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/btnFri"
-        app:layout_constraintTop_toBottomOf="@+id/rbDays" />
+        app:layout_constraintTop_toTopOf="@+id/btnFri" />
 
     <ImageView
         android:id="@+id/imageAlarm"
@@ -327,7 +319,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="52dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="8dp"
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageAlarm">
@@ -358,18 +350,21 @@
             android:textSize="16sp" />
     </RadioGroup>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnComplete"
-        android:layout_width="100dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="152dp"
-        android:layout_marginBottom="35dp"
+        android:layout_width="72dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="170dp"
+        android:layout_marginEnd="170dp"
+        android:layout_marginBottom="36dp"
         android:background="@drawable/roundorange"
         android:fontFamily="@font/zzanggu"
         android:text="완료"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent" />
 
 
