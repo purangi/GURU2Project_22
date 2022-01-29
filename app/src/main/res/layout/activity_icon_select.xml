@@ -59,20 +59,147 @@
         app:layout_constraintStart_toEndOf="@+id/btnBack"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <RadioGroup
-        android:id="@+id/rgIcon"
+<!--    <RadioGroup-->
+<!--        android:id="@+id/rgIcon"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="vertical"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/imgBack"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/imgBack"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/imgBack"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/imgBack">-->
+
+<!--        <RadioGroup-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            <RadioButton-->
+<!--                android:id="@+id/rbWater"-->
+<!--                android:layout_width="80dp"-->
+<!--                android:layout_height="80dp"-->
+<!--                android:layout_margin="10dp"-->
+<!--                android:background="@drawable/radio_water"-->
+<!--                android:button="@null" />-->
+
+<!--            <RadioButton-->
+<!--                android:id="@+id/rbBed"-->
+<!--                android:layout_width="80dp"-->
+<!--                android:layout_height="80dp"-->
+<!--                android:layout_margin="10dp"-->
+<!--                android:background="@drawable/radio_bed"-->
+<!--                android:button="@null" />-->
+
+<!--            <RadioButton-->
+<!--                android:id="@+id/rbComputer"-->
+<!--                android:layout_width="80dp"-->
+<!--                android:layout_height="80dp"-->
+<!--                android:layout_margin="10dp"-->
+<!--                android:background="@drawable/radio_computer"-->
+<!--                android:button="@null" />-->
+<!--        </RadioGroup>-->
+
+<!--        <RadioGroup-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            <RadioButton-->
+<!--                android:id="@+id/rbExercise"-->
+<!--                android:layout_width="80dp"-->
+<!--                android:layout_height="80dp"-->
+<!--                android:layout_margin="10dp"-->
+<!--                android:background="@drawable/radio_exercise"-->
+<!--                android:button="@null" />-->
+
+<!--            <RadioButton-->
+<!--                android:id="@+id/rbExercise2"-->
+<!--                android:layout_width="80dp"-->
+<!--                android:layout_height="80dp"-->
+<!--                android:layout_margin="10dp"-->
+<!--                android:background="@drawable/radio_exercise2"-->
+<!--                android:button="@null" />-->
+
+<!--            <RadioButton-->
+<!--                android:id="@+id/rbStudy"-->
+<!--                android:layout_width="80dp"-->
+<!--                android:layout_height="80dp"-->
+<!--                android:layout_margin="10dp"-->
+<!--                android:background="@drawable/radio_study"-->
+<!--                android:button="@null" />-->
+<!--        </RadioGroup>-->
+
+<!--        <RadioGroup-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            <RadioButton-->
+<!--                android:id="@+id/rbReading"-->
+<!--                android:layout_width="80dp"-->
+<!--                android:layout_height="80dp"-->
+<!--                android:layout_margin="10dp"-->
+<!--                android:background="@drawable/radio_reading"-->
+<!--                android:button="@null" />-->
+
+<!--            <RadioButton-->
+<!--                android:id="@+id/rbPill"-->
+<!--                android:layout_width="80dp"-->
+<!--                android:layout_height="80dp"-->
+<!--                android:layout_margin="10dp"-->
+<!--                android:background="@drawable/radio_pill"-->
+<!--                android:button="@null" />-->
+
+<!--            <RadioButton-->
+<!--                android:id="@+id/rbMeal"-->
+<!--                android:layout_width="80dp"-->
+<!--                android:layout_height="80dp"-->
+<!--                android:layout_margin="10dp"-->
+<!--                android:background="@drawable/radio_meal"-->
+<!--                android:button="@null" />-->
+<!--        </RadioGroup>-->
+
+<!--        <RadioGroup-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            <RadioButton-->
+<!--                android:id="@+id/rbShopping"-->
+<!--                android:layout_width="80dp"-->
+<!--                android:layout_height="80dp"-->
+<!--                android:layout_margin="10dp"-->
+<!--                android:background="@drawable/radio_shopping"-->
+<!--                android:button="@null" />-->
+
+<!--            <RadioButton-->
+<!--                android:id="@+id/rbBath"-->
+<!--                android:layout_width="80dp"-->
+<!--                android:layout_height="80dp"-->
+<!--                android:layout_margin="10dp"-->
+<!--                android:background="@drawable/radio_bath"-->
+<!--                android:button="@null" />-->
+
+<!--            <RadioButton-->
+<!--                android:id="@+id/rbCleanup"-->
+<!--                android:layout_width="80dp"-->
+<!--                android:layout_height="80dp"-->
+<!--                android:layout_margin="10dp"-->
+<!--                android:background="@drawable/radio_bed"-->
+<!--                android:button="@null" />-->
+<!--        </RadioGroup>-->
+
+<!--    </RadioGroup> -->
+
+    <TableLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="@+id/imgBack"
-        app:layout_constraintEnd_toEndOf="@+id/imgBack"
-        app:layout_constraintStart_toStartOf="@+id/imgBack"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imgBack">
 
-        <RadioGroup
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+        <TableRow>
 
             <RadioButton
                 android:id="@+id/rbWater"
@@ -97,12 +224,9 @@
                 android:layout_margin="10dp"
                 android:background="@drawable/radio_computer"
                 android:button="@null" />
-        </RadioGroup>
+        </TableRow>
 
-        <RadioGroup
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+        <TableRow>
 
             <RadioButton
                 android:id="@+id/rbExercise"
@@ -127,12 +251,9 @@
                 android:layout_margin="10dp"
                 android:background="@drawable/radio_study"
                 android:button="@null" />
-        </RadioGroup>
+        </TableRow>
 
-        <RadioGroup
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+        <TableRow>
 
             <RadioButton
                 android:id="@+id/rbReading"
@@ -157,12 +278,9 @@
                 android:layout_margin="10dp"
                 android:background="@drawable/radio_meal"
                 android:button="@null" />
-        </RadioGroup>
+        </TableRow>
 
-        <RadioGroup
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+        <TableRow>
 
             <RadioButton
                 android:id="@+id/rbShopping"
@@ -187,9 +305,18 @@
                 android:layout_margin="10dp"
                 android:background="@drawable/radio_bed"
                 android:button="@null" />
-        </RadioGroup>
+        </TableRow>
+    </TableLayout>
 
-    </RadioGroup>
+    <RadioButton
+        android:id="@+id/activeRadioButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="38dp"
+        android:button="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

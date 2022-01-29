@@ -13,8 +13,17 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
-
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+        <item name="android:timePickerDialogTheme">@style/DialogTimePicker.Theme</item>
+
+    </style>
+    <style name="DialogTimePicker.Theme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@color/main_orange</item>
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorOnPrimary">@color/main_orange</item>
+        <item name="android:textColor">@color/main_orange</item>
+        <item name="android:textColorPrimary">@color/main_orange</item>
+        <item name="android:textColorSecondary">@color/main_orange</item>
     </style>
 </resources>

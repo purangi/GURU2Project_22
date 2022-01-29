@@ -1,17 +1,16 @@
 package com.example.guru2project_22
 
+import android.app.TimePickerDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
-import android.widget.Button
-import android.widget.CheckBox
-import android.widget.EditText
-import android.widget.RadioButton
+import android.widget.*
+import java.util.*
 
 class HabitActivity : AppCompatActivity() {
-    lateinit var btnBack : Button
-    lateinit var btnIcon : Button
+    lateinit var btnBack : ImageButton
+    lateinit var btnIcon : ImageButton
     lateinit var editHabit : EditText
     lateinit var btnStart : Button
     lateinit var btnEnd : Button
@@ -27,6 +26,7 @@ class HabitActivity : AppCompatActivity() {
     lateinit var btnSat : Button
     lateinit var rbOn : RadioButton
     lateinit var rbOff : RadioButton
+    var timeString = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,9 +55,18 @@ class HabitActivity : AppCompatActivity() {
         }
 
         btnIcon.setOnClickListener{
-            val habitIntent = Intent(this, HabitActivity::class.java)
-            startActivity(habitIntent)
+            val iconIntent = Intent(this, IconSelect::class.java)
+            startActivity(iconIntent)
         }
 
+        btnStart.setOnClickListener {
+            val cal = Calendar.getInstance()
+            val timeSetListener = TimePickerDialog.OnTimeSetListener { view, hourOfDay, minute ->
+                timeString = "${hourOfDay} : ${minute}"
+                btnStart.text = timeString
+
+            }
+            TimePickerDialog(this, timeSetListener, cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE), true).show()
+        }
     }
 }
