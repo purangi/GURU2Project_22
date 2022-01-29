@@ -1,5 +1,6 @@
 package com.example.guru2project_22
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
@@ -48,6 +49,15 @@ class HabitActivity : AppCompatActivity() {
         btnSat = findViewById(R.id.btnSat)
         rbOn = findViewById(R.id.rbOn)
         rbOff = findViewById(R.id.rbOff)
+
+        btnBack.setOnClickListener {
+            onBackPressed()
+        }
+
+        btnIcon.setOnClickListener{
+            val habitIntent = Intent(this, HabitActivity::class.java)
+            startActivity(habitIntent)
+        }
 
     }
 }
