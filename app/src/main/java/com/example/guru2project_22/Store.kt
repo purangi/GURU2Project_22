@@ -9,27 +9,26 @@ import androidx.appcompat.app.AppCompatActivity
 
 class Store : AppCompatActivity() {
 
-    var mycoin=200
+    var mycoin = 300
 
     lateinit var backbtn : ImageButton
     lateinit var okbtn : Button
 
-    lateinit var storeGroup : RadioGroup
-    lateinit var catfood : RadioButton
-    lateinit var smallplant : RadioButton
-    lateinit var bigplant : RadioButton
-    lateinit var catbathroom : RadioButton
-    lateinit var catplaying : RadioButton
-    lateinit var light : RadioButton
-    lateinit var window : RadioButton
-    lateinit var cathome : RadioButton
-    lateinit var cattable : RadioButton
-    lateinit var bookshelf : RadioButton
-    lateinit var catcircle : RadioButton
-    lateinit var cattower : RadioButton
-    lateinit var catsofa : RadioButton
-    lateinit var catbed : RadioButton
-    lateinit var cattv : RadioButton
+    lateinit var catfood : ImageButton
+    lateinit var smallplant : ImageButton
+    lateinit var bigplant : ImageButton
+    lateinit var catbathroom : ImageButton
+    lateinit var catplaying : ImageButton
+    lateinit var light : ImageButton
+    lateinit var window : ImageButton
+    lateinit var cathome : ImageButton
+    lateinit var cattable : ImageButton
+    lateinit var bookshelf : ImageButton
+    lateinit var catcircle : ImageButton
+    lateinit var cattower : ImageButton
+    lateinit var catsofa : ImageButton
+    lateinit var catbed : ImageButton
+    lateinit var cattv : ImageButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,7 +37,6 @@ class Store : AppCompatActivity() {
         backbtn = findViewById(R.id.backbtn)
         okbtn=findViewById(R.id.okbtn)
 
-        storeGroup = findViewById(R.id.storeGroup)
         catfood = findViewById(R.id.catfood)
         smallplant = findViewById(R.id.smallplant)
         bigplant = findViewById(R.id.bigplant)
@@ -51,7 +49,7 @@ class Store : AppCompatActivity() {
         bookshelf = findViewById(R.id.bookshelf)
         catcircle = findViewById(R.id.catcircle)
         cattower = findViewById(R.id.cattower)
-        catsofa = findViewById(R.id.catbed)
+        catsofa = findViewById(R.id.catsofa)
         catbed= findViewById(R.id.catbed)
         cattv = findViewById(R.id.cattv)
 
@@ -62,83 +60,88 @@ class Store : AppCompatActivity() {
             startActivity(intent)
         }
 
+
+
+
         okbtn.setOnClickListener {
 
+            var intent = Intent(this, CatRoom::class.java)
 
-
-            when (storeGroup.getCheckedRadioButtonId()) {
+           /* when () {
                 R.id.catfood -> {
-                    mycoin = mycoin - 10
-                    Toast.makeText(this, "구매했다 냥", Toast.LENGTH_SHORT).show()
+                    if(mycoin>=10){
+                        mycoin -= 10
+                        Toast.makeText(this, "구매했다 냥", Toast.LENGTH_SHORT).show()
+
+                        saveCoin(mycoin.toString().toInt())
+                        intent.putExtra("mycoin",mycoin.toString())
+                        startActivity(intent)
+                    } else {
+                        Toast.makeText(this, "코인이 부족하다 냥", Toast.LENGTH_SHORT).show()
+                    }
                 }
                 R.id.smallplant -> {
-                    mycoin = mycoin - 50
+                    mycoin -= 50
                     Toast.makeText(this, "구매했다 냥", Toast.LENGTH_SHORT).show()
                 }
                 R.id.bigplant -> {
-                    mycoin = mycoin - 50
+                    mycoin -= 50
                     Toast.makeText(this, "구매했다 냥", Toast.LENGTH_SHORT).show()
                 }
                 R.id.catbathroom -> {
-                    mycoin = mycoin - 80
+                    mycoin -= 80
                     Toast.makeText(this, "구매했다 냥", Toast.LENGTH_SHORT).show()
                 }
                 R.id.catplaying -> {
-                    mycoin = mycoin - 100
+                    mycoin -= 100
                     Toast.makeText(this, "구매했다 냥", Toast.LENGTH_SHORT).show()
                 }
                 R.id.light -> {
-                    mycoin = mycoin - 150
+                    mycoin -= 150
                     Toast.makeText(this, "구매했다 냥", Toast.LENGTH_SHORT).show()
                 }
                 R.id.window -> {
-                    mycoin = mycoin - 200
+                    mycoin -= 200
                     Toast.makeText(this, "구매했다 냥", Toast.LENGTH_SHORT).show()
                 }
                 R.id.cathome -> {
-                    mycoin = mycoin - 250
+                    mycoin -= 250
                     Toast.makeText(this, "구매했다 냥", Toast.LENGTH_SHORT).show()
                 }
                 R.id.cattable -> {
-                    mycoin = mycoin - 300
+                    mycoin -= 300
                     Toast.makeText(this, "구매했다 냥", Toast.LENGTH_SHORT).show()
                 }
                 R.id.bookshelf -> {
-                    mycoin = mycoin - 450
+                    mycoin -= 450
                     Toast.makeText(this, "구매했다 냥", Toast.LENGTH_SHORT).show()
                 }
                 R.id.catcircle -> {
-                    mycoin = mycoin - 500
+                    mycoin -= 500
                     Toast.makeText(this, "구매했다 냥", Toast.LENGTH_SHORT).show()
                 }
                 R.id.cattower -> {
-                    mycoin = mycoin - 600
+                    mycoin -= 600
                     Toast.makeText(this, "구매했다 냥", Toast.LENGTH_SHORT).show()
                 }
                 R.id.catsofa -> {
-                    mycoin = mycoin - 700
+                    mycoin -= 700
                     Toast.makeText(this, "구매했다 냥", Toast.LENGTH_SHORT).show()
                 }
                 R.id.catbed -> {
-                    mycoin = mycoin - 800
+                    mycoin -= 800
                     Toast.makeText(this, "구매했다 냥", Toast.LENGTH_SHORT).show()
                 }
                 R.id.cattv -> {
-                    mycoin = mycoin - 1000
+                    mycoin -= 1000
                     Toast.makeText(this, "구매했다 냥", Toast.LENGTH_SHORT).show()
                 }
 
 
 
-               else -> Toast.makeText(this, "코인이 부족하다 냥", Toast.LENGTH_SHORT).show()
+                else -> Toast.makeText(this, "아이템을 선택해라 냥", Toast.LENGTH_SHORT).show()
 
-            }
-
-            saveCoin(mycoin.toString().toInt())
-            var intent = Intent(this, CatRoom::class.java)
-            //intent.putExtra("mycoin",mycoin.toString())
-            startActivity(intent)
-
+            }*/
         }
     }
 
