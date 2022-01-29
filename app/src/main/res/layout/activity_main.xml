@@ -17,7 +17,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintLeft_toRightOf="parent"
-        app:menu="@menu/menu"></com.google.android.material.bottomnavigation.BottomNavigationView>
+        app:menu="@menu/menu">
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
 
     <FrameLayout
         android:id="@+id/fragment_container"
@@ -45,13 +47,13 @@
             android:layout_marginLeft="29dp"
             android:layout_marginTop="80dp"
             android:layout_marginRight="29dp"
-            android:background="@drawable/calenderrounded_corner">
+            android:background="@drawable/rounded_corner">
 
         </CalendarView>
 
         <TextView
             android:id="@+id/todaylist"
-            android:layout_width="wrap_content"
+            android:layout_width="288dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="38dp"
             android:layout_marginTop="433dp"
@@ -60,23 +62,36 @@
             android:textColor="@color/black"
             android:textSize="18dp" />
 
-        <ImageView
-            android:layout_width="288dp"
+        <LinearLayout
+            android:layout_width="320dp"
             android:layout_height="49dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginLeft="36dp"
             android:layout_marginTop="461dp"
-            android:src="@drawable/rectangle">
-
+            android:background="@drawable/rounded_corner">
 
             <ImageView
                 android:id="@+id/water"
                 android:layout_width="33dp"
                 android:layout_height="33dp"
-                android:layout_marginLeft="62dp"
-                android:layout_marginTop="469dp"
+                android:layout_marginLeft="26dp"
+                android:layout_marginTop="8dp"
                 app:srcCompat="@drawable/water" />
 
-        </ImageView>
+            <TextView
+                android:layout_width="99dp"
+                android:layout_height="16dp"
+                android:layout_marginLeft="46dp"
+                android:layout_gravity="center"
+                android:fontFamily="@font/zzanggu"
+                android:text="물 한 잔 마시기"
+                android:textColor="@color/black" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="70dp"
+                android:button="@drawable/check_todolist"/>
+
+        </LinearLayout>
     </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

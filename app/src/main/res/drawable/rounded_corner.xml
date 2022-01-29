@@ -3,7 +3,6 @@
     <solid android:color="#ffffff" />
     <!--border color and border width-->
     <stroke
-        android:width="7dp"
         android:color="#ffffff" />
     <!--border radius in dp-->
     <corners android:radius="19dp" />
