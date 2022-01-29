@@ -17,7 +17,7 @@ class Loading : AppCompatActivity() {
             //닉네임 값이 있으면 메인페이지로 이동
             if (!(sharedPreference.getString("nickname", "").isNullOrBlank()))
             {
-                val intent2 = Intent(this, MyPage::class.java)
+                val intent2 = Intent(this, MainActivity::class.java)
                 startActivity(intent2)
                 finish()
             }
