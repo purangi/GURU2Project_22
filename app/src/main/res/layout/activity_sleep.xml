@@ -37,7 +37,7 @@
             android:layout_height="130dp"
             android:layout_margin="20dp"
             android:background="@drawable/radio_moon"
-            android:button="null" />
+            android:button="@null" />
 
         <RadioButton
             android:id="@+id/rbSun"
@@ -45,7 +45,7 @@
             android:layout_height="130dp"
             android:layout_margin="20dp"
             android:background="@drawable/radio_sun"
-            android:button="null" />
+            android:button="@null" />
 
     </RadioGroup>
 
@@ -155,7 +155,7 @@
             android:layout_height="30dp"
             android:layout_marginRight="10dp"
             android:background="@drawable/daybutton_pressed"
-            android:button="null"
+            android:button="@null"
             android:fontFamily="@font/zzanggu"
             android:text="켜기"
             android:textAlignment="center"
@@ -167,7 +167,7 @@
             android:layout_width="70dp"
             android:layout_height="30dp"
             android:background="@drawable/daybutton_pressed"
-            android:button="null"
+            android:button="@null"
             android:fontFamily="@font/zzanggu"
             android:text="끄기"
             android:textAlignment="center"
