@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.os.Handler
 
 class Loading : AppCompatActivity() {
-    val DURATION:Long = 3000
+    val DURATION:Long = 3000 //로딩 페이지 나오는 시간 3초
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -14,12 +14,14 @@ class Loading : AppCompatActivity() {
         var sharedPreference = getSharedPreferences("user", 0)
 
         Handler().postDelayed({
+            //닉네임 값이 있으면 메인페이지로 이동
             if (!(sharedPreference.getString("nickname", "").isNullOrBlank()))
             {
                 val intent2 = Intent(this, MainActivity::class.java)
                 startActivity(intent2)
                 finish()
             }
+            //닉네임 값이 없으면 로그인 페이지로 이동
             else
             {
                 val intent = Intent(this, Login::class.java)

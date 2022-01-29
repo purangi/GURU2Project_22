@@ -15,9 +15,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-
-
-
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -31,7 +28,7 @@
                     android:layout_height="108dp"
                     android:scaleType="centerInside"
                     android:background="@android:color/transparent"
-                    android:src="@drawable/catfood" />
+                    android:src="@drawable/catfood"/>
 
                 <ImageButton
                     android:id="@+id/smallplant"
@@ -125,7 +122,7 @@
                     android:layout_marginTop="15dp"
                     android:scaleType="centerInside"
                     android:background="@android:color/transparent"
-                    android:src="@drawable/catplaying" />
+                    android:src="@drawable/catplaying"/>
 
                 <ImageButton
                     android:id="@+id/light"
@@ -204,7 +201,7 @@
                     android:layout_marginTop="15dp"
                     android:scaleType="centerInside"
                     android:background="@android:color/transparent"
-                    android:src="@drawable/window" />
+                    android:src="@drawable/window"/>
 
                 <ImageButton
                     android:id="@+id/cathome"
@@ -222,7 +219,7 @@
                     android:layout_marginTop="15dp"
                     android:scaleType="centerInside"
                     android:background="@android:color/transparent"
-                    android:src="@drawable/cattable" />
+                    android:src="@drawable/cattable"  />
             </TableRow>
 
             <TableRow>
@@ -284,6 +281,7 @@
             <TableRow>
 
                 <ImageButton
+                    android:id="@+id/bookshelf"
                     android:layout_width="115dp"
                     android:layout_height="108dp"
                     android:layout_marginTop="15dp"
@@ -292,20 +290,22 @@
                     android:src="@drawable/bookshelf" />
 
                 <ImageButton
+                    android:id="@+id/catcircle"
                     android:layout_width="115dp"
                     android:layout_height="108dp"
                     android:layout_marginTop="15dp"
                     android:scaleType="centerInside"
                     android:background="@android:color/transparent"
-                    android:src="@drawable/catcircle" />
+                    android:src="@drawable/catcircle"  />
 
                 <ImageButton
+                    android:id="@+id/cattower"
                     android:layout_width="115dp"
                     android:layout_height="108dp"
                     android:layout_marginTop="15dp"
                     android:scaleType="centerInside"
                     android:background="@android:color/transparent"
-                    android:src="@drawable/cattower" />
+                    android:src="@drawable/cattower"  />
             </TableRow>
 
             <TableRow>
@@ -367,22 +367,25 @@
             <TableRow>
 
                 <ImageButton
+                    android:id="@+id/catsofa"
                     android:layout_width="115dp"
                     android:layout_height="108dp"
                     android:layout_marginTop="15dp"
                     android:scaleType="centerInside"
                     android:background="@android:color/transparent"
-                    android:src="@drawable/catsofa" />
+                    android:src="@drawable/catsofa"  />
 
                 <ImageButton
+                    android:id="@+id/catbed"
                     android:layout_width="115dp"
                     android:layout_height="108dp"
                     android:layout_marginTop="15dp"
                     android:scaleType="centerInside"
                     android:background="@android:color/transparent"
-                    android:src="@drawable/catbed" />
+                    android:src="@drawable/catbed"  />
 
                 <ImageButton
+                    android:id="@+id/cattv"
                     android:layout_width="115dp"
                     android:layout_height="108dp"
                     android:layout_marginTop="15dp"
@@ -484,19 +487,17 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/okbtn"
+        android:id="@+id/btnComplete"
         android:layout_width="72dp"
         android:layout_height="32dp"
         android:layout_marginBottom="24dp"
         android:background="@drawable/roundorange"
-        android:elevation="20dp"
         android:fontFamily="@font/zzanggu"
         android:text="구매"
-        android:textColor="#000000"
-        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
