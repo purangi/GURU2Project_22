@@ -9,9 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GURU2Project_22">
-        <activity android:name=".SleepActivity"></activity>
-        <activity android:name=".IconSelect" />
-        <activity android:name=".MyPage" />
+        <activity android:name=".MyPage"></activity>
         <activity android:name=".HabitActivity" />
         <activity android:name=".Login" />
         <activity android:name=".MainActivity" />
@@ -23,7 +21,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CatRoom"></activity>
+        <activity android:name=".CatRoom" />
     </application>
 
 </manifest>
