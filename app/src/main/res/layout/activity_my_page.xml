@@ -28,14 +28,26 @@
         app:srcCompat="@drawable/catfoot" />
 
     <ImageView
-        android:id="@+id/coin"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="90dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/coinImage"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toStartOf="@+id/mycoin"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/coin" />
+
+    <TextView
+        android:id="@+id/mycoin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="28dp"
+        android:fontFamily="@font/zzanggu"
+        android:text="300"
+        android:textColor="#EFB506"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextTextPersonName"

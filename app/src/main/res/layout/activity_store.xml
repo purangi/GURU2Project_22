@@ -15,443 +15,453 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-
-
-
-        <TableLayout
+        <RadioGroup
+            android:id="@+id/storeGroup"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
-            //1행
-            <TableRow>
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-                <ImageButton
-                    android:id="@+id/catfood"
-                    android:layout_width="113dp"
-                    android:layout_height="108dp"
-                    android:scaleType="centerInside"
-                    android:background="@android:color/transparent"
-                    android:src="@drawable/catfood" />
-
-                <ImageButton
-                    android:id="@+id/smallplant"
-                    android:layout_width="113dp"
-                    android:layout_height="108dp"
-                    android:scaleType="centerInside"
-                    android:background="@android:color/transparent"
-                    android:src="@drawable/smallplant" />
-
-                <ImageButton
-                    android:id="@+id/bigplant"
-                    android:layout_width="113dp"
-                    android:layout_height="108dp"
-                    android:scaleType="centerInside"
-                    android:background="@android:color/transparent"
-                    android:src="@drawable/bigplant" />
-            </TableRow>
-
-            <TableRow>
-
+                //1행
                 <TableRow>
 
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="18dp"
-                        android:layout_marginLeft="35dp"
-                        android:layout_marginRight="3dp"
-                        android:src="@drawable/coin" />
+                    <RadioButton
+                        android:id="@+id/catfood"
+                        android:layout_width="113dp"
+                        android:layout_height="108dp"
+                        android:scaleType="centerInside"
+                        android:background="@drawable/catfood"
+                        android:button="null"/>
 
-                    <TextView
-                        android:layout_width="50dp"
-                        android:layout_height="18dp"
-                        android:fontFamily="@font/zzanggu"
-                        android:text="10"
-                        android:textSize="18sp" />
+                    <RadioButton
+                        android:id="@+id/smallplant"
+                        android:layout_width="113dp"
+                        android:layout_height="108dp"
+                        android:scaleType="centerInside"
+                        android:background="@drawable/smallplant"
+                        android:button="null" />
+
+                    <RadioButton
+                        android:id="@+id/bigplant"
+                        android:layout_width="113dp"
+                        android:layout_height="108dp"
+                        android:scaleType="centerInside"
+                        android:background="@drawable/bigplant"
+                        android:button="null" />
                 </TableRow>
 
                 <TableRow>
 
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="18dp"
-                        android:layout_marginLeft="30dp"
-                        android:layout_marginRight="3dp"
-                        android:src="@drawable/coin" />
+                    <TableRow>
 
-                    <TextView
-                        android:layout_width="50dp"
-                        android:layout_height="18dp"
-                        android:fontFamily="@font/zzanggu"
-                        android:text="50"
-                        android:textSize="18sp" />
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="18dp"
+                            android:layout_marginLeft="35dp"
+                            android:layout_marginRight="3dp"
+                            android:src="@drawable/coin" />
+
+                        <TextView
+                            android:layout_width="50dp"
+                            android:layout_height="18dp"
+                            android:fontFamily="@font/zzanggu"
+                            android:text="10"
+                            android:textSize="18sp" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="18dp"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginRight="3dp"
+                            android:src="@drawable/coin" />
+
+                        <TextView
+                            android:layout_width="50dp"
+                            android:layout_height="18dp"
+                            android:fontFamily="@font/zzanggu"
+                            android:text="50"
+                            android:textSize="18sp" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="18dp"
+                            android:layout_marginLeft="27dp"
+                            android:layout_marginRight="3dp"
+                            android:src="@drawable/coin" />
+
+                        <TextView
+                            android:layout_width="50dp"
+                            android:layout_height="18dp"
+                            android:fontFamily="@font/zzanggu"
+                            android:text="50"
+                            android:textSize="18sp" />
+                    </TableRow>
+                </TableRow>
+
+
+                //2행
+
+                <TableRow>
+
+                    <RadioButton
+                        android:id="@+id/catbathroom"
+                        android:layout_width="115dp"
+                        android:layout_height="108dp"
+                        android:layout_marginTop="15dp"
+                        android:scaleType="centerInside"
+                        android:background="@drawable/catbathroom"
+                        android:button="null" />
+
+                    <RadioButton
+                        android:id="@+id/catplaying"
+                        android:layout_width="115dp"
+                        android:layout_height="108dp"
+                        android:layout_marginTop="15dp"
+                        android:scaleType="centerInside"
+                        android:background="@drawable/catplaying"
+                        android:button="null" />
+
+                    <RadioButton
+                        android:id="@+id/light"
+                        android:layout_width="115dp"
+                        android:layout_height="108dp"
+                        android:layout_marginTop="15dp"
+                        android:scaleType="centerInside"
+                        android:background="@drawable/light"
+                        android:button="null" />
                 </TableRow>
 
                 <TableRow>
 
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="18dp"
-                        android:layout_marginLeft="27dp"
-                        android:layout_marginRight="3dp"
-                        android:src="@drawable/coin" />
+                    <TableRow>
 
-                    <TextView
-                        android:layout_width="50dp"
-                        android:layout_height="18dp"
-                        android:fontFamily="@font/zzanggu"
-                        android:text="50"
-                        android:textSize="18sp" />
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="18dp"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginRight="3dp"
+                            android:src="@drawable/coin" />
+
+                        <TextView
+                            android:layout_width="50dp"
+                            android:layout_height="18dp"
+                            android:fontFamily="@font/zzanggu"
+                            android:text="80"
+                            android:textSize="18sp" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="18dp"
+                            android:layout_marginLeft="28dp"
+                            android:layout_marginRight="3dp"
+                            android:src="@drawable/coin" />
+
+                        <TextView
+                            android:layout_width="50dp"
+                            android:layout_height="18dp"
+                            android:fontFamily="@font/zzanggu"
+                            android:text="100"
+                            android:textSize="18sp" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="18dp"
+                            android:layout_marginLeft="28dp"
+
+                            android:layout_marginRight="3dp"
+                            android:src="@drawable/coin" />
+
+                        <TextView
+                            android:layout_width="50dp"
+                            android:layout_height="18dp"
+                            android:fontFamily="@font/zzanggu"
+                            android:text="150"
+                            android:textSize="18sp" />
+                    </TableRow>
                 </TableRow>
-            </TableRow>
 
 
-            //2행
-
-            <TableRow>
-
-                <ImageButton
-                    android:id="@+id/catbathroom"
-                    android:layout_width="115dp"
-                    android:layout_height="108dp"
-                    android:layout_marginTop="15dp"
-                    android:scaleType="centerInside"
-                    android:background="@android:color/transparent"
-                    android:src="@drawable/catbathroom" />
-
-                <ImageButton
-                    android:id="@+id/catplaying"
-                    android:layout_width="115dp"
-                    android:layout_height="108dp"
-                    android:layout_marginTop="15dp"
-                    android:scaleType="centerInside"
-                    android:background="@android:color/transparent"
-                    android:src="@drawable/catplaying" />
-
-                <ImageButton
-                    android:id="@+id/light"
-                    android:layout_width="115dp"
-                    android:layout_height="108dp"
-                    android:layout_marginTop="15dp"
-                    android:scaleType="centerInside"
-                    android:background="@android:color/transparent"
-                    android:src="@drawable/light" />
-            </TableRow>
-
-            <TableRow>
+                //3행
 
                 <TableRow>
 
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="18dp"
-                        android:layout_marginLeft="30dp"
-                        android:layout_marginRight="3dp"
-                        android:src="@drawable/coin" />
+                    <RadioButton
+                        android:id="@+id/window"
+                        android:layout_width="115dp"
+                        android:layout_height="108dp"
+                        android:layout_marginTop="15dp"
+                        android:scaleType="centerInside"
+                        android:background="@drawable/window"
+                        android:button="null" />
 
-                    <TextView
-                        android:layout_width="50dp"
-                        android:layout_height="18dp"
-                        android:fontFamily="@font/zzanggu"
-                        android:text="80"
-                        android:textSize="18sp" />
-                </TableRow>
+                    <RadioButton
+                        android:id="@+id/cathome"
+                        android:layout_width="115dp"
+                        android:layout_height="108dp"
+                        android:layout_marginTop="15dp"
+                        android:scaleType="centerInside"
+                        android:background="@drawable/cathome"
+                        android:button="null"  />
 
-                <TableRow>
-
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="18dp"
-                        android:layout_marginLeft="28dp"
-                        android:layout_marginRight="3dp"
-                        android:src="@drawable/coin" />
-
-                    <TextView
-                        android:layout_width="50dp"
-                        android:layout_height="18dp"
-                        android:fontFamily="@font/zzanggu"
-                        android:text="100"
-                        android:textSize="18sp" />
-                </TableRow>
-
-                <TableRow>
-
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="18dp"
-                        android:layout_marginLeft="28dp"
-
-                        android:layout_marginRight="3dp"
-                        android:src="@drawable/coin" />
-
-                    <TextView
-                        android:layout_width="50dp"
-                        android:layout_height="18dp"
-                        android:fontFamily="@font/zzanggu"
-                        android:text="150"
-                        android:textSize="18sp" />
-                </TableRow>
-            </TableRow>
-
-
-            //3행
-
-            <TableRow>
-
-                <ImageButton
-                    android:id="@+id/window"
-                    android:layout_width="115dp"
-                    android:layout_height="108dp"
-                    android:layout_marginTop="15dp"
-                    android:scaleType="centerInside"
-                    android:background="@android:color/transparent"
-                    android:src="@drawable/window" />
-
-                <ImageButton
-                    android:id="@+id/cathome"
-                    android:layout_width="115dp"
-                    android:layout_height="108dp"
-                    android:layout_marginTop="15dp"
-                    android:scaleType="centerInside"
-                    android:background="@android:color/transparent"
-                    android:src="@drawable/cathome" />
-
-                <ImageButton
-                    android:id="@+id/cattable"
-                    android:layout_width="115dp"
-                    android:layout_height="108dp"
-                    android:layout_marginTop="15dp"
-                    android:scaleType="centerInside"
-                    android:background="@android:color/transparent"
-                    android:src="@drawable/cattable" />
-            </TableRow>
-
-            <TableRow>
-
-                <TableRow>
-
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="18dp"
-                        android:layout_marginLeft="27dp"
-                        android:layout_marginRight="3dp"
-                        android:src="@drawable/coin" />
-
-                    <TextView
-                        android:layout_width="50dp"
-                        android:layout_height="18dp"
-                        android:fontFamily="@font/zzanggu"
-                        android:text="200"
-                        android:textSize="18sp" />
+                    <RadioButton
+                        android:id="@+id/cattable"
+                        android:layout_width="115dp"
+                        android:layout_height="108dp"
+                        android:layout_marginTop="15dp"
+                        android:scaleType="centerInside"
+                        android:background="@drawable/cattable"
+                        android:button="null"  />
                 </TableRow>
 
                 <TableRow>
 
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="18dp"
-                        android:layout_marginLeft="28dp"
-                        android:layout_marginRight="3dp"
-                        android:src="@drawable/coin" />
+                    <TableRow>
 
-                    <TextView
-                        android:layout_width="50dp"
-                        android:layout_height="18dp"
-                        android:fontFamily="@font/zzanggu"
-                        android:text="250"
-                        android:textSize="18sp" />
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="18dp"
+                            android:layout_marginLeft="27dp"
+                            android:layout_marginRight="3dp"
+                            android:src="@drawable/coin" />
+
+                        <TextView
+                            android:layout_width="50dp"
+                            android:layout_height="18dp"
+                            android:fontFamily="@font/zzanggu"
+                            android:text="200"
+                            android:textSize="18sp" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="18dp"
+                            android:layout_marginLeft="28dp"
+                            android:layout_marginRight="3dp"
+                            android:src="@drawable/coin" />
+
+                        <TextView
+                            android:layout_width="50dp"
+                            android:layout_height="18dp"
+                            android:fontFamily="@font/zzanggu"
+                            android:text="250"
+                            android:textSize="18sp" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="18dp"
+                            android:layout_marginLeft="28dp"
+                            android:layout_marginRight="3dp"
+                            android:src="@drawable/coin" />
+
+                        <TextView
+                            android:layout_width="50dp"
+                            android:layout_height="18dp"
+                            android:fontFamily="@font/zzanggu"
+                            android:text="300"
+                            android:textSize="18sp" />
+                    </TableRow>
+                </TableRow>
+
+                //4행
+
+                <TableRow>
+
+                    <RadioButton
+                        android:id="@+id/bookshelf"
+                        android:layout_width="115dp"
+                        android:layout_height="108dp"
+                        android:layout_marginTop="15dp"
+                        android:scaleType="centerInside"
+                        android:background="@drawable/bookshelf"
+                        android:button="null"  />
+
+                    <RadioButton
+                        android:id="@+id/catcircle"
+                        android:layout_width="115dp"
+                        android:layout_height="108dp"
+                        android:layout_marginTop="15dp"
+                        android:scaleType="centerInside"
+                        android:background="@drawable/catcircle"
+                        android:button="null"  />
+
+                    <RadioButton
+                        android:id="@+id/cattower"
+                        android:layout_width="115dp"
+                        android:layout_height="108dp"
+                        android:layout_marginTop="15dp"
+                        android:scaleType="centerInside"
+                        android:background="@drawable/cattower"
+                        android:button="null"  />
                 </TableRow>
 
                 <TableRow>
 
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="18dp"
-                        android:layout_marginLeft="28dp"
-                        android:layout_marginRight="3dp"
-                        android:src="@drawable/coin" />
+                    <TableRow>
 
-                    <TextView
-                        android:layout_width="50dp"
-                        android:layout_height="18dp"
-                        android:fontFamily="@font/zzanggu"
-                        android:text="300"
-                        android:textSize="18sp" />
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="18dp"
+                            android:layout_marginLeft="27dp"
+                            android:layout_marginRight="3dp"
+                            android:src="@drawable/coin" />
+
+                        <TextView
+                            android:layout_width="50dp"
+                            android:layout_height="18dp"
+                            android:fontFamily="@font/zzanggu"
+                            android:text="450"
+                            android:textSize="18sp" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="18dp"
+                            android:layout_marginLeft="28dp"
+                            android:layout_marginRight="3dp"
+                            android:src="@drawable/coin" />
+
+                        <TextView
+                            android:layout_width="50dp"
+                            android:layout_height="18dp"
+                            android:fontFamily="@font/zzanggu"
+                            android:text="500"
+                            android:textSize="18sp" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="18dp"
+                            android:layout_marginLeft="28dp"
+                            android:layout_marginRight="3dp"
+                            android:src="@drawable/coin" />
+
+                        <TextView
+                            android:layout_width="50dp"
+                            android:layout_height="18dp"
+                            android:fontFamily="@font/zzanggu"
+                            android:text="600"
+                            android:textSize="18sp" />
+                    </TableRow>
                 </TableRow>
-            </TableRow>
 
-            //4행
-
-            <TableRow>
-
-                <ImageButton
-                    android:layout_width="115dp"
-                    android:layout_height="108dp"
-                    android:layout_marginTop="15dp"
-                    android:scaleType="centerInside"
-                    android:background="@android:color/transparent"
-                    android:src="@drawable/bookshelf" />
-
-                <ImageButton
-                    android:layout_width="115dp"
-                    android:layout_height="108dp"
-                    android:layout_marginTop="15dp"
-                    android:scaleType="centerInside"
-                    android:background="@android:color/transparent"
-                    android:src="@drawable/catcircle" />
-
-                <ImageButton
-                    android:layout_width="115dp"
-                    android:layout_height="108dp"
-                    android:layout_marginTop="15dp"
-                    android:scaleType="centerInside"
-                    android:background="@android:color/transparent"
-                    android:src="@drawable/cattower" />
-            </TableRow>
-
-            <TableRow>
+                //5행
 
                 <TableRow>
 
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="18dp"
-                        android:layout_marginLeft="27dp"
-                        android:layout_marginRight="3dp"
-                        android:src="@drawable/coin" />
+                    <RadioButton
+                        android:id="@+id/catsofa"
+                        android:layout_width="115dp"
+                        android:layout_height="108dp"
+                        android:layout_marginTop="15dp"
+                        android:scaleType="centerInside"
+                        android:background="@drawable/catsofa"
+                        android:button="null"  />
 
-                    <TextView
-                        android:layout_width="50dp"
-                        android:layout_height="18dp"
-                        android:fontFamily="@font/zzanggu"
-                        android:text="450"
-                        android:textSize="18sp" />
-                </TableRow>
+                    <RadioButton
+                        android:id="@+id/catbed"
+                        android:layout_width="115dp"
+                        android:layout_height="108dp"
+                        android:layout_marginTop="15dp"
+                        android:scaleType="centerInside"
+                        android:background="@drawable/catbed"
+                        android:button="null"  />
 
-                <TableRow>
-
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="18dp"
-                        android:layout_marginLeft="28dp"
-                        android:layout_marginRight="3dp"
-                        android:src="@drawable/coin" />
-
-                    <TextView
-                        android:layout_width="50dp"
-                        android:layout_height="18dp"
-                        android:fontFamily="@font/zzanggu"
-                        android:text="500"
-                        android:textSize="18sp" />
-                </TableRow>
-
-                <TableRow>
-
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="18dp"
-                        android:layout_marginLeft="28dp"
-                        android:layout_marginRight="3dp"
-                        android:src="@drawable/coin" />
-
-                    <TextView
-                        android:layout_width="50dp"
-                        android:layout_height="18dp"
-                        android:fontFamily="@font/zzanggu"
-                        android:text="600"
-                        android:textSize="18sp" />
-                </TableRow>
-            </TableRow>
-
-            //5행
-
-            <TableRow>
-
-                <ImageButton
-                    android:layout_width="115dp"
-                    android:layout_height="108dp"
-                    android:layout_marginTop="15dp"
-                    android:scaleType="centerInside"
-                    android:background="@android:color/transparent"
-                    android:src="@drawable/catsofa" />
-
-                <ImageButton
-                    android:layout_width="115dp"
-                    android:layout_height="108dp"
-                    android:layout_marginTop="15dp"
-                    android:scaleType="centerInside"
-                    android:background="@android:color/transparent"
-                    android:src="@drawable/catbed" />
-
-                <ImageButton
-                    android:layout_width="115dp"
-                    android:layout_height="108dp"
-                    android:layout_marginTop="15dp"
-                    android:scaleType="centerInside"
-                    android:background="@android:color/transparent"
-                    android:src="@drawable/cattv" />
-            </TableRow>
-
-            <TableRow>
-
-                <TableRow>
-
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="18dp"
-                        android:layout_marginLeft="27dp"
-                        android:layout_marginRight="3dp"
-                        android:layout_marginBottom="10dp"
-                        android:src="@drawable/coin" />
-
-                    <TextView
-                        android:layout_width="50dp"
-                        android:layout_height="18dp"
-                        android:layout_marginBottom="10dp"
-                        android:fontFamily="@font/zzanggu"
-                        android:text="700"
-                        android:textSize="18sp" />
+                    <RadioButton
+                        android:id="@+id/cattv"
+                        android:layout_width="115dp"
+                        android:layout_height="108dp"
+                        android:layout_marginTop="15dp"
+                        android:scaleType="centerInside"
+                        android:background="@drawable/cattv"
+                        android:button="null"  />
                 </TableRow>
 
                 <TableRow>
 
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="18dp"
-                        android:layout_marginLeft="28dp"
-                        android:layout_marginRight="3dp"
-                        android:layout_marginBottom="10dp"
-                        android:src="@drawable/coin" />
+                    <TableRow>
 
-                    <TextView
-                        android:layout_width="50dp"
-                        android:layout_height="18dp"
-                        android:layout_marginBottom="10dp"
-                        android:fontFamily="@font/zzanggu"
-                        android:text="800"
-                        android:textSize="18sp" />
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="18dp"
+                            android:layout_marginLeft="27dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_marginBottom="10dp"
+                            android:src="@drawable/coin" />
+
+                        <TextView
+                            android:layout_width="50dp"
+                            android:layout_height="18dp"
+                            android:layout_marginBottom="10dp"
+                            android:fontFamily="@font/zzanggu"
+                            android:text="700"
+                            android:textSize="18sp" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="18dp"
+                            android:layout_marginLeft="28dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_marginBottom="10dp"
+                            android:src="@drawable/coin" />
+
+                        <TextView
+                            android:layout_width="50dp"
+                            android:layout_height="18dp"
+                            android:layout_marginBottom="10dp"
+                            android:fontFamily="@font/zzanggu"
+                            android:text="800"
+                            android:textSize="18sp" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="18dp"
+                            android:layout_marginLeft="23dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_marginBottom="10dp"
+                            android:src="@drawable/coin" />
+
+                        <TextView
+                            android:layout_width="50dp"
+                            android:layout_height="18dp"
+                            android:layout_marginBottom="10dp"
+                            android:fontFamily="@font/zzanggu"
+                            android:text="1000"
+                            android:textSize="18sp" />
+                    </TableRow>
                 </TableRow>
 
-                <TableRow>
+            </TableLayout>
 
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="18dp"
-                        android:layout_marginLeft="23dp"
-                        android:layout_marginRight="3dp"
-                        android:layout_marginBottom="10dp"
-                        android:src="@drawable/coin" />
-
-                    <TextView
-                        android:layout_width="50dp"
-                        android:layout_height="18dp"
-                        android:layout_marginBottom="10dp"
-                        android:fontFamily="@font/zzanggu"
-                        android:text="1000"
-                        android:textSize="18sp" />
-                </TableRow>
-            </TableRow>
-
-        </TableLayout>
+        </RadioGroup>
     </ScrollView>
 
     <ImageButton
@@ -473,13 +483,13 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:fontFamily="@font/zzanggu"
         android:text="스토어"
         android:textColor="#000000"
-        android:textSize="40sp"
+        android:textSize="32sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.362"
+        app:layout_constraintHorizontal_bias="0.404"
         app:layout_constraintStart_toEndOf="@+id/backbtn"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -487,16 +497,14 @@
         android:id="@+id/okbtn"
         android:layout_width="72dp"
         android:layout_height="32dp"
+        android:layout_marginStart="170dp"
         android:layout_marginBottom="24dp"
         android:background="@drawable/roundorange"
-        android:elevation="20dp"
         android:fontFamily="@font/zzanggu"
         android:text="구매"
-        android:textColor="#000000"
-        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
