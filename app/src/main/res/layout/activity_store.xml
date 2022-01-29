@@ -33,7 +33,7 @@
                         android:layout_height="108dp"
                         android:scaleType="centerInside"
                         android:background="@drawable/catfood"
-                        android:button="null"/>
+                        android:button="@null"/>
 
                     <RadioButton
                         android:id="@+id/smallplant"
@@ -41,7 +41,7 @@
                         android:layout_height="108dp"
                         android:scaleType="centerInside"
                         android:background="@drawable/smallplant"
-                        android:button="null" />
+                        android:button="@null" />
 
                     <RadioButton
                         android:id="@+id/bigplant"
@@ -49,7 +49,7 @@
                         android:layout_height="108dp"
                         android:scaleType="centerInside"
                         android:background="@drawable/bigplant"
-                        android:button="null" />
+                        android:button="@null" />
                 </TableRow>
 
                 <TableRow>
@@ -118,7 +118,7 @@
                         android:layout_marginTop="15dp"
                         android:scaleType="centerInside"
                         android:background="@drawable/catbathroom"
-                        android:button="null" />
+                        android:button="@null" />
 
                     <RadioButton
                         android:id="@+id/catplaying"
@@ -127,7 +127,7 @@
                         android:layout_marginTop="15dp"
                         android:scaleType="centerInside"
                         android:background="@drawable/catplaying"
-                        android:button="null" />
+                        android:button="@null" />
 
                     <RadioButton
                         android:id="@+id/light"
@@ -136,7 +136,7 @@
                         android:layout_marginTop="15dp"
                         android:scaleType="centerInside"
                         android:background="@drawable/light"
-                        android:button="null" />
+                        android:button="@null" />
                 </TableRow>
 
                 <TableRow>
@@ -206,7 +206,7 @@
                         android:layout_marginTop="15dp"
                         android:scaleType="centerInside"
                         android:background="@drawable/window"
-                        android:button="null" />
+                        android:button="@null" />
 
                     <RadioButton
                         android:id="@+id/cathome"
@@ -215,7 +215,7 @@
                         android:layout_marginTop="15dp"
                         android:scaleType="centerInside"
                         android:background="@drawable/cathome"
-                        android:button="null"  />
+                        android:button="@null"  />
 
                     <RadioButton
                         android:id="@+id/cattable"
@@ -224,7 +224,7 @@
                         android:layout_marginTop="15dp"
                         android:scaleType="centerInside"
                         android:background="@drawable/cattable"
-                        android:button="null"  />
+                        android:button="@null"  />
                 </TableRow>
 
                 <TableRow>
@@ -292,7 +292,7 @@
                         android:layout_marginTop="15dp"
                         android:scaleType="centerInside"
                         android:background="@drawable/bookshelf"
-                        android:button="null"  />
+                        android:button="@null"  />
 
                     <RadioButton
                         android:id="@+id/catcircle"
@@ -301,7 +301,7 @@
                         android:layout_marginTop="15dp"
                         android:scaleType="centerInside"
                         android:background="@drawable/catcircle"
-                        android:button="null"  />
+                        android:button="@null"  />
 
                     <RadioButton
                         android:id="@+id/cattower"
@@ -310,7 +310,7 @@
                         android:layout_marginTop="15dp"
                         android:scaleType="centerInside"
                         android:background="@drawable/cattower"
-                        android:button="null"  />
+                        android:button="@null"  />
                 </TableRow>
 
                 <TableRow>
@@ -378,7 +378,7 @@
                         android:layout_marginTop="15dp"
                         android:scaleType="centerInside"
                         android:background="@drawable/catsofa"
-                        android:button="null"  />
+                        android:button="@null"  />
 
                     <RadioButton
                         android:id="@+id/catbed"
@@ -387,7 +387,7 @@
                         android:layout_marginTop="15dp"
                         android:scaleType="centerInside"
                         android:background="@drawable/catbed"
-                        android:button="null"  />
+                        android:button="@null"  />
 
                     <RadioButton
                         android:id="@+id/cattv"
@@ -396,7 +396,7 @@
                         android:layout_marginTop="15dp"
                         android:scaleType="centerInside"
                         android:background="@drawable/cattv"
-                        android:button="null"  />
+                        android:button="@null"  />
                 </TableRow>
 
                 <TableRow>
