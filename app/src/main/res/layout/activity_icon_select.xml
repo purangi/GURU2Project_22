@@ -31,12 +31,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/roundbeige" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnComplete"
-        android:layout_width="100dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="152dp"
-        android:layout_marginBottom="35dp"
+        android:layout_width="72dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="170dp"
+        android:layout_marginEnd="170dp"
+        android:layout_marginBottom="36dp"
         android:background="@drawable/roundorange"
         android:fontFamily="@font/zzanggu"
         android:text="완료"
@@ -79,7 +80,7 @@
                 android:layout_height="80dp"
                 android:layout_margin="10dp"
                 android:background="@drawable/radio_water"
-                android:button="null" />
+                android:button="@null" />
 
             <RadioButton
                 android:id="@+id/rbBed"
@@ -87,7 +88,7 @@
                 android:layout_height="80dp"
                 android:layout_margin="10dp"
                 android:background="@drawable/radio_bed"
-                android:button="null" />
+                android:button="@null" />
 
             <RadioButton
                 android:id="@+id/rbComputer"
@@ -95,7 +96,7 @@
                 android:layout_height="80dp"
                 android:layout_margin="10dp"
                 android:background="@drawable/radio_computer"
-                android:button="null" />
+                android:button="@null" />
         </RadioGroup>
 
         <RadioGroup
@@ -109,7 +110,7 @@
                 android:layout_height="80dp"
                 android:layout_margin="10dp"
                 android:background="@drawable/radio_exercise"
-                android:button="null" />
+                android:button="@null" />
 
             <RadioButton
                 android:id="@+id/rbExercise2"
@@ -117,7 +118,7 @@
                 android:layout_height="80dp"
                 android:layout_margin="10dp"
                 android:background="@drawable/radio_exercise2"
-                android:button="null" />
+                android:button="@null" />
 
             <RadioButton
                 android:id="@+id/rbStudy"
@@ -125,7 +126,7 @@
                 android:layout_height="80dp"
                 android:layout_margin="10dp"
                 android:background="@drawable/radio_study"
-                android:button="null" />
+                android:button="@null" />
         </RadioGroup>
 
         <RadioGroup
@@ -139,7 +140,7 @@
                 android:layout_height="80dp"
                 android:layout_margin="10dp"
                 android:background="@drawable/radio_reading"
-                android:button="null" />
+                android:button="@null" />
 
             <RadioButton
                 android:id="@+id/rbPill"
@@ -147,7 +148,7 @@
                 android:layout_height="80dp"
                 android:layout_margin="10dp"
                 android:background="@drawable/radio_pill"
-                android:button="null" />
+                android:button="@null" />
 
             <RadioButton
                 android:id="@+id/rbMeal"
@@ -155,7 +156,7 @@
                 android:layout_height="80dp"
                 android:layout_margin="10dp"
                 android:background="@drawable/radio_meal"
-                android:button="null" />
+                android:button="@null" />
         </RadioGroup>
 
         <RadioGroup
@@ -169,7 +170,7 @@
                 android:layout_height="80dp"
                 android:layout_margin="10dp"
                 android:background="@drawable/radio_shopping"
-                android:button="null" />
+                android:button="@null" />
 
             <RadioButton
                 android:id="@+id/rbBath"
@@ -177,7 +178,7 @@
                 android:layout_height="80dp"
                 android:layout_margin="10dp"
                 android:background="@drawable/radio_bath"
-                android:button="null" />
+                android:button="@null" />
 
             <RadioButton
                 android:id="@+id/rbCleanup"
@@ -185,7 +186,7 @@
                 android:layout_height="80dp"
                 android:layout_margin="10dp"
                 android:background="@drawable/radio_bed"
-                android:button="null" />
+                android:button="@null" />
         </RadioGroup>
 
     </RadioGroup>
