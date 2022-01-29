@@ -17,11 +17,13 @@ class Login : AppCompatActivity() {
         editNickname = findViewById(R.id.editNickname)
         completeButton = findViewById(R.id.completeButton)
 
+        //완료 버튼 누를 시
         completeButton.setOnClickListener {
 
             var sharedPreference = getSharedPreferences("user", 0)
             var editor = sharedPreference.edit()
 
+            //닉네임 저장
             editor.putString("nickname", editNickname.text.toString())
             editor.commit()
 
