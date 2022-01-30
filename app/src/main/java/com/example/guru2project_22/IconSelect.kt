@@ -1,15 +1,22 @@
 package com.example.guru2project_22
 
-import android.media.Image
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.ImageButton
 import android.widget.RadioButton
-import android.widget.RadioGroup
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.graphics.drawable.toDrawable
+import java.io.ByteArrayOutputStream
+
 
 class IconSelect : AppCompatActivity() {
-    lateinit var rgIcon : RadioGroup
+    lateinit var btnBack : ImageButton
+    lateinit var btnComplete : Button
+
     lateinit var rbWater : RadioButton
     lateinit var rbBed : RadioButton
     lateinit var rbComputer : RadioButton
@@ -22,13 +29,15 @@ class IconSelect : AppCompatActivity() {
     lateinit var rbShopping : RadioButton
     lateinit var rbBath : RadioButton
     lateinit var rbCleanup : RadioButton
-    lateinit var btnBack : ImageButton
+
     lateinit var activeRadioButton : RadioButton
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_icon_select)
 
+        btnComplete = findViewById(R.id.btnComplete)
         rbWater = findViewById(R.id.rbWater)
         rbBed = findViewById(R.id.rbBed)
         rbComputer = findViewById(R.id.rbComputer)
@@ -44,96 +53,88 @@ class IconSelect : AppCompatActivity() {
         btnBack = findViewById(R.id.btnBack)
         activeRadioButton = findViewById(R.id.activeRadioButton)
 
+//        var waterDrawable = getDrawable(R.drawable.water)
+//        var bedDrawable = getDrawable(R.drawable.bed)
+//        var computerDrawable = getDrawable(R.drawable.computer)
+//        var exerciseDrawable = getDrawable(R.drawable.exercise)
+//        var exercise2Drawable = getDrawable(R.drawable.exercise2)
+//        var studyDrawable = getDrawable(R.drawable.study)
+//        var readingDrawable = getDrawable(R.drawable.reading)
+//        var pillDrawable = getDrawable(R.drawable.pill)
+//        var mealDrawable = getDrawable(R.drawable.meal)
+//        var shoppingDrawable = getDrawable(R.drawable.shopping)
+//        var bathDrawable = getDrawable(R.drawable.bath)
+//        var cleanupDrawable = getDrawable(R.drawable.cleanup)
+
         activeRadioButton.isChecked = true
 
         btnBack.setOnClickListener {
             onBackPressed()
         }
 
-        rbWater.setOnClickListener {
-            if(activeRadioButton != null) {
-                activeRadioButton.isChecked = false
+        btnComplete.setOnClickListener {
+            val iconIntent = Intent(this, HabitActivity::class.java)
+
+//            val stream = ByteArrayOutputStream()
+//
+//            var stateDrawable = activeRadioButton.background
+//
+//            when(activeRadioButton.id) {
+//                R.id.rbWater -> stateDrawable = waterDrawable
+//                R.id.rbBed -> stateDrawable = bedDrawable
+//                R.id.rbComputer -> stateDrawable = computerDrawable
+//                R.id.rbExercise -> stateDrawable = exerciseDrawable
+//                R.id.rbExercise2 -> stateDrawable = exercise2Drawable
+//                R.id.rbStudy -> stateDrawable = studyDrawable
+//                R.id.rbReading -> stateDrawable = readingDrawable
+//                R.id.rbPill -> stateDrawable = pillDrawable
+//                R.id.rbMeal -> stateDrawable = mealDrawable
+//                R.id.rbShopping -> stateDrawable = shoppingDrawable
+//                R.id.rbBath -> stateDrawable = bathDrawable
+//                R.id.rbCleanup -> stateDrawable = cleanupDrawable
+//            }
+//
+//            val bitmapDrawable = stateDrawable as BitmapDrawable
+//            val bitmap = bitmapDrawable.bitmap
+//            val scale = (1024 / bitmap.width.toFloat())
+//            val image_w = (bitmap.width * scale).toInt()
+//            val image_h = (bitmap.height * scale).toInt()
+//            val resize = Bitmap.createScaledBitmap(bitmap, image_w, image_h, true)
+//            resize.compress(Bitmap.CompressFormat.JPEG, 100, stream)
+//            val byteArray: ByteArray = stream.toByteArray()
+
+            //iconIntent.putExtra("image", byteArray)
+
+            when(activeRadioButton.id) {
+                R.id.rbWater -> iconIntent.putExtra("icon", "water")
+                R.id.rbBed -> iconIntent.putExtra("icon", "bed")
+                R.id.rbComputer -> iconIntent.putExtra("icon", "computer")
+                R.id.rbExercise -> iconIntent.putExtra("icon", "exercise")
+                R.id.rbExercise2 -> iconIntent.putExtra("icon", "exercise2")
+                R.id.rbStudy -> iconIntent.putExtra("icon", "study")
+                R.id.rbReading -> iconIntent.putExtra("icon", "reading")
+                R.id.rbPill -> iconIntent.putExtra("icon", "pill")
+                R.id.rbMeal -> iconIntent.putExtra("icon", "meal")
+                R.id.rbShopping -> iconIntent.putExtra("icon", "shopping")
+                R.id.rbBath -> iconIntent.putExtra("icon", "bath")
+                R.id.rbCleanup -> iconIntent.putExtra("icon", "cleanup")
             }
-            rbWater.isChecked = true
-            activeRadioButton = rbWater
-        }
-        rbBed.setOnClickListener {
-            if(activeRadioButton != null) {
-                activeRadioButton.isChecked = false
-            }
-            rbBed.isChecked = true
-            activeRadioButton = rbBed
-        }
-        rbComputer.setOnClickListener {
-            if(activeRadioButton != null) {
-                activeRadioButton.isChecked = false
-            }
-            rbComputer.isChecked = true
-            activeRadioButton = rbComputer
-        }
-        rbExercise.setOnClickListener {
-            if(activeRadioButton != null) {
-                activeRadioButton.isChecked = false
-            }
-            rbExercise.isChecked = true
-            activeRadioButton = rbExercise
-        }
-        rbExercise2.setOnClickListener {
-            if(activeRadioButton != null) {
-                activeRadioButton.isChecked = false
-            }
-            rbExercise2.isChecked = true
-            activeRadioButton = rbExercise2
-        }
-        rbStudy.setOnClickListener {
-            if(activeRadioButton != null) {
-                activeRadioButton.isChecked = false
-            }
-            rbStudy.isChecked = true
-            activeRadioButton = rbStudy
-        }
-        rbReading.setOnClickListener {
-            if(activeRadioButton != null) {
-                activeRadioButton.isChecked = false
-            }
-            rbReading.isChecked = true
-            activeRadioButton = rbReading
-        }
-        rbPill.setOnClickListener {
-            if(activeRadioButton != null) {
-                activeRadioButton.isChecked = false
-            }
-            rbPill.isChecked = true
-            activeRadioButton = rbPill
-        }
-        rbMeal.setOnClickListener {
-            if(activeRadioButton != null) {
-                activeRadioButton.isChecked = false
-            }
-            rbMeal.isChecked = true
-            activeRadioButton = rbMeal
-        }
-        rbShopping.setOnClickListener {
-            if(activeRadioButton != null) {
-                activeRadioButton.isChecked = false
-            }
-            rbShopping.isChecked = true
-            activeRadioButton = rbShopping
-        }
-        rbBath.setOnClickListener {
-            if(activeRadioButton != null) {
-                activeRadioButton.isChecked = false
-            }
-            rbBath.isChecked = true
-            activeRadioButton = rbBath
-        }
-        rbCleanup.setOnClickListener {
-            if(activeRadioButton != null) {
-                activeRadioButton.isChecked = false
-            }
-            rbCleanup.isChecked = true
-            activeRadioButton = rbCleanup
+
+            startActivity(iconIntent)
+
+            this.finish()
         }
 
+    }
+
+
+    fun clickRB(view: View) {
+        var radioButton = view as RadioButton
+
+        if(activeRadioButton != null) {
+            activeRadioButton.isChecked = false
+        }
+        radioButton.isChecked = true
+        activeRadioButton = radioButton
     }
 }
