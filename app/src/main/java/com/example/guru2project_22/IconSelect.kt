@@ -120,9 +120,9 @@ class IconSelect : AppCompatActivity() {
                 R.id.rbCleanup -> iconIntent.putExtra("icon", "cleanup")
             }
 
-            startActivity(iconIntent)
+            setResult(RESULT_OK, iconIntent)
 
-            this.finish()
+            finish()
         }
 
     }

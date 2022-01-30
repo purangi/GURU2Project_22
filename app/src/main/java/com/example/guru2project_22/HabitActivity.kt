@@ -1,5 +1,6 @@
 package com.example.guru2project_22
 
+import android.app.Activity
 import android.app.TimePickerDialog
 import android.content.Intent
 import android.content.res.Resources
@@ -32,6 +33,8 @@ class HabitActivity : AppCompatActivity() {
     lateinit var rbOff : RadioButton
     var timeString = ""
 
+    val ICONSELECT_REQUEST_CODE = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_habit)
@@ -54,27 +57,13 @@ class HabitActivity : AppCompatActivity() {
         rbOn = findViewById(R.id.rbOn)
         rbOff = findViewById(R.id.rbOff)
 
-        var waterDrawable = getDrawable(R.drawable.water)
-        var bedDrawable = getDrawable(R.drawable.bed)
-        var computerDrawable = getDrawable(R.drawable.computer)
-        var exerciseDrawable = getDrawable(R.drawable.exercise)
-        var exercise2Drawable = getDrawable(R.drawable.exercise2)
-        var studyDrawable = getDrawable(R.drawable.study)
-        var readingDrawable = getDrawable(R.drawable.reading)
-        var pillDrawable = getDrawable(R.drawable.pill)
-        var mealDrawable = getDrawable(R.drawable.meal)
-        var shoppingDrawable = getDrawable(R.drawable.shopping)
-        var bathDrawable = getDrawable(R.drawable.bath)
-        var cleanupDrawable = getDrawable(R.drawable.cleanup)
-
-
         btnBack.setOnClickListener {
             onBackPressed()
         }
 
         btnIcon.setOnClickListener{
             val iconIntent = Intent(this, IconSelect::class.java)
-            startActivity(iconIntent)
+            startActivityForResult(iconIntent, ICONSELECT_REQUEST_CODE)
         }
 
         btnStart.setOnClickListener {
@@ -93,30 +82,48 @@ class HabitActivity : AppCompatActivity() {
             ).show()
         }
 
-        if (intent.hasExtra("icon")) {
-//            val byteArray = intent.getByteArrayExtra("image")
-//            val bitmap = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.size)
-//
-//            //되는데 테두리 생김
-//            btnIcon.setImageBitmap(bitmap);
-            var icon = intent.getStringExtra("icon")
 
-            when(icon) {
-                "water" -> btnIcon.setImageDrawable(waterDrawable)
-                "bed" -> btnIcon.setImageDrawable(bedDrawable)
-                "computer" -> btnIcon.setImageDrawable(computerDrawable)
-                "exercise" -> btnIcon.setImageDrawable(exerciseDrawable)
-                "exercise2" -> btnIcon.setImageDrawable(exercise2Drawable)
-                "study" -> btnIcon.setImageDrawable(studyDrawable)
-                "reading" -> btnIcon.setImageDrawable(readingDrawable)
-                "pill" -> btnIcon.setImageDrawable(pillDrawable)
-                "meal" -> btnIcon.setImageDrawable(mealDrawable)
-                "shopping" -> btnIcon.setImageDrawable(shoppingDrawable)
-                "bath" -> btnIcon.setImageDrawable(bathDrawable)
-                "cleanup" -> btnIcon.setImageDrawable(cleanupDrawable)
+
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        val waterDrawable = getDrawable(R.drawable.water)
+        val bedDrawable = getDrawable(R.drawable.bed)
+        val computerDrawable = getDrawable(R.drawable.computer)
+        val exerciseDrawable = getDrawable(R.drawable.exercise)
+        val exercise2Drawable = getDrawable(R.drawable.exercise2)
+        val studyDrawable = getDrawable(R.drawable.study)
+        val readingDrawable = getDrawable(R.drawable.reading)
+        val pillDrawable = getDrawable(R.drawable.pill)
+        val mealDrawable = getDrawable(R.drawable.meal)
+        val shoppingDrawable = getDrawable(R.drawable.shopping)
+        val bathDrawable = getDrawable(R.drawable.bath)
+        val cleanupDrawable = getDrawable(R.drawable.cleanup)
+
+        if(resultCode == Activity.RESULT_OK) {
+            when(requestCode) {
+                ICONSELECT_REQUEST_CODE -> {
+                    var icon = data?.getStringExtra("icon")
+
+                    when(icon) {
+                        "water" -> btnIcon.setImageDrawable(waterDrawable)
+                        "bed" -> btnIcon.setImageDrawable(bedDrawable)
+                        "computer" -> btnIcon.setImageDrawable(computerDrawable)
+                        "exercise" -> btnIcon.setImageDrawable(exerciseDrawable)
+                        "exercise2" -> btnIcon.setImageDrawable(exercise2Drawable)
+                        "study" -> btnIcon.setImageDrawable(studyDrawable)
+                        "reading" -> btnIcon.setImageDrawable(readingDrawable)
+                        "pill" -> btnIcon.setImageDrawable(pillDrawable)
+                        "meal" -> btnIcon.setImageDrawable(mealDrawable)
+                        "shopping" -> btnIcon.setImageDrawable(shoppingDrawable)
+                        "bath" -> btnIcon.setImageDrawable(bathDrawable)
+                        "cleanup" -> btnIcon.setImageDrawable(cleanupDrawable)
+
+                    }
+                }
             }
-
         }
-
     }
 }
