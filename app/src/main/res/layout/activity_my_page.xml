@@ -74,4 +74,15 @@
         app:layout_constraintStart_toEndOf="@+id/myIcon"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <View
+        android:id="@+id/catView"
+        android:layout_width="343dp"
+        android:layout_height="231dp"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="34dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/myIcon" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
