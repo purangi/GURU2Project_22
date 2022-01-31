@@ -15,7 +15,7 @@ class CatRoom : AppCompatActivity() {
     lateinit var backbtn : ImageButton
     lateinit var storebtn : ImageButton
     lateinit var item : ImageButton
-    lateinit var drawer : DrawerLayout
+    //lateinit var drawer : DrawerLayout
     lateinit var mycoin : TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,7 +25,7 @@ class CatRoom : AppCompatActivity() {
         backbtn = findViewById(R.id.backbtn)
         storebtn = findViewById(R.id.storebtn)
         item = findViewById(R.id.item)
-        drawer = findViewById(R.id.drawer)
+        //drawer = findViewById(R.id.drawer)
         mycoin = findViewById(R.id.mycoin)
 
         loadCoin()
@@ -40,9 +40,10 @@ class CatRoom : AppCompatActivity() {
         }
 
         item.setOnClickListener {
-            if(!drawer.isDrawerOpen(Gravity.RIGHT)){
+            /*if(!drawer.isDrawerOpen(Gravity.RIGHT)){
                 drawer.openDrawer(Gravity.RIGHT)
-            }
+            }*/
+
         }
 
     }

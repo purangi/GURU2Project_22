@@ -91,7 +91,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/cat" />
 
-    <androidx.drawerlayout.widget.DrawerLayout
+    <!--<androidx.drawerlayout.widget.DrawerLayout
         android:id="@+id/drawer"
         android:layout_width="150dp"
         android:layout_height="match_parent"
@@ -141,7 +141,7 @@
                 </LinearLayout>
             </ScrollView>
         </LinearLayout>
-    </androidx.drawerlayout.widget.DrawerLayout>
+    </androidx.drawerlayout.widget.DrawerLayout> !-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

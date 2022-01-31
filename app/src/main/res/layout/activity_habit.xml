@@ -215,7 +215,8 @@
         android:textColor="#FF0000"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cbDays" />
+        app:layout_constraintTop_toBottomOf="@+id/cbDays"
+        android:onClick="clickBtn"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnMon"
@@ -227,7 +228,8 @@
         android:text="월"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/btnSun"
-        app:layout_constraintTop_toTopOf="@+id/btnSun" />
+        app:layout_constraintTop_toTopOf="@+id/btnSun"
+        android:onClick="clickBtn"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnTues"
@@ -239,7 +241,8 @@
         android:text="화"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/btnMon"
-        app:layout_constraintTop_toTopOf="@+id/btnMon" />
+        app:layout_constraintTop_toTopOf="@+id/btnMon"
+        android:onClick="clickBtn"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnWed"
@@ -251,7 +254,8 @@
         android:text="수"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/btnTues"
-        app:layout_constraintTop_toTopOf="@+id/btnTues" />
+        app:layout_constraintTop_toTopOf="@+id/btnTues"
+        android:onClick="clickBtn"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnThur"
@@ -263,7 +267,8 @@
         android:text="목"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/btnWed"
-        app:layout_constraintTop_toTopOf="@+id/btnWed" />
+        app:layout_constraintTop_toTopOf="@+id/btnWed"
+        android:onClick="clickBtn"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnFri"
@@ -275,7 +280,8 @@
         android:text="금"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/btnThur"
-        app:layout_constraintTop_toTopOf="@+id/btnThur" />
+        app:layout_constraintTop_toTopOf="@+id/btnThur"
+        android:onClick="clickBtn"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnSat"
@@ -288,7 +294,8 @@
         android:textColor="#FF0000"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/btnFri"
-        app:layout_constraintTop_toTopOf="@+id/btnFri" />
+        app:layout_constraintTop_toTopOf="@+id/btnFri"
+        android:onClick="clickBtn"/>
 
     <ImageView
         android:id="@+id/imageAlarm"
@@ -329,7 +336,7 @@
             android:layout_width="70dp"
             android:layout_height="30dp"
             android:layout_marginRight="10dp"
-            android:background="@drawable/daybutton_pressed"
+            android:background="@drawable/onoff_pressed"
             android:button="@null"
             android:fontFamily="@font/zzanggu"
             android:text="켜기"
@@ -341,7 +348,7 @@
             android:id="@+id/rbOff"
             android:layout_width="70dp"
             android:layout_height="30dp"
-            android:background="@drawable/daybutton_pressed"
+            android:background="@drawable/onoff_pressed"
             android:button="@null"
             android:fontFamily="@font/zzanggu"
             android:text="끄기"
