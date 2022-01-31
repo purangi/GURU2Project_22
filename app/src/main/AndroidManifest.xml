@@ -11,12 +11,12 @@
         android:theme="@style/Theme.GURU2Project_22">
         <activity android:name=".SleepActivity"></activity>
         <activity android:name=".IconSelect" />
-        <activity android:name=".Loading" />
+        <activity android:name=".MyPage" />
         <activity android:name=".HabitActivity" />
         <activity android:name=".Login" />
         <activity android:name=".MainActivity" />
         <activity android:name=".Store" />
-        <activity android:name=".MyPage">
+        <activity android:name=".Loading">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

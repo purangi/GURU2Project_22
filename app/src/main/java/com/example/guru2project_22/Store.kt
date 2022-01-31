@@ -35,7 +35,7 @@ class Store : AppCompatActivity() {
         setContentView(R.layout.activity_store)
 
         backbtn = findViewById(R.id.backbtn)
-        okbtn=findViewById(R.id.okbtn)
+        //okbtn=findViewById(R.id.okbtn)
 
         catfood = findViewById(R.id.catfood)
         smallplant = findViewById(R.id.smallplant)
