@@ -53,19 +53,6 @@ class IconSelect : AppCompatActivity() {
         btnBack = findViewById(R.id.btnBack)
         activeRadioButton = findViewById(R.id.activeRadioButton)
 
-//        var waterDrawable = getDrawable(R.drawable.water)
-//        var bedDrawable = getDrawable(R.drawable.bed)
-//        var computerDrawable = getDrawable(R.drawable.computer)
-//        var exerciseDrawable = getDrawable(R.drawable.exercise)
-//        var exercise2Drawable = getDrawable(R.drawable.exercise2)
-//        var studyDrawable = getDrawable(R.drawable.study)
-//        var readingDrawable = getDrawable(R.drawable.reading)
-//        var pillDrawable = getDrawable(R.drawable.pill)
-//        var mealDrawable = getDrawable(R.drawable.meal)
-//        var shoppingDrawable = getDrawable(R.drawable.shopping)
-//        var bathDrawable = getDrawable(R.drawable.bath)
-//        var cleanupDrawable = getDrawable(R.drawable.cleanup)
-
         activeRadioButton.isChecked = true
 
         btnBack.setOnClickListener {
@@ -75,36 +62,7 @@ class IconSelect : AppCompatActivity() {
         btnComplete.setOnClickListener {
             val iconIntent = Intent(this, HabitActivity::class.java)
 
-//            val stream = ByteArrayOutputStream()
-//
-//            var stateDrawable = activeRadioButton.background
-//
-//            when(activeRadioButton.id) {
-//                R.id.rbWater -> stateDrawable = waterDrawable
-//                R.id.rbBed -> stateDrawable = bedDrawable
-//                R.id.rbComputer -> stateDrawable = computerDrawable
-//                R.id.rbExercise -> stateDrawable = exerciseDrawable
-//                R.id.rbExercise2 -> stateDrawable = exercise2Drawable
-//                R.id.rbStudy -> stateDrawable = studyDrawable
-//                R.id.rbReading -> stateDrawable = readingDrawable
-//                R.id.rbPill -> stateDrawable = pillDrawable
-//                R.id.rbMeal -> stateDrawable = mealDrawable
-//                R.id.rbShopping -> stateDrawable = shoppingDrawable
-//                R.id.rbBath -> stateDrawable = bathDrawable
-//                R.id.rbCleanup -> stateDrawable = cleanupDrawable
-//            }
-//
-//            val bitmapDrawable = stateDrawable as BitmapDrawable
-//            val bitmap = bitmapDrawable.bitmap
-//            val scale = (1024 / bitmap.width.toFloat())
-//            val image_w = (bitmap.width * scale).toInt()
-//            val image_h = (bitmap.height * scale).toInt()
-//            val resize = Bitmap.createScaledBitmap(bitmap, image_w, image_h, true)
-//            resize.compress(Bitmap.CompressFormat.JPEG, 100, stream)
-//            val byteArray: ByteArray = stream.toByteArray()
-
-            //iconIntent.putExtra("image", byteArray)
-
+            //이미지 방식은 비트맵 전달밖에 안되어서 태그 전달
             when(activeRadioButton.id) {
                 R.id.rbWater -> iconIntent.putExtra("icon", "water")
                 R.id.rbBed -> iconIntent.putExtra("icon", "bed")

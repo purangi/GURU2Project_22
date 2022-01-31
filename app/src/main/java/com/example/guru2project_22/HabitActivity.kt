@@ -8,8 +8,10 @@ import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
+import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import java.text.DecimalFormat
 import java.util.*
 
 
@@ -69,7 +71,9 @@ class HabitActivity : AppCompatActivity() {
         btnStart.setOnClickListener {
             val cal = Calendar.getInstance()
             val timeSetListener = TimePickerDialog.OnTimeSetListener { view, hourOfDay, minute ->
-                timeString = "${hourOfDay} : ${minute}"
+                val hourFormat = DecimalFormat("00")
+                val minuteFormat = DecimalFormat("00")
+                timeString = hourFormat.format(hourOfDay).toString() + " : " +  minuteFormat.format(minute).toString()
                 btnStart.text = timeString
 
             }
@@ -82,6 +86,23 @@ class HabitActivity : AppCompatActivity() {
             ).show()
         }
 
+        btnEnd.setOnClickListener {
+            val cal = Calendar.getInstance()
+            val timeSetListener = TimePickerDialog.OnTimeSetListener { view, hourOfDay, minute ->
+                val hourFormat = DecimalFormat("00")
+                val minuteFormat = DecimalFormat("00")
+                timeString = hourFormat.format(hourOfDay).toString() + " : " +  minuteFormat.format(minute).toString()
+                btnEnd.text = timeString
+
+            }
+            TimePickerDialog(
+                this,
+                timeSetListener,
+                cal.get(Calendar.HOUR_OF_DAY),
+                cal.get(Calendar.MINUTE),
+                true
+            ).show()
+        }
 
 
     }
@@ -89,41 +110,34 @@ class HabitActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        val waterDrawable = getDrawable(R.drawable.water)
-        val bedDrawable = getDrawable(R.drawable.bed)
-        val computerDrawable = getDrawable(R.drawable.computer)
-        val exerciseDrawable = getDrawable(R.drawable.exercise)
-        val exercise2Drawable = getDrawable(R.drawable.exercise2)
-        val studyDrawable = getDrawable(R.drawable.study)
-        val readingDrawable = getDrawable(R.drawable.reading)
-        val pillDrawable = getDrawable(R.drawable.pill)
-        val mealDrawable = getDrawable(R.drawable.meal)
-        val shoppingDrawable = getDrawable(R.drawable.shopping)
-        val bathDrawable = getDrawable(R.drawable.bath)
-        val cleanupDrawable = getDrawable(R.drawable.cleanup)
-
         if(resultCode == Activity.RESULT_OK) {
             when(requestCode) {
-                ICONSELECT_REQUEST_CODE -> {
+                ICONSELECT_REQUEST_CODE -> { //아이콘 셀렉터 전달 받았을 시
                     var icon = data?.getStringExtra("icon")
 
                     when(icon) {
-                        "water" -> btnIcon.setImageDrawable(waterDrawable)
-                        "bed" -> btnIcon.setImageDrawable(bedDrawable)
-                        "computer" -> btnIcon.setImageDrawable(computerDrawable)
-                        "exercise" -> btnIcon.setImageDrawable(exerciseDrawable)
-                        "exercise2" -> btnIcon.setImageDrawable(exercise2Drawable)
-                        "study" -> btnIcon.setImageDrawable(studyDrawable)
-                        "reading" -> btnIcon.setImageDrawable(readingDrawable)
-                        "pill" -> btnIcon.setImageDrawable(pillDrawable)
-                        "meal" -> btnIcon.setImageDrawable(mealDrawable)
-                        "shopping" -> btnIcon.setImageDrawable(shoppingDrawable)
-                        "bath" -> btnIcon.setImageDrawable(bathDrawable)
-                        "cleanup" -> btnIcon.setImageDrawable(cleanupDrawable)
+                        "water" -> btnIcon.setImageDrawable(getDrawable(R.drawable.water))
+                        "bed" -> btnIcon.setImageDrawable(getDrawable(R.drawable.bed))
+                        "computer" -> btnIcon.setImageDrawable(getDrawable(R.drawable.computer))
+                        "exercise" -> btnIcon.setImageDrawable(getDrawable(R.drawable.exercise))
+                        "exercise2" -> btnIcon.setImageDrawable(getDrawable(R.drawable.exercise2))
+                        "study" -> btnIcon.setImageDrawable(getDrawable(R.drawable.study))
+                        "reading" -> btnIcon.setImageDrawable(getDrawable(R.drawable.reading))
+                        "pill" -> btnIcon.setImageDrawable(getDrawable(R.drawable.pill))
+                        "meal" -> btnIcon.setImageDrawable(getDrawable(R.drawable.meal))
+                        "shopping" -> btnIcon.setImageDrawable(getDrawable(R.drawable.shopping))
+                        "bath" -> btnIcon.setImageDrawable(getDrawable(R.drawable.bath))
+                        "cleanup" -> btnIcon.setImageDrawable(getDrawable(R.drawable.cleanup))
 
                     }
                 }
             }
         }
+    }
+
+    fun clickBtn(view: View) {
+        var button = view as Button
+        button?.isSelected = button?.isSelected != true
+
     }
 }
