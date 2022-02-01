@@ -24,27 +24,14 @@
         android:id="@+id/imgBack"
         android:layout_width="323dp"
         android:layout_height="427dp"
-        android:layout_marginBottom="100dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btnComplete"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvIcon"
         app:srcCompat="@drawable/roundbeige" />
 
-    <TextView
-        android:id="@+id/tvIcon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="76dp"
-        android:layout_marginTop="60dp"
-        android:fontFamily="@font/zzanggu"
-        android:text="아이콘 선택"
-        android:textColor="@color/black"
-        android:textSize="32sp"
-        app:layout_constraintStart_toEndOf="@+id/btnBack"
-        app:layout_constraintTop_toTopOf="parent" />
-
-<!--    <RadioGroup-->
+    <!--    <RadioGroup-->
 <!--        android:id="@+id/rgIcon"-->
 <!--        android:layout_width="wrap_content"-->
 <!--        android:layout_height="wrap_content"-->
@@ -175,6 +162,19 @@
 <!--        </RadioGroup>-->
 
 <!--    </RadioGroup> -->
+
+    <TextView
+        android:id="@+id/tvIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:fontFamily="@font/zzanggu"
+        android:text="아이콘 선택"
+        android:textColor="@color/black"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TableLayout
         android:layout_width="wrap_content"
@@ -319,8 +319,7 @@
         android:id="@+id/btnComplete"
         android:layout_width="72dp"
         android:layout_height="32dp"
-        android:layout_marginStart="170dp"
-        android:layout_marginEnd="170dp"
+        android:layout_marginEnd="88dp"
         android:layout_marginBottom="36dp"
         android:background="@drawable/roundorange"
         android:fontFamily="@font/zzanggu"
@@ -328,6 +327,8 @@
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.673"
         app:layout_constraintStart_toStartOf="parent" />
 
 

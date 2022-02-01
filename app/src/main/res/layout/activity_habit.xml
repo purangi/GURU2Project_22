@@ -43,7 +43,8 @@
         android:hint="어떤 습관을 가져볼까요?"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:privateImeOptions="defaultInputmode=korean"/>
 
     <ImageView
         android:id="@+id/imageClock"
@@ -361,8 +362,6 @@
         android:id="@+id/btnComplete"
         android:layout_width="72dp"
         android:layout_height="32dp"
-        android:layout_marginStart="170dp"
-        android:layout_marginEnd="170dp"
         android:layout_marginBottom="36dp"
         android:background="@drawable/roundorange"
         android:fontFamily="@font/zzanggu"
@@ -371,7 +370,7 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
 
