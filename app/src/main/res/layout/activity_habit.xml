@@ -373,5 +373,19 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="219dp"
+        android:fontFamily="@font/zzanggu"
+        android:text="*3개월간 반복됩니다."
+        app:layout_constraintBottom_toBottomOf="@+id/tvRepeat"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/tvRepeat"
+        app:layout_constraintTop_toTopOf="@+id/tvRepeat" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
