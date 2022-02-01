@@ -25,10 +25,15 @@ class MyPage : AppCompatActivity() {
         var pref = getSharedPreferences("user", 0)
         var editor = pref.edit()
 
+        //닉네임 설정
         binding.myNickname.text = pref.getString("nickname", "").toString()
+
+        //고양이 창 나타내기
+        LayoutInflater.from(this).inflate(R.layout.activity_cat_room, binding.catLayout, true)
 
         //연필 버튼 누를 시
         binding.pencilButton.setOnClickListener {
+
             //Dialog 만들기
             var mDialogView = LayoutInflater.from(this).inflate(R.layout.change_nickname, null)
             var mBuilder = AlertDialog.Builder(this)
@@ -49,6 +54,9 @@ class MyPage : AppCompatActivity() {
                 editor.putString("nickname", binding.myNickname.text.toString()).apply()
             }
         }
+
+
+
 
     }
 }
