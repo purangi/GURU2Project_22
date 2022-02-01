@@ -25,7 +25,7 @@ class Login : AppCompatActivity() {
 
             //닉네임 저장
             editor.putString("nickname", editNickname.text.toString())
-            editor.commit()
+            editor.apply()
 
             //화면전환(메인 액티비티로)
             var intent = Intent(this, MainActivity::class.java)
