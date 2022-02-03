@@ -140,69 +140,63 @@
         app:layout_constraintStart_toEndOf="@+id/imageClock"
         app:layout_constraintTop_toBottomOf="@+id/btnStart" />
 
-    <androidx.appcompat.widget.AppCompatCheckBox
-        android:id="@+id/cbOneMonth"
+    <RadioGroup
+        android:id="@+id/rgRepeat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
         android:layout_marginStart="52dp"
         android:layout_marginTop="8dp"
-        android:button="@drawable/custom_checkbox"
-        android:fontFamily="@font/zzanggu"
-        android:text=" 1개월"
-        android:textColor="@color/black"
-        android:textSize="20sp"
+        android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageRepeat" />
+        app:layout_constraintTop_toBottomOf="@+id/tvRepeat">
 
-    <androidx.appcompat.widget.AppCompatCheckBox
-        android:id="@+id/cbTwoMonth"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
-        android:layout_marginStart="48dp"
-        android:button="@drawable/custom_checkbox"
-        android:fontFamily="@font/zzanggu"
-        android:text=" 2개월"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/cbOneMonth"
-        app:layout_constraintTop_toTopOf="@+id/cbOneMonth" />
+        <RadioButton
+            android:id="@+id/rbOneMonth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
+            android:layout_weight="1"
+            android:buttonTint="@color/black"
+            android:fontFamily="@font/zzanggu"
+            android:text="1개월"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
 
-    <androidx.appcompat.widget.AppCompatCheckBox
-        android:id="@+id/cbThreeMonth"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
-        android:layout_marginStart="48dp"
-        android:button="@drawable/custom_checkbox"
-        android:fontFamily="@font/zzanggu"
-        android:text=" 3개월"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/cbTwoMonth"
-        app:layout_constraintTop_toTopOf="@+id/cbTwoMonth" />
+        <RadioButton
+            android:id="@+id/rbTwoMonth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
+            android:layout_weight="1"
+            android:buttonTint="@color/black"
+            android:fontFamily="@font/zzanggu"
+            android:text="2개월"
+            android:textSize="20sp" />
 
-    <androidx.appcompat.widget.AppCompatCheckBox
-        android:id="@+id/cbDays"
+        <RadioButton
+            android:id="@+id/rbThreeMonth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:buttonTint="@color/black"
+            android:fontFamily="@font/zzanggu"
+            android:text="3개월"
+            android:textSize="20sp" />
+    </RadioGroup>
+
+    <RadioButton
+        android:id="@+id/rbDays"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="52dp"
-        android:layout_marginTop="8dp"
-        android:button="@drawable/custom_checkbox"
+        android:buttonTint="@color/black"
         android:enabled="false"
         android:fontFamily="@font/zzanggu"
-        android:text=" 요일"
+        android:text="요일"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cbOneMonth" />
+        app:layout_constraintTop_toBottomOf="@+id/rgRepeat" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnSun"
@@ -216,7 +210,7 @@
         android:textColor="#FF0000"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cbDays"
+        app:layout_constraintTop_toBottomOf="@+id/rbDays"
         android:onClick="clickBtn"/>
 
     <androidx.appcompat.widget.AppCompatButton
@@ -323,7 +317,7 @@
         app:layout_constraintTop_toBottomOf="@+id/btnSun" />
 
     <RadioGroup
-        android:id="@+id/radioGroup"
+        android:id="@+id/rgAlarm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="52dp"
@@ -377,13 +371,13 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="3dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
         android:fontFamily="@font/zzanggu"
         android:text="*기간/요일 선택"
-        app:layout_constraintBottom_toBottomOf="@+id/tvTime"
-        app:layout_constraintStart_toEndOf="@+id/tvTime"
-        app:layout_constraintTop_toTopOf="@+id/tvTime"
+        app:layout_constraintBottom_toBottomOf="@+id/tvRepeat"
+        app:layout_constraintStart_toEndOf="@+id/tvRepeat"
+        app:layout_constraintTop_toTopOf="@+id/tvRepeat"
         app:layout_constraintVertical_bias="0.0" />
 
 
