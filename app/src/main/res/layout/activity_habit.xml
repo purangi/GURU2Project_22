@@ -141,7 +141,7 @@
         app:layout_constraintTop_toBottomOf="@+id/btnStart" />
 
     <androidx.appcompat.widget.AppCompatCheckBox
-        android:id="@+id/cbEveryDay"
+        android:id="@+id/cbOneMonth"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -151,43 +151,43 @@
         android:layout_marginTop="8dp"
         android:button="@drawable/custom_checkbox"
         android:fontFamily="@font/zzanggu"
-        android:text=" 매일"
+        android:text=" 1개월"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageRepeat" />
 
     <androidx.appcompat.widget.AppCompatCheckBox
-        android:id="@+id/cbEveryWeek"
+        android:id="@+id/cbTwoMonth"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
-        android:layout_marginStart="60dp"
+        android:layout_marginStart="48dp"
         android:button="@drawable/custom_checkbox"
         android:fontFamily="@font/zzanggu"
-        android:text=" 매주"
+        android:text=" 2개월"
         android:textColor="@color/black"
         android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/cbEveryDay"
-        app:layout_constraintTop_toTopOf="@+id/cbEveryDay" />
+        app:layout_constraintStart_toEndOf="@+id/cbOneMonth"
+        app:layout_constraintTop_toTopOf="@+id/cbOneMonth" />
 
     <androidx.appcompat.widget.AppCompatCheckBox
-        android:id="@+id/cbEveryMonth"
+        android:id="@+id/cbThreeMonth"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
-        android:layout_marginStart="60dp"
+        android:layout_marginStart="48dp"
         android:button="@drawable/custom_checkbox"
         android:fontFamily="@font/zzanggu"
-        android:text=" 매달"
+        android:text=" 3개월"
         android:textColor="@color/black"
         android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/cbEveryWeek"
-        app:layout_constraintTop_toTopOf="@+id/cbEveryWeek" />
+        app:layout_constraintStart_toEndOf="@+id/cbTwoMonth"
+        app:layout_constraintTop_toTopOf="@+id/cbTwoMonth" />
 
     <androidx.appcompat.widget.AppCompatCheckBox
         android:id="@+id/cbDays"
@@ -202,7 +202,7 @@
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cbEveryDay" />
+        app:layout_constraintTop_toBottomOf="@+id/cbOneMonth" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnSun"
@@ -372,6 +372,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="3dp"
+        android:fontFamily="@font/zzanggu"
+        android:text="*기간/요일 선택"
+        app:layout_constraintBottom_toBottomOf="@+id/tvTime"
+        app:layout_constraintStart_toEndOf="@+id/tvTime"
+        app:layout_constraintTop_toTopOf="@+id/tvTime"
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,6 +7,52 @@
     android:background="@color/main_beige"
     tools:context=".DayActivity">
 
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFB78E"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:labelVisibilityMode="unlabeled"
+        app:menu="@menu/menu">
+
+        <ImageButton
+            android:id="@+id/navday"
+            android:layout_gravity="clip_horizontal"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginLeft="57dp"
+            android:adjustViewBounds="true"
+            android:background="#FFB78E"
+            android:scaleType="fitEnd"
+            app:srcCompat="@drawable/day" />
+
+        <ImageButton
+            android:id="@+id/navhome"
+            android:layout_width="43dp"
+            android:layout_height="43dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="185dp"
+            android:adjustViewBounds="true"
+            android:background="#FFB78E"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/home" />
+
+        <ImageButton
+            android:id="@+id/navmypage"
+            android:layout_width="44dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginLeft="320dp"
+            android:adjustViewBounds="true"
+            android:background="#FFB78E"
+            android:scaleType="fitEnd"
+            app:srcCompat="@drawable/mypage" />
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
     <TextView
         android:id="@+id/tvDay"
         android:layout_width="wrap_content"
