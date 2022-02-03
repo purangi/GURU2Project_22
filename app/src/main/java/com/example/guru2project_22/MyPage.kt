@@ -3,6 +3,8 @@ package com.example.guru2project_22
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.view.ViewGroup.LayoutParams.MATCH_PARENT
 import android.view.ViewGroup.LayoutParams.WRAP_CONTENT
 import android.widget.Button
@@ -22,6 +24,8 @@ class MyPage : AppCompatActivity() {
         binding = ActivityMyPageBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        var parent: ViewGroup = findViewById(R.id.catLayout)
+        //var catView = findViewById<View>(R.id.catView)
         var pref = getSharedPreferences("user", 0)
         var editor = pref.edit()
 
@@ -29,7 +33,9 @@ class MyPage : AppCompatActivity() {
         binding.myNickname.text = pref.getString("nickname", "").toString()
 
         //고양이 창 나타내기
-        LayoutInflater.from(this).inflate(R.layout.activity_cat_room, binding.catLayout, true)
+        //catView =
+        LayoutInflater.from(this).inflate(R.layout.fragment_cat, parent, true)
+        //parent.addView(catView, 500, 500)
 
         //연필 버튼 누를 시
         binding.pencilButton.setOnClickListener {
@@ -54,7 +60,6 @@ class MyPage : AppCompatActivity() {
                 editor.putString("nickname", binding.myNickname.text.toString()).apply()
             }
         }
-
 
 
 

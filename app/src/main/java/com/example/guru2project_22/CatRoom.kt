@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.fragment.app.FragmentManager
 import org.w3c.dom.Text
 
 class CatRoom : AppCompatActivity() {
@@ -56,4 +57,8 @@ class CatRoom : AppCompatActivity() {
             mycoin.setText(coin.toString())
         }
     }
+
+
+
+
 }

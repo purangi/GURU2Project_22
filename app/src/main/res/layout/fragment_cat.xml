@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/catcat"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_beige"
+    tools:context=".CatFragment">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="411dp"
+        android:layout_height="233dp"
+        android:src="@drawable/smallfloor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/originCat"
+        android:layout_width="175dp"
+        android:layout_height="186dp"
+        android:layout_marginEnd="148dp"
+        android:layout_marginBottom="88dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/origincat" />
+</androidx.constraintlayout.widget.ConstraintLayout>
