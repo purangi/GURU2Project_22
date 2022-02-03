@@ -3,10 +3,6 @@ package com.example.guru2project_22
 import android.app.Activity
 import android.app.TimePickerDialog
 import android.content.Intent
-import android.content.res.Resources
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
-import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
 import android.view.View
 import android.widget.*
@@ -46,9 +42,9 @@ class HabitActivity : AppCompatActivity() {
         editHabit = findViewById(R.id.editHabit)
         btnStart = findViewById(R.id.btnStart)
         btnEnd = findViewById(R.id.btnEnd)
-        cbEveryDay = findViewById(R.id.cbEveryDay)
-        cbEveryWeek = findViewById(R.id.cbEveryWeek)
-        cbEveryMonth = findViewById(R.id.cbEveryMonth)
+        cbEveryDay = findViewById(R.id.cbOneMonth)
+        cbEveryWeek = findViewById(R.id.cbTwoMonth)
+        cbEveryMonth = findViewById(R.id.cbThreeMonth)
         btnSun = findViewById(R.id.btnSun)
         btnMon = findViewById(R.id.btnMon)
         btnTues = findViewById(R.id.btnTues)
