@@ -1,13 +1,20 @@
 package com.example.guru2project_22
 
 import android.app.Activity
+import android.app.AppComponentFactory
 import android.app.TimePickerDialog
+import android.content.Context
 import android.content.Intent
+import android.database.sqlite.SQLiteDatabase
+import android.database.sqlite.SQLiteOpenHelper
 import android.os.Bundle
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import java.text.DecimalFormat
+import java.text.SimpleDateFormat
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 import java.util.*
 
 
@@ -17,9 +24,9 @@ class HabitActivity : AppCompatActivity() {
     lateinit var editHabit : EditText
     lateinit var btnStart : Button
     lateinit var btnEnd : Button
-    lateinit var cbEveryDay : CheckBox
-    lateinit var cbEveryWeek : CheckBox
-    lateinit var cbEveryMonth : CheckBox
+    lateinit var cbOneMonth : CheckBox
+    lateinit var cbTwoMonth : CheckBox
+    lateinit var cbThreeMonth : CheckBox
     lateinit var btnSun : Button
     lateinit var btnMon : Button
     lateinit var btnTues : Button
@@ -29,7 +36,12 @@ class HabitActivity : AppCompatActivity() {
     lateinit var btnSat : Button
     lateinit var rbOn : RadioButton
     lateinit var rbOff : RadioButton
+    lateinit var btnComplete : Button
     var timeString = ""
+    var iconName = ""
+
+    lateinit var dbManager : DBManager
+    lateinit var sqlitedb : SQLiteDatabase
 
     val ICONSELECT_REQUEST_CODE = 0
 
@@ -42,9 +54,9 @@ class HabitActivity : AppCompatActivity() {
         editHabit = findViewById(R.id.editHabit)
         btnStart = findViewById(R.id.btnStart)
         btnEnd = findViewById(R.id.btnEnd)
-        cbEveryDay = findViewById(R.id.cbOneMonth)
-        cbEveryWeek = findViewById(R.id.cbTwoMonth)
-        cbEveryMonth = findViewById(R.id.cbThreeMonth)
+        cbOneMonth = findViewById(R.id.cbOneMonth)
+        cbTwoMonth = findViewById(R.id.cbTwoMonth)
+        cbThreeMonth = findViewById(R.id.cbThreeMonth)
         btnSun = findViewById(R.id.btnSun)
         btnMon = findViewById(R.id.btnMon)
         btnTues = findViewById(R.id.btnTues)
@@ -54,6 +66,13 @@ class HabitActivity : AppCompatActivity() {
         btnSat = findViewById(R.id.btnSat)
         rbOn = findViewById(R.id.rbOn)
         rbOff = findViewById(R.id.rbOff)
+        btnComplete = findViewById(R.id.btnComplete)
+
+        // 현재시간을 가져오기
+        val now = System.currentTimeMillis()
+        val date = Date(now)
+        val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale("ko", "KR"))
+        val str_date = dateFormat.format(date)
 
         btnBack.setOnClickListener {
             onBackPressed()
@@ -100,6 +119,20 @@ class HabitActivity : AppCompatActivity() {
             ).show()
         }
 
+        btnComplete.setOnClickListener {
+            //필수 선택지들이 입력되지 않았을 시 완료 선택 불가
+            //scheduleDB (date text, icon text, habit text, startTime INTEGER, endTime INTEGER, days INTEGER, alarm INTEGER)
+            var dateText = str_date
+            var iconText = iconName
+            var habitText = editHabit.text.toString()
+            var startTime = btnStart.text
+            var endTime = btnEnd.text
+            var days : Int = 1011011 //첫자리가 0인거 지원 x 아마 text로 전향해야할지도
+            var alarm = 0 //꺼져있으면 0, 켜져있으면 1
+
+
+        }
+
 
     }
 
@@ -110,6 +143,7 @@ class HabitActivity : AppCompatActivity() {
             when(requestCode) {
                 ICONSELECT_REQUEST_CODE -> { //아이콘 셀렉터 전달 받았을 시
                     var icon = data?.getStringExtra("icon")
+                    iconName = icon.toString()
 
                     when(icon) {
                         "water" -> btnIcon.setImageDrawable(getDrawable(R.drawable.water))
@@ -124,7 +158,6 @@ class HabitActivity : AppCompatActivity() {
                         "shopping" -> btnIcon.setImageDrawable(getDrawable(R.drawable.shopping))
                         "bath" -> btnIcon.setImageDrawable(getDrawable(R.drawable.bath))
                         "cleanup" -> btnIcon.setImageDrawable(getDrawable(R.drawable.cleanup))
-
                     }
                 }
             }
@@ -135,5 +168,16 @@ class HabitActivity : AppCompatActivity() {
         var button = view as Button
         button?.isSelected = button?.isSelected != true
 
+    }
+
+    class DBManager(context: Context, name: String?, factory: SQLiteDatabase.CursorFactory?, version: Int) : SQLiteOpenHelper(context, name, factory, version) {
+        override fun onCreate(db: SQLiteDatabase?) {
+            //날짜, 아이콘 id, 습관 이름, 시작시간, 끝시간, 요일, 알람 여부
+            db!!.execSQL("CREATE TABLE scheduleDB (date text, icon text, habit text, startTime INTEGER, endTime INTEGER, days INTEGER, alarm INTEGER)")
+        }
+
+        override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
+            TODO("Not yet implemented")
+        }
     }
 }
