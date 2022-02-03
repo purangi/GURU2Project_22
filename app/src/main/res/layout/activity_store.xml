@@ -6,6 +6,73 @@
     android:layout_height="match_parent"
     tools:context=".Store">
 
+    <ImageButton
+        android:id="@+id/backbtn"
+        android:layout_width="37dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="333dp"
+        android:background="@android:color/transparent"
+        android:scaleType="centerInside"
+        android:src="@drawable/back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/zzanggu"
+        android:text="스토어"
+        android:textColor="#000000"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.362"
+        app:layout_constraintStart_toEndOf="@+id/backbtn"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buybtn"
+        android:layout_width="72dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/roundorange"
+        android:fontFamily="@font/zzanggu"
+        android:text="구매"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/okbtn"
+        android:layout_width="80dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/roundorange"
+        android:fontFamily="@font/zzanggu"
+        android:text="꾸미기"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <RadioButton
+        android:id="@+id/activeRadioButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:button="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
     <ScrollView
         android:layout_width="wrap_content"
         android:layout_height="499dp"
@@ -17,34 +84,34 @@
 
         <TableLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            tools:ignore="ExtraText,UselessParent">
 
             //1행
             <TableRow>
-
-                <ImageButton
+                <RadioButton
                     android:id="@+id/catfood"
                     android:layout_width="113dp"
                     android:layout_height="108dp"
-                    android:scaleType="centerInside"
-                    android:background="@android:color/transparent"
-                    android:src="@drawable/catfood"/>
+                    android:background="@drawable/catfood"
+                    android:button="@null"
+                    android:onClick="clickRB"/>
 
-                <ImageButton
+                <RadioButton
                     android:id="@+id/smallplant"
                     android:layout_width="113dp"
                     android:layout_height="108dp"
-                    android:scaleType="centerInside"
-                    android:background="@android:color/transparent"
-                    android:src="@drawable/smallplant" />
+                    android:background="@drawable/smallplant"
+                    android:button="@null"
+                    android:onClick="clickRB"/>
 
-                <ImageButton
+                <RadioButton
                     android:id="@+id/bigplant"
                     android:layout_width="113dp"
                     android:layout_height="108dp"
-                    android:scaleType="centerInside"
-                    android:background="@android:color/transparent"
-                    android:src="@drawable/bigplant" />
+                    android:background="@drawable/bigplant"
+                    android:button="@null"
+                    android:onClick="clickRB"/>
             </TableRow>
 
             <TableRow>
@@ -106,32 +173,32 @@
 
             <TableRow>
 
-                <ImageButton
+                <RadioButton
                     android:id="@+id/catbathroom"
                     android:layout_width="115dp"
                     android:layout_height="108dp"
                     android:layout_marginTop="15dp"
-                    android:scaleType="centerInside"
-                    android:background="@android:color/transparent"
-                    android:src="@drawable/catbathroom" />
+                    android:background="@drawable/catbathroom"
+                    android:button="@null"
+                    android:onClick="clickRB"/>
 
-                <ImageButton
+                <RadioButton
                     android:id="@+id/catplaying"
                     android:layout_width="115dp"
                     android:layout_height="108dp"
                     android:layout_marginTop="15dp"
-                    android:scaleType="centerInside"
-                    android:background="@android:color/transparent"
-                    android:src="@drawable/catplaying"/>
+                    android:background="@drawable/catplaying"
+                    android:button="@null"
+                    android:onClick="clickRB"/>
 
-                <ImageButton
+                <RadioButton
                     android:id="@+id/light"
                     android:layout_width="115dp"
                     android:layout_height="108dp"
                     android:layout_marginTop="15dp"
-                    android:scaleType="centerInside"
-                    android:background="@android:color/transparent"
-                    android:src="@drawable/light" />
+                    android:background="@drawable/light"
+                    android:button="@null"
+                    android:onClick="clickRB"/>
             </TableRow>
 
             <TableRow>
@@ -194,32 +261,32 @@
 
             <TableRow>
 
-                <ImageButton
+                <RadioButton
                     android:id="@+id/window"
                     android:layout_width="115dp"
                     android:layout_height="108dp"
                     android:layout_marginTop="15dp"
-                    android:scaleType="centerInside"
-                    android:background="@android:color/transparent"
-                    android:src="@drawable/window"/>
+                    android:background="@drawable/window"
+                    android:button="@null"
+                    android:onClick="clickRB"/>
 
-                <ImageButton
+                <RadioButton
                     android:id="@+id/cathome"
                     android:layout_width="115dp"
                     android:layout_height="108dp"
                     android:layout_marginTop="15dp"
-                    android:scaleType="centerInside"
-                    android:background="@android:color/transparent"
-                    android:src="@drawable/cathome" />
+                    android:background="@drawable/cathome"
+                    android:button="@null"
+                    android:onClick="clickRB"/>
 
-                <ImageButton
+                <RadioButton
                     android:id="@+id/cattable"
                     android:layout_width="115dp"
                     android:layout_height="108dp"
                     android:layout_marginTop="15dp"
-                    android:scaleType="centerInside"
-                    android:background="@android:color/transparent"
-                    android:src="@drawable/cattable"  />
+                    android:background="@drawable/cattable"
+                    android:button="@null"
+                    android:onClick="clickRB"/>
             </TableRow>
 
             <TableRow>
@@ -280,32 +347,32 @@
 
             <TableRow>
 
-                <ImageButton
+                <RadioButton
                     android:id="@+id/bookshelf"
                     android:layout_width="115dp"
                     android:layout_height="108dp"
                     android:layout_marginTop="15dp"
-                    android:scaleType="centerInside"
-                    android:background="@android:color/transparent"
-                    android:src="@drawable/bookshelf" />
+                    android:background="@drawable/bookshelf"
+                    android:button="@null"
+                    android:onClick="clickRB"/>
 
-                <ImageButton
+                <RadioButton
                     android:id="@+id/catcircle"
                     android:layout_width="115dp"
                     android:layout_height="108dp"
                     android:layout_marginTop="15dp"
-                    android:scaleType="centerInside"
-                    android:background="@android:color/transparent"
-                    android:src="@drawable/catcircle"  />
+                    android:background="@drawable/catcircle"
+                    android:button="@null"
+                    android:onClick="clickRB"/>
 
-                <ImageButton
+                <RadioButton
                     android:id="@+id/cattower"
                     android:layout_width="115dp"
                     android:layout_height="108dp"
                     android:layout_marginTop="15dp"
-                    android:scaleType="centerInside"
-                    android:background="@android:color/transparent"
-                    android:src="@drawable/cattower"  />
+                    android:background="@drawable/cattower"
+                    android:button="@null"
+                    android:onClick="clickRB"/>
             </TableRow>
 
             <TableRow>
@@ -366,32 +433,32 @@
 
             <TableRow>
 
-                <ImageButton
+                <RadioButton
                     android:id="@+id/catsofa"
                     android:layout_width="115dp"
                     android:layout_height="108dp"
                     android:layout_marginTop="15dp"
-                    android:scaleType="centerInside"
-                    android:background="@android:color/transparent"
-                    android:src="@drawable/catsofa"  />
+                    android:background="@drawable/catsofa"
+                    android:button="@null"
+                    android:onClick="clickRB"/>
 
-                <ImageButton
+                <RadioButton
                     android:id="@+id/catbed"
                     android:layout_width="115dp"
                     android:layout_height="108dp"
                     android:layout_marginTop="15dp"
-                    android:scaleType="centerInside"
-                    android:background="@android:color/transparent"
-                    android:src="@drawable/catbed"  />
+                    android:background="@drawable/catbed"
+                    android:button="@null"
+                    android:onClick="clickRB"/>
 
-                <ImageButton
+                <RadioButton
                     android:id="@+id/cattv"
                     android:layout_width="115dp"
                     android:layout_height="108dp"
                     android:layout_marginTop="15dp"
-                    android:scaleType="centerInside"
-                    android:background="@android:color/transparent"
-                    android:src="@drawable/cattv" />
+                    android:background="@drawable/cattv"
+                    android:button="@null"
+                    android:onClick="clickRB"/>
             </TableRow>
 
             <TableRow>
@@ -453,51 +520,8 @@
                         android:textSize="18sp" />
                 </TableRow>
             </TableRow>
-
         </TableLayout>
     </ScrollView>
 
-    <ImageButton
-        android:id="@+id/backbtn"
-        android:layout_width="37dp"
-        android:layout_height="27dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="333dp"
-        android:background="@android:color/transparent"
-        android:scaleType="centerInside"
-        android:src="@drawable/back"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/zzanggu"
-        android:text="스토어"
-        android:textColor="#000000"
-        android:textSize="40sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.362"
-        app:layout_constraintStart_toEndOf="@+id/backbtn"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnComplete"
-        android:layout_width="72dp"
-        android:layout_height="32dp"
-        android:layout_marginBottom="24dp"
-        android:background="@drawable/roundorange"
-        android:fontFamily="@font/zzanggu"
-        android:text="구매"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
