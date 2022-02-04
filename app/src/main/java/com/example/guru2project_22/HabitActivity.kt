@@ -7,6 +7,7 @@ import android.content.Intent
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
@@ -156,7 +157,7 @@ class HabitActivity : AppCompatActivity() {
             false -> days += "0"
         }
 
-        var isDaysSelected = btnSun.isSelected || btnMon.isSelected || btnTues.isSelected || btnWed.isSelected || btnThur.isSelected || btnFri.isSelected || btnSat.isSelected
+
 
         var alarm : Int //꺼져있으면 0, 켜져있으면 1
 
@@ -175,6 +176,7 @@ class HabitActivity : AppCompatActivity() {
             var endTime = btnEnd.text
             //days, alarm 입력
 
+
             //입력값 확인
             if(dateText.isEmpty()) {
                 Toast.makeText(this@HabitActivity, "잘못된 접근입니다", Toast.LENGTH_SHORT).show() //나중에는 그냥 오늘 시간 할당으로
@@ -184,9 +186,9 @@ class HabitActivity : AppCompatActivity() {
                 Toast.makeText(this@HabitActivity, "가지고 싶은 습관을 입력해주세요", Toast.LENGTH_SHORT).show()
             } else if(startTime==endTime) {
                 Toast.makeText(this@HabitActivity, "시작 시간과 끝나는 시간이 같습니다", Toast.LENGTH_SHORT).show()
-            } else if(rgRepeat.isSelected && !isDaysSelected) {
+            } else if((rbOneMonth.isChecked || rbTwoMonth.isChecked || rbThreeMonth.isChecked) && !(btnSun.isSelected || btnMon.isSelected || btnTues.isSelected || btnWed.isSelected || btnThur.isSelected || btnFri.isSelected || btnSat.isSelected)) {
                 Toast.makeText(this@HabitActivity, "반복할 요일을 선택해주세요", Toast.LENGTH_SHORT).show()
-            } else if(!rgRepeat.isSelected && isDaysSelected) {
+            } else if(!(rbOneMonth.isChecked || rbTwoMonth.isChecked || rbThreeMonth.isChecked) && (btnSun.isSelected || btnMon.isSelected || btnTues.isSelected || btnWed.isSelected || btnThur.isSelected || btnFri.isSelected || btnSat.isSelected)) {
                 Toast.makeText(this@HabitActivity, "반복할 기간을 선택해주세요", Toast.LENGTH_SHORT).show()
             } else if(rgAlarm.isSelected == null) {
                 Toast.makeText(this@HabitActivity, "알람 설정 여부를 확인해주세요", Toast.LENGTH_SHORT).show()
