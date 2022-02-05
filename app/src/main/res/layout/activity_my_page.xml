@@ -134,14 +134,13 @@
         android:id="@+id/pencilButton2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
         android:layout_marginTop="116dp"
         android:adjustViewBounds="true"
         android:backgroundTint="@color/main_beige"
         android:maxWidth="48dp"
         android:maxHeight="50dp"
         android:scaleType="fitCenter"
-        app:layout_constraintStart_toEndOf="@+id/myNickname"
+        app:layout_constraintStart_toEndOf="@+id/name"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/pencil" />
 
@@ -149,30 +148,28 @@
         android:id="@+id/pencilButton3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="84dp"
-        android:layout_marginTop="184dp"
+        android:layout_marginTop="21dp"
         android:adjustViewBounds="true"
         android:backgroundTint="@color/main_beige"
         android:maxWidth="48dp"
         android:maxHeight="50dp"
         android:scaleType="fitCenter"
-        app:layout_constraintStart_toEndOf="@+id/myNickname"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/email"
+        app:layout_constraintTop_toBottomOf="@+id/pencilButton2"
         app:srcCompat="@drawable/pencil" />
 
     <ImageButton
         android:id="@+id/pencilButton4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="252dp"
+        android:layout_marginTop="29dp"
         android:adjustViewBounds="true"
         android:backgroundTint="@color/main_beige"
         android:maxWidth="48dp"
         android:maxHeight="50dp"
         android:scaleType="fitCenter"
-        app:layout_constraintStart_toEndOf="@+id/myNickname"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/birth"
+        app:layout_constraintTop_toBottomOf="@+id/pencilButton3"
         app:srcCompat="@drawable/pencil" />
 
     <TextView
