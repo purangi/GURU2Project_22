@@ -68,7 +68,7 @@ class CatRoom : AppCompatActivity() {
 
     //coin 받아오기
    private fun loadCoin() {
-        val shared = getSharedPreferences("mycoin", Context.MODE_PRIVATE)
+        val shared = getSharedPreferences("coin", Context.MODE_PRIVATE)
         var coin = shared.getInt("mycoin",0)
         mycoin.text=coin.toString()
     }
