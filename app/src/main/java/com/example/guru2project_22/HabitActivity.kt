@@ -74,6 +74,9 @@ class HabitActivity : AppCompatActivity() {
 
         rbOff.isChecked = true
 
+        dbManager = DBManager(this, "scheduleDB", null, 1)
+        sqlitedb = dbManager.writableDatabase
+
         // 현재 시간을 가져오기
         val now = System.currentTimeMillis()
         val date = Date(now)
@@ -129,55 +132,54 @@ class HabitActivity : AppCompatActivity() {
             ).show()
         }
 
-        var days = ""//각 요일이 선택되었으면 0, 아니면 1
-
-        //days 설정
-        when(btnSun.isSelected) {
-            true -> days += "1"
-            false -> days += "0"
-        }
-        when(btnMon.isSelected) {
-            true -> days += "1"
-            false -> days += "0"
-        }
-        when(btnTues.isSelected) {
-            true -> days += "1"
-            false -> days += "0"
-        }
-        when(btnWed.isSelected) {
-            true -> days += "1"
-            false -> days += "0"
-        }
-        when(btnThur.isSelected) {
-            true -> days += "1"
-            false -> days += "0"
-        }
-        when(btnFri.isSelected) {
-            true -> days += "1"
-            false -> days += "0"
-        }
-        when(btnSat.isSelected) {
-            true -> days += "1"
-            false -> days += "0"
-        }
-
-        var alarm : Int //꺼져있으면 0, 켜져있으면 1
-
-        when(rbOff.isChecked) { //알람 Int 설정
-            true -> alarm = 0
-            false -> alarm = 1
-        }
-
         btnComplete.setOnClickListener {
             //필수 선택지들이 입력되지 않았을 시 완료 선택 불가
-            //scheduleDB (date text, icon text, habit text, startTime text, endTime text, days INTEGER, alarm INTEGER)
+            //scheduleDB (date text, icon text, habit text, startTime text, endTime text, days text, alarm INTEGER)
             var dateText = str_date
             var iconText = iconName //안쓰고 직접 넣어도..?
             var habitText = editHabit.text.toString()
             var startTime = btnStart.text
             var endTime = btnEnd.text
             //days, alarm 입력
+            var days = ""//각 요일이 선택되었으면 0, 아니면 1
 
+            //days 설정
+            when(btnSun.isSelected) {
+                true -> days += "1"
+                false -> days += "2"
+            }
+            when(btnMon.isSelected) {
+                true -> days += "1"
+                false -> days += "2"
+            }
+            when(btnTues.isSelected) {
+                true -> days += "1"
+                false -> days += "2"
+            }
+            when(btnWed.isSelected) {
+                true -> days += "1"
+                false -> days += "2"
+            }
+            when(btnThur.isSelected) {
+                true -> days += "1"
+                false -> days += "2"
+            }
+            when(btnFri.isSelected) {
+                true -> days += "1"
+                false -> days += "2"
+            }
+            when(btnSat.isSelected) {
+                true -> days += "1"
+                false -> days += "2"
+            }
+
+            //알람 설정
+            var alarm : Int //꺼져있으면 0, 켜져있으면 1
+
+            when(rbOff.isChecked) { //알람 Int 설정
+                true -> alarm = 0
+                false -> alarm = 1
+            }
 
             //입력값 확인
             if(dateText.isEmpty()) {
@@ -195,16 +197,21 @@ class HabitActivity : AppCompatActivity() {
             } else if(rgAlarm.isSelected == null) {
                 Toast.makeText(this@HabitActivity, "알람 설정 여부를 확인해주세요", Toast.LENGTH_SHORT).show()
             } else { //전부 입력되었으면 데이터 베이스 입력 & day로 인텐트
+
                 //반복 설정 없을 시
                 if(!(rbOneMonth.isChecked || rbTwoMonth.isChecked || rbThreeMonth.isChecked) && !(btnSun.isSelected ||
                             btnMon.isSelected || btnTues.isSelected || btnWed.isSelected || btnThur.isSelected || btnFri.isSelected || btnSat.isSelected)){
-                    sqlitedb = dbManager.writableDatabase
-                    sqlitedb.execSQL("INSERT INTO scheduleDB VALUES ('" + dateText + "', '" + iconText + "', '" + habitText + "'")
+                    sqlitedb.execSQL("INSERT INTO scheduleDB VALUES ('" + dateText + "', '" + iconText + "', '" + habitText + "', '"
+                    + startTime + "' , '" + endTime + "' , '" + days + "' , " + alarm + ")")
+                } else { //반복 설정에 따라 db 추가
+                    sqlitedb.execSQL("INSERT INTO scheduleDB VALUES ('" + dateText + "', '" + iconText + "', '" + habitText + "', '"
+                            + startTime + "' , '" + endTime + "' , '" + days + "' , " + alarm + ")")
                 }
-                //반복 설정에 따라 db 추가
+
 
 
                 //입력 후 인텐트 이동 및 토스트
+                sqlitedb.close()
                 Toast.makeText(this, "습관을 입력했습니다.", Toast.LENGTH_SHORT).show()
             }
         }
@@ -249,7 +256,7 @@ class HabitActivity : AppCompatActivity() {
     class DBManager(context: Context, name: String?, factory: SQLiteDatabase.CursorFactory?, version: Int) : SQLiteOpenHelper(context, name, factory, version) {
         override fun onCreate(db: SQLiteDatabase?) {
             //날짜, 아이콘 id, 습관 이름, 시작시간, 끝시간, 요일, 알람 여부
-            db!!.execSQL("CREATE TABLE scheduleDB (date text, icon text, habit text, startTime text, endTime text, days INTEGER, alarm INTEGER)")
+            db!!.execSQL("CREATE TABLE scheduleDB (date text, icon text, habit text, startTime text, endTime text, days text, alarm INTEGER)")
         }
 
         override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
