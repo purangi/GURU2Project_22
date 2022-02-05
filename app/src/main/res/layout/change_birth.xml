@@ -7,30 +7,29 @@
     android:background="@color/main_beige">
 
     <EditText
-        android:id="@+id/editNickname"
+        android:id="@+id/editBirth"
         android:layout_width="217dp"
         android:layout_height="55dp"
         android:layout_marginTop="50dp"
         android:ems="10"
         android:fontFamily="@font/zzanggu"
         android:gravity="center_horizontal"
-        android:hint="닉네임 변경"
+        android:hint="00/01/01"
         android:inputType="textPersonName"
-        android:maxLength="8"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/changeButton"
+        android:id="@+id/birthOKButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:layout_marginBottom="20dp"
         android:backgroundTint="@color/main_orange"
         android:fontFamily="@font/zzanggu"
-        android:text="변경"
+        android:text="확인"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:cornerRadius="16dp"

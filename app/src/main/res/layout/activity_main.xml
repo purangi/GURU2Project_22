@@ -98,7 +98,7 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <LinearLayout
                 android:layout_width="350dp"
@@ -112,10 +112,8 @@
                     android:adjustViewBounds="true"
                     android:layout_width="33dp"
                     android:layout_height="33dp"
-                    android:background="@color/white"
                     android:layout_marginLeft="26dp"
                     android:layout_marginTop="8dp"
-                    android:scaleType="fitEnd"
                     app:srcCompat="@drawable/water" />
 
                 <TextView
@@ -128,77 +126,6 @@
                     android:textColor="@color/black" />
 
                 <CheckBox
-                    android:id="@+id/checkbox_water"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="70dp"
-                    android:button="@drawable/check_todolist" />
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="350dp"
-                android:layout_height="49dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="461dp"
-                android:background="@drawable/rounded_corner">
-
-                <ImageButton
-                    android:id="@+id/bed"
-                    android:adjustViewBounds="true"
-                    android:layout_width="33dp"
-                    android:layout_height="33dp"
-                    android:background="@color/white"
-                    android:layout_marginLeft="26dp"
-                    android:layout_marginTop="8dp"
-                    android:scaleType="fitEnd"
-                    app:srcCompat="@drawable/bed" />
-
-                <TextView
-                    android:layout_width="99dp"
-                    android:layout_height="16dp"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="46dp"
-                    android:fontFamily="@font/zzanggu"
-                    android:text="낮잠 자기"
-                    android:textColor="@color/black" />
-
-                <CheckBox
-                    android:id="@+id/checkbox_bed"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="70dp"
-                    android:button="@drawable/check_todolist" />
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="350dp"
-                android:layout_height="49dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="461dp"
-                android:background="@drawable/rounded_corner">
-
-                <ImageButton
-                    android:id="@+id/computer"
-                    android:adjustViewBounds="true"
-                    android:layout_width="33dp"
-                    android:layout_height="33dp"
-                    android:background="@color/white"
-                    android:layout_marginLeft="26dp"
-                    android:layout_marginTop="8dp"
-                    android:scaleType="fitEnd"
-                    app:srcCompat="@drawable/computer" />
-
-                <TextView
-                    android:layout_width="99dp"
-                    android:layout_height="16dp"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="46dp"
-                    android:fontFamily="@font/zzanggu"
-                    android:text="일 하기"
-                    android:textColor="@color/black" />
-
-                <CheckBox
-                    android:id="@+id/checkbox_computer"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="70dp"
