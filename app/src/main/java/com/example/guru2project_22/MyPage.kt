@@ -53,7 +53,7 @@ class MyPage : AppCompatActivity() {
 
         //닉네임 설정
         binding.myNickname.text = pref.getString("nickname", "").toString()
-        //binding.myNickname.setText(pref.getString("nickname", "").toString())
+
         //이름 설정
         binding.name.text = pref.getString("name", "").toString()
 
@@ -138,7 +138,6 @@ class MyPage : AppCompatActivity() {
             }
         }
 
-
         //생일 연필버튼 누를 시
         binding.pencilButton4.setOnClickListener {
 
@@ -162,7 +161,5 @@ class MyPage : AppCompatActivity() {
                 editor.putString("birth", binding.birth.text.toString()).apply()
             }
         }
-
-
     }
 }
