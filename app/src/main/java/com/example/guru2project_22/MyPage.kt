@@ -1,6 +1,7 @@
 package com.example.guru2project_22
 
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -17,19 +18,9 @@ import com.example.guru2project_22.databinding.ActivityMyPageBinding
 class MyPage : AppCompatActivity() {
 
     private lateinit var binding: ActivityMyPageBinding
-    lateinit var mycoin : TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        mycoin = findViewById(R.id.mycoin)
-
-        //coin 공유
-        val shared = getSharedPreferences("coin", Context.MODE_PRIVATE)
-        var coin = shared.getInt("mycoin",0)
-        mycoin.text=coin.toString()
-
-
 
         //뷰 바인딩
         binding = ActivityMyPageBinding.inflate(layoutInflater)
@@ -38,6 +29,28 @@ class MyPage : AppCompatActivity() {
         var parent: ViewGroup = findViewById(R.id.catLayout)
         var pref = getSharedPreferences("user", 0)
         var editor = pref.edit()
+
+        //네비게이션 이미지 버튼
+        binding.navday.setOnClickListener{
+            val intent = Intent(this, DayActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.navhome.setOnClickListener{
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.navmypage.setOnClickListener{
+            val intent = Intent(this, MyPage::class.java)
+            startActivity(intent)
+        }
+
+        //coin 공유
+        val shared = getSharedPreferences("coin", Context.MODE_PRIVATE)
+        var coin = shared.getInt("mycoin",0)
+        binding.mycoin.text=coin.toString()
+
 
         //닉네임 설정
         binding.myNickname.text = pref.getString("nickname", "").toString()

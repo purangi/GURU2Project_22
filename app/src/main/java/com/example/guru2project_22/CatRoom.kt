@@ -55,9 +55,9 @@ class CatRoom : AppCompatActivity() {
 
 
         backbtn.setOnClickListener {
-            var intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+            onBackPressed()
         }
+
         storebtn.setOnClickListener {
             var intent = Intent(this, Store::class.java)
             startActivity(intent)
@@ -68,9 +68,8 @@ class CatRoom : AppCompatActivity() {
 
     //coin 받아오기
    private fun loadCoin() {
-        val shared = getSharedPreferences("coin", Context.MODE_PRIVATE)
-        var coin = shared.getInt("mycoin",0)
-        mycoin.text=coin.toString()
+        val shared = getSharedPreferences("mycoin", 0)
+        mycoin.text=shared.getString("coin","").toString()
     }
 
 }
