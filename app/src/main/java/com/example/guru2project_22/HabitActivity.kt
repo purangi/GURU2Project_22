@@ -55,11 +55,11 @@ class HabitActivity : AppCompatActivity() {
         editHabit = findViewById(R.id.editHabit)
         btnStart = findViewById(R.id.btnStart)
         btnEnd = findViewById(R.id.btnEnd)
-        rgRepeat = findViewById(R.id.rgRepeat)
-        rbOneMonth = findViewById(R.id.rbOneMonth)
-        rbTwoMonth = findViewById(R.id.rbTwoMonth)
-        rbThreeMonth = findViewById(R.id.rbThreeMonth)
-        rbDays = findViewById(R.id.rbDays)
+        //rgRepeat = findViewById(R.id.rgRepeat)
+        //rbOneMonth = findViewById(R.id.rbOneMonth)
+        //rbTwoMonth = findViewById(R.id.rbTwoMonth)
+        //rbThreeMonth = findViewById(R.id.rbThreeMonth)
+        //rbDays = findViewById(R.id.rbDays)
         btnSun = findViewById(R.id.btnSun)
         btnMon = findViewById(R.id.btnMon)
         btnTues = findViewById(R.id.btnTues)
@@ -67,7 +67,7 @@ class HabitActivity : AppCompatActivity() {
         btnThur = findViewById(R.id.btnThur)
         btnFri = findViewById(R.id.btnFri)
         btnSat = findViewById(R.id.btnSat)
-        rgAlarm = findViewById(R.id.rgAlarm)
+        //rgAlarm = findViewById(R.id.rgAlarm)
         rbOn = findViewById(R.id.rbOn)
         rbOff = findViewById(R.id.rbOff)
         btnComplete = findViewById(R.id.btnComplete)
@@ -79,10 +79,6 @@ class HabitActivity : AppCompatActivity() {
         val date = Date(now)
         val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale("ko", "KR"))
         val str_date = dateFormat.format(date)
-
-        var cal : Calendar = Calendar.getInstance();
-        cal.setTime(date);
-        var dayNum = cal.get(Calendar.DAY_OF_WEEK) //요일 (1:일 ~ 7:토)
 
         btnBack.setOnClickListener {
             onBackPressed()
@@ -161,6 +157,8 @@ class HabitActivity : AppCompatActivity() {
             false -> days += "0"
         }
 
+
+
         var alarm : Int //꺼져있으면 0, 켜져있으면 1
 
         when(rbOff.isChecked) { //알람 Int 설정
@@ -170,9 +168,9 @@ class HabitActivity : AppCompatActivity() {
 
         btnComplete.setOnClickListener {
             //필수 선택지들이 입력되지 않았을 시 완료 선택 불가
-            //scheduleDB (date text, icon text, habit text, startTime text, endTime text, days INTEGER, alarm INTEGER)
+            //scheduleDB (date text, icon text, habit text, startTime INTEGER, endTime INTEGER, days INTEGER, alarm INTEGER)
             var dateText = str_date
-            var iconText = iconName //안쓰고 직접 넣어도..?
+            //var iconText = iconName //안쓰고 직접 넣어도..?
             var habitText = editHabit.text.toString()
             var startTime = btnStart.text
             var endTime = btnEnd.text
@@ -195,12 +193,7 @@ class HabitActivity : AppCompatActivity() {
             } else if(rgAlarm.isSelected == null) {
                 Toast.makeText(this@HabitActivity, "알람 설정 여부를 확인해주세요", Toast.LENGTH_SHORT).show()
             } else { //전부 입력되었으면 데이터 베이스 입력 & day로 인텐트
-                //반복 설정 없을 시
-                if(!(rbOneMonth.isChecked || rbTwoMonth.isChecked || rbThreeMonth.isChecked) && !(btnSun.isSelected ||
-                            btnMon.isSelected || btnTues.isSelected || btnWed.isSelected || btnThur.isSelected || btnFri.isSelected || btnSat.isSelected)){
-                    sqlitedb = dbManager.writableDatabase
-                    sqlitedb.execSQL("INSERT INTO scheduleDB VALUES ('" + dateText + "', '" + iconText + "', '" + habitText + "'")
-                }
+
                 //반복 설정에 따라 db 추가
 
 
@@ -249,7 +242,7 @@ class HabitActivity : AppCompatActivity() {
     class DBManager(context: Context, name: String?, factory: SQLiteDatabase.CursorFactory?, version: Int) : SQLiteOpenHelper(context, name, factory, version) {
         override fun onCreate(db: SQLiteDatabase?) {
             //날짜, 아이콘 id, 습관 이름, 시작시간, 끝시간, 요일, 알람 여부
-            db!!.execSQL("CREATE TABLE scheduleDB (date text, icon text, habit text, startTime text, endTime text, days INTEGER, alarm INTEGER)")
+            db!!.execSQL("CREATE TABLE scheduleDB (date text, icon text, habit text, startTime INTEGER, endTime INTEGER, days INTEGER, alarm INTEGER)")
         }
 
         override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {

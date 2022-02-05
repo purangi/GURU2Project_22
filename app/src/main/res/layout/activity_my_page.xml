@@ -13,19 +13,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#FFB78E"
+        app:labelVisibilityMode="unlabeled"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintLeft_toRightOf="parent"
-        app:labelVisibilityMode="unlabeled"
         app:menu="@menu/menu">
 
         <ImageButton
             android:id="@+id/navday"
-            android:layout_gravity="clip_horizontal"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_marginTop="4dp"
+            android:layout_gravity="clip_horizontal"
             android:layout_marginLeft="57dp"
+            android:layout_marginTop="4dp"
             android:adjustViewBounds="true"
             android:background="#FFB78E"
             android:scaleType="fitEnd"
@@ -35,8 +35,8 @@
             android:id="@+id/navhome"
             android:layout_width="43dp"
             android:layout_height="43dp"
-            android:layout_marginTop="5dp"
             android:layout_marginLeft="185dp"
+            android:layout_marginTop="5dp"
             android:adjustViewBounds="true"
             android:background="#FFB78E"
             android:scaleType="fitCenter"
@@ -46,8 +46,8 @@
             android:id="@+id/navmypage"
             android:layout_width="44dp"
             android:layout_height="45dp"
-            android:layout_marginTop="2dp"
             android:layout_marginLeft="320dp"
+            android:layout_marginTop="2dp"
             android:adjustViewBounds="true"
             android:background="#FFB78E"
             android:scaleType="fitEnd"
@@ -60,6 +60,36 @@
         android:layout_height="62dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/catfoot" />
+
+    <ImageView
+        android:id="@+id/myIcon2"
+        android:layout_width="56dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="96dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/catfoot" />
+
+    <ImageView
+        android:id="@+id/myIcon3"
+        android:layout_width="56dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="168dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/catfoot" />
+
+    <ImageView
+        android:id="@+id/myIcon4"
+        android:layout_width="56dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="240dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/catfoot" />
@@ -100,6 +130,51 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/pencil" />
 
+    <ImageButton
+        android:id="@+id/pencilButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="116dp"
+        android:adjustViewBounds="true"
+        android:backgroundTint="@color/main_beige"
+        android:maxWidth="48dp"
+        android:maxHeight="50dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintStart_toEndOf="@+id/myNickname"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/pencil" />
+
+    <ImageButton
+        android:id="@+id/pencilButton3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="184dp"
+        android:adjustViewBounds="true"
+        android:backgroundTint="@color/main_beige"
+        android:maxWidth="48dp"
+        android:maxHeight="50dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintStart_toEndOf="@+id/myNickname"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/pencil" />
+
+    <ImageButton
+        android:id="@+id/pencilButton4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="252dp"
+        android:adjustViewBounds="true"
+        android:backgroundTint="@color/main_beige"
+        android:maxWidth="48dp"
+        android:maxHeight="50dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintStart_toEndOf="@+id/myNickname"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/pencil" />
+
     <TextView
         android:id="@+id/myNickname"
         android:layout_width="wrap_content"
@@ -110,26 +185,50 @@
         app:layout_constraintStart_toEndOf="@+id/myIcon"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="116dp"
+        android:fontFamily="@font/zzanggu"
+        android:hint="이름"
+        android:textSize="34sp"
+        app:layout_constraintStart_toEndOf="@+id/myIcon2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="184dp"
+        android:fontFamily="@font/zzanggu"
+        android:hint="이메일"
+        android:textSize="34sp"
+        app:layout_constraintStart_toEndOf="@+id/myIcon2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/birth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="252dp"
+        android:fontFamily="@font/zzanggu"
+        android:hint="생일"
+        android:textSize="34sp"
+        app:layout_constraintStart_toEndOf="@+id/myIcon2"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <FrameLayout
         android:id="@+id/catLayout"
         android:layout_width="333dp"
         android:layout_height="260dp"
         android:layout_marginStart="38dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="228dp"
         android:layout_marginEnd="38dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/myIcon">
 
     </FrameLayout>
-
-    <View
-        android:id="@+id/catView"
-        android:layout_width="327dp"
-        android:layout_height="207dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginBottom="52dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

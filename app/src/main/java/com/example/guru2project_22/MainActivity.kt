@@ -11,8 +11,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.github.mikephil.charting.utils.Utils.init
 
 class MainActivity : AppCompatActivity() {
-
-//    private val MyPage = MyPage()
     private val DayActivity = DayActivity()
     private val MainActivity = MainActivity()
     lateinit var catbutton: ImageButton
@@ -26,111 +24,111 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         //고양이 방 이동
-        catbutton.setOnClickListener {
+        catbutton.setOnClickListener{
             val intent = Intent(this, CatRoom::class.java)
             startActivity(intent)
         }
 
-        //네비게이션 이미지 버튼
-        navday.setOnClickListener {
+//네비게이션 이미지 버튼
+        navday.setOnClickListener{
             val intent = Intent(this, DayActivity::class.java)
             startActivity(intent)
         }
 
-        navhome.setOnClickListener {
+        navhome.setOnClickListener{
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
 
-        navmypage.setOnClickListener {
+        navmypage.setOnClickListener{
             val intent = Intent(this, MyPage::class.java)
             startActivity(intent)
         }
-
+/*
         //체크박스 클릭 시 +10 코인
         fun onCheckboxClicked(view: View) {
             if (view is CheckBox) {
                 val checked: Boolean = view.isChecked
 
                 when (view.id) {
-                    R.id.checkbox_water -> {
+                    R.id.checkbox_water-> {
                         if (checked) {
                             Toast.makeText(this@MainActivity, "물 한 잔 마시기 완료!", Toast.LENGTH_LONG)
                             coin += 10
                         } else {
                         }
                     }
-                    R.id.checkbox_bed -> {
+                    R.id.checkbox_bed-> {
                         if (checked) {
                             Toast.makeText(this@MainActivity, "낮잠 자기 완료!", Toast.LENGTH_LONG)
                             coin += 10
                         } else {
                         }
                     }
-                    R.id.checkbox_computer -> {
+                    R.id.checkbox_computer-> {
                         if (checked) {
                             Toast.makeText(this@MainActivity, "일 하기 완료!", Toast.LENGTH_LONG)
                             coin += 10
                         } else {
                         }
                     }
-                    R.id.checkbox_bed -> {
+                    R.id.checkbox_bed-> {
                         if (checked) {
                             Toast.makeText(this@MainActivity, "낮잠 자기 완료!", Toast.LENGTH_LONG)
                             coin += 10
                         } else {
                         }
                     }
-                    R.id.checkbox_bed -> {
+                    R.id.checkbox_bed-> {
                         if (checked) {
                             Toast.makeText(this@MainActivity, "낮잠 자기 완료!", Toast.LENGTH_LONG)
                             coin += 10
                         } else {
                         }
                     }
-                    R.id.checkbox_bed -> {
+                    R.id.checkbox_bed-> {
                         if (checked) {
                             Toast.makeText(this@MainActivity, "낮잠 자기 완료!", Toast.LENGTH_LONG)
                             coin += 10
                         } else {
                         }
                     }
-                    R.id.checkbox_bed -> {
+                    R.id.checkbox_bed-> {
                         if (checked) {
                             Toast.makeText(this@MainActivity, "낮잠 자기 완료!", Toast.LENGTH_LONG)
                             coin += 10
                         } else {
                         }
                     }
-                    R.id.checkbox_bed -> {
+                    R.id.checkbox_bed-> {
                         if (checked) {
                             Toast.makeText(this@MainActivity, "낮잠 자기 완료!", Toast.LENGTH_LONG)
                             coin += 10
                         } else {
                         }
                     }
-                    R.id.checkbox_bed -> {
+                    R.id.checkbox_bed-> {
                         if (checked) {
                             Toast.makeText(this@MainActivity, "낮잠 자기 완료!", Toast.LENGTH_LONG)
                             coin += 10
                         } else {
                         }
                     }
-                    R.id.checkbox_bed -> {
+                    R.id.checkbox_bed-> {
                         if (checked) {
                             Toast.makeText(this@MainActivity, "낮잠 자기 완료!", Toast.LENGTH_LONG)
                             coin += 10
                         } else {
                         }
                     }
-                    R.id.checkbox_bed -> {
+                    R.id.checkbox_bed-> {
                         if (checked) {
                             Toast.makeText(this@MainActivity, "낮잠 자기 완료!", Toast.LENGTH_LONG)
                             coin += 10
                         } else {
                         }
                     }
-                    R.id.checkbox_bed -> {
+                    R.id.checkbox_bed-> {
                         if (checked) {
                             Toast.makeText(this@MainActivity, "낮잠 자기 완료!", Toast.LENGTH_LONG)
                             coin += 10
@@ -140,16 +138,16 @@ class MainActivity : AppCompatActivity() {
 
                 }
             }
-        }
+        }*/
 
-        val sp = getSharedPreferences("Mycoin", MODE_PRIVATE)
+        val sp = getSharedPreferences("Mycoin",MODE_PRIVATE)
         coin = sp.getInt("coin", 0)
 
     }
 
     init {
         coin += 10
-        val sp = getSharedPreferences("Mycoin", MODE_PRIVATE)
+        val sp = getSharedPreferences("Mycoin",MODE_PRIVATE)
         val editor = sp.edit()
         editor.putInt("coin", coin)
         editor.apply()

@@ -20,7 +20,7 @@ class CatRoom : AppCompatActivity() {
     lateinit var storebtn : ImageButton
     lateinit var mycoin : TextView
     lateinit var origincat : ImageView
-    /*lateinit var catwindow : ImageView
+    lateinit var catwindow : ImageView
     lateinit var catfood : ImageView
     lateinit var catbookshelf : ImageView
     lateinit var catsmallplant : ImageView
@@ -29,7 +29,7 @@ class CatRoom : AppCompatActivity() {
     lateinit var catbed : ImageView
     lateinit var catcircle : ImageView
     lateinit var cathome : ImageView
-    lateinit var catsofa : ImageView*/
+    lateinit var catsofa : ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,10 +52,10 @@ class CatRoom : AppCompatActivity() {
 
         loadCoin()
 
-       /* var type = intent.getStringExtra("number")
+        var type = intent.getStringExtra("number")
         when(type){
             "1" -> catfood.visibility = View.VISIBLE
-        }*/
+        }
 
 
 
