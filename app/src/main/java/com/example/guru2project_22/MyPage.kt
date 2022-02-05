@@ -43,9 +43,12 @@ class MyPage : AppCompatActivity() {
         }
 
         //coin 공유
-        val shared = getSharedPreferences("coin", Context.MODE_PRIVATE)
-        var coin = shared.getInt("mycoin",0)
-        binding.mycoin.text=coin.toString()
+        val  shared = getSharedPreferences("mycoin", 0)
+        val editor2 = shared.edit()
+        editor2.putInt("coin", 300).apply()
+
+        binding.mycoin.text= shared.getString("coin","").toString()
+
 
         var parent: ViewGroup = findViewById(R.id.catLayout)
         var pref = getSharedPreferences("user", 0)

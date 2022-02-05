@@ -2,13 +2,20 @@ package com.example.guru2project_22
 
 import android.content.Context
 import android.content.Intent
+import android.database.sqlite.SQLiteDatabase
+import android.database.sqlite.SQLiteOpenHelper
 import android.os.Bundle
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import java.sql.SQLClientInfoException
 
 
 class Store : AppCompatActivity() {
+
+    var price = 0
+    var mycoin = 0
+
 
     lateinit var backbtn : ImageButton
     lateinit var buybtn : Button
@@ -63,115 +70,40 @@ class Store : AppCompatActivity() {
 
 
         backbtn.setOnClickListener {
-            var intent = Intent(this, CatRoom::class.java)
-            startActivity(intent)
+            onBackPressed()
         }
 
+        val shared = getSharedPreferences("mycoin", 0)
+        val editor = shared.edit()
+        mycoin = shared.getInt("coin",0)
 
         buybtn.setOnClickListener {
 
-            val shared = getSharedPreferences("coin", Context.MODE_PRIVATE)
-            var mycoin = shared.getInt("mycoin",0)
-            val editor2 = shared.edit()
-
             when (activeRadioButton.id) {
-                R.id.catfood -> {
-                    if(mycoin>=10){
-                        mycoin -= 10
-                        //shared 수정, 저장
-                        editor2.putInt("mycoin", mycoin)
-                        editor2.apply()
-                        Toast.makeText(this, "구매했다 냥", Toast.LENGTH_SHORT).show()
-                    } else Toast.makeText(this, "코인이 부족하다 냥", Toast.LENGTH_SHORT).show()
-                }
-                R.id.smallplant -> {
-                    if(mycoin>=50){
-                        mycoin -= 50
-                        Toast.makeText(this, "구매했다 냥", Toast.LENGTH_SHORT).show()
-                    } else Toast.makeText(this, "코인이 부족하다 냥", Toast.LENGTH_SHORT).show()
-                }
-                R.id.bigplant -> {
-                    if(mycoin>=50){
-                        mycoin -= 50
-                        Toast.makeText(this, "구매했다 냥", Toast.LENGTH_SHORT).show()
-                    } else Toast.makeText(this, "코인이 부족하다 냥", Toast.LENGTH_SHORT).show()
-                }
-                R.id.catbathroom -> {
-                    if(mycoin>=80){
-                        mycoin -= 80
-                        Toast.makeText(this, "구매했다 냥", Toast.LENGTH_SHORT).show()
-                    } else Toast.makeText(this, "코인이 부족하다 냥", Toast.LENGTH_SHORT).show()
-                }
-                R.id.catplaying -> {
-                    if(mycoin>=100){
-                        mycoin -= 100
-                        Toast.makeText(this, "구매했다 냥", Toast.LENGTH_SHORT).show()
-                    } else Toast.makeText(this, "코인이 부족하다 냥", Toast.LENGTH_SHORT).show()
-                }
-                R.id.light -> {
-                    if(mycoin>=150){
-                        mycoin -= 150
-                        Toast.makeText(this, "구매했다 냥", Toast.LENGTH_SHORT).show()
-                    } else Toast.makeText(this, "코인이 부족하다 냥", Toast.LENGTH_SHORT).show()
-                }
-                R.id.window -> {
-                    if(mycoin>=200){
-                        mycoin -= 200
-                        Toast.makeText(this, "구매했다 냥", Toast.LENGTH_SHORT).show()
-                    } else Toast.makeText(this, "코인이 부족하다 냥", Toast.LENGTH_SHORT).show()
-                }
-                R.id.cathome -> {
-                    if(mycoin>=250){
-                        mycoin -= 250
-                        Toast.makeText(this, "구매했다 냥", Toast.LENGTH_SHORT).show()
-                    } else Toast.makeText(this, "코인이 부족하다 냥", Toast.LENGTH_SHORT).show()
-                }
-                R.id.cattable -> {
-                    if(mycoin>=300){
-                        mycoin -= 300
-                        Toast.makeText(this, "구매했다 냥", Toast.LENGTH_SHORT).show()
-                    } else Toast.makeText(this, "코인이 부족하다 냥", Toast.LENGTH_SHORT).show()
-                }
-                R.id.bookshelf -> {
-                    if(mycoin>=450){
-                        mycoin -= 450
-                        Toast.makeText(this, "구매했다 냥", Toast.LENGTH_SHORT).show()
-                    } else Toast.makeText(this, "코인이 부족하다 냥", Toast.LENGTH_SHORT).show()
-                }
-                R.id.catcircle -> {
-                    if(mycoin>=500){
-                        mycoin -= 500
-                        Toast.makeText(this, "구매했다 냥", Toast.LENGTH_SHORT).show()
-                    } else Toast.makeText(this, "코인이 부족하다 냥", Toast.LENGTH_SHORT).show()
-                }
-                R.id.cattower -> {
-                    if(mycoin>=600){
-                        mycoin -= 600
-                        Toast.makeText(this, "구매했다 냥", Toast.LENGTH_SHORT).show()
-                    } else Toast.makeText(this, "코인이 부족하다 냥", Toast.LENGTH_SHORT).show()
-                }
-                R.id.catsofa -> {
-                    if(mycoin>=700){
-                        mycoin -= 700
-                        Toast.makeText(this, "구매했다 냥", Toast.LENGTH_SHORT).show()
-                    } else Toast.makeText(this, "코인이 부족하다 냥", Toast.LENGTH_SHORT).show()
-                }
-                R.id.catbed -> {
-                    if(mycoin>=800){
-                        mycoin -= 800
-                        Toast.makeText(this, "구매했다 냥", Toast.LENGTH_SHORT).show()
-                    } else Toast.makeText(this, "코인이 부족하다 냥", Toast.LENGTH_SHORT).show()
-                }
-                R.id.cattv -> {
-                    if(mycoin>=1000){
-                        mycoin -= 1000
-                        Toast.makeText(this, "구매했다 냥", Toast.LENGTH_SHORT).show()
-                    } else Toast.makeText(this, "코인이 부족하다 냥", Toast.LENGTH_SHORT).show()
-                }
-
+                R.id.catfood -> price =10
+                R.id.smallplant -> price =50
+                R.id.bigplant -> price =50
+                R.id.catbathroom -> price =80
+                R.id.catplaying -> price=100
+                R.id.light -> price =150
+                R.id.window -> price =200
+                R.id.cathome -> price =250
+                R.id.cattable -> price=300
+                R.id.bookshelf -> price =450
+                R.id.catcircle ->price =500
+                R.id.cattower -> price =600
+                R.id.catsofa -> price =700
+                R.id.catbed -> price =800
+                R.id.cattv -> price =1000
                 else -> Toast.makeText(this, "아이템을 선택해라 냥", Toast.LENGTH_SHORT).show()
-
             }
+
+            if(mycoin>=price){
+                mycoin -= price
+                //shared 수정, 저장
+                editor.putString("coin", mycoin.toString()).apply()
+                Toast.makeText(this, "구매했다 냥", Toast.LENGTH_SHORT).show()
+            } else Toast.makeText(this, "코인이 부족하다 냥", Toast.LENGTH_SHORT).show()
         }
 
         okbtn.setOnClickListener {
@@ -211,5 +143,16 @@ class Store : AppCompatActivity() {
         }
         radioButton.isChecked = true
         activeRadioButton = radioButton
+    }
+
+    //store, catroom에서 쓸 item DB
+    class itemDBHelper(context: Context) : SQLiteOpenHelper(context, "itemDB" , null,1){
+        override fun onCreate(db: SQLiteDatabase?) {
+            db!!.execSQL("CREATE TABLE itemTBL (itemName CHAR(15) PRIMARY KEY, itemResource String);")
+        }
+
+        override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
+            // 안 씀
+        }
     }
 }
