@@ -141,37 +141,37 @@ class HabitActivity : AppCompatActivity() {
             var startTime = btnStart.text
             var endTime = btnEnd.text
             //days, alarm 입력
-            var days = ""//각 요일이 선택되었으면 0, 아니면 1
-
-            //days 설정
-            when(btnSun.isSelected) {
-                true -> days += "1"
-                false -> days += "2"
-            }
-            when(btnMon.isSelected) {
-                true -> days += "1"
-                false -> days += "2"
-            }
-            when(btnTues.isSelected) {
-                true -> days += "1"
-                false -> days += "2"
-            }
-            when(btnWed.isSelected) {
-                true -> days += "1"
-                false -> days += "2"
-            }
-            when(btnThur.isSelected) {
-                true -> days += "1"
-                false -> days += "2"
-            }
-            when(btnFri.isSelected) {
-                true -> days += "1"
-                false -> days += "2"
-            }
-            when(btnSat.isSelected) {
-                true -> days += "1"
-                false -> days += "2"
-            }
+//            var days = ""//각 요일이 선택되었으면 0, 아니면 1
+//
+//            //days 설정
+//            when(btnSun.isSelected) {
+//                true -> days += "1"
+//                false -> days += "2"
+//            }
+//            when(btnMon.isSelected) {
+//                true -> days += "1"
+//                false -> days += "2"
+//            }
+//            when(btnTues.isSelected) {
+//                true -> days += "1"
+//                false -> days += "2"
+//            }
+//            when(btnWed.isSelected) {
+//                true -> days += "1"
+//                false -> days += "2"
+//            }
+//            when(btnThur.isSelected) {
+//                true -> days += "1"
+//                false -> days += "2"
+//            }
+//            when(btnFri.isSelected) {
+//                true -> days += "1"
+//                false -> days += "2"
+//            }
+//            when(btnSat.isSelected) {
+//                true -> days += "1"
+//                false -> days += "2"
+//            }
 
             //알람 설정
             var alarm : Int //꺼져있으면 0, 켜져있으면 1
@@ -202,10 +202,10 @@ class HabitActivity : AppCompatActivity() {
                 if(!(rbOneMonth.isChecked || rbTwoMonth.isChecked || rbThreeMonth.isChecked) && !(btnSun.isSelected ||
                             btnMon.isSelected || btnTues.isSelected || btnWed.isSelected || btnThur.isSelected || btnFri.isSelected || btnSat.isSelected)){
                     sqlitedb.execSQL("INSERT INTO scheduleDB VALUES ('" + dateText + "', '" + iconText + "', '" + habitText + "', '"
-                    + startTime + "' , '" + endTime + "' , '" + days + "' , " + alarm + ")")
+                    + startTime + "' , '" + endTime + "' , " + alarm + ")")
                 } else { //반복 설정에 따라 db 추가
                     sqlitedb.execSQL("INSERT INTO scheduleDB VALUES ('" + dateText + "', '" + iconText + "', '" + habitText + "', '"
-                            + startTime + "' , '" + endTime + "' , '" + days + "' , " + alarm + ")")
+                            + startTime + "' , '" + endTime + "' , " + alarm + ")")
                 }
 
 
@@ -256,7 +256,7 @@ class HabitActivity : AppCompatActivity() {
     class DBManager(context: Context, name: String?, factory: SQLiteDatabase.CursorFactory?, version: Int) : SQLiteOpenHelper(context, name, factory, version) {
         override fun onCreate(db: SQLiteDatabase?) {
             //날짜, 아이콘 id, 습관 이름, 시작시간, 끝시간, 요일, 알람 여부
-            db!!.execSQL("CREATE TABLE scheduleDB (date text, icon text, habit text, startTime text, endTime text, days text, alarm INTEGER)")
+            db!!.execSQL("CREATE TABLE scheduleDB (date text, icon text, habit text, startTime text, endTime text, alarm INTEGER)")
         }
 
         override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
