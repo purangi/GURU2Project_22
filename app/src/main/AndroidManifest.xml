@@ -14,7 +14,7 @@
         <activity android:name=".MyPage" />
         <activity android:name=".HabitActivity" />
         <activity android:name=".Login" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity" android:exported="true"/>
         <activity android:name=".Store" />
         <activity android:name=".Loading">
             <intent-filter>

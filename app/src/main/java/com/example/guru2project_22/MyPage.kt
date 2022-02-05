@@ -59,6 +59,7 @@ class MyPage : AppCompatActivity() {
                 editor.remove("nickname").apply()
                 editor.putString("nickname", binding.myNickname.text.toString()).apply()
             }
+
         }
 
 
