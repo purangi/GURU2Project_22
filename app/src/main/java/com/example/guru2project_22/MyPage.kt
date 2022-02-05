@@ -1,5 +1,6 @@
 package com.example.guru2project_22
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,6 +9,7 @@ import android.view.ViewGroup.LayoutParams.MATCH_PARENT
 import android.view.ViewGroup.LayoutParams.WRAP_CONTENT
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import com.example.guru2project_22.databinding.ActivityMyPageBinding
 
@@ -15,9 +17,19 @@ import com.example.guru2project_22.databinding.ActivityMyPageBinding
 class MyPage : AppCompatActivity() {
 
     private lateinit var binding: ActivityMyPageBinding
+    lateinit var mycoin : TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        mycoin = findViewById(R.id.mycoin)
+
+        //coin 공유
+        val shared = getSharedPreferences("coin", Context.MODE_PRIVATE)
+        var coin = shared.getInt("mycoin",0)
+        mycoin.text=coin.toString()
+
+
 
         //뷰 바인딩
         binding = ActivityMyPageBinding.inflate(layoutInflater)
@@ -29,7 +41,7 @@ class MyPage : AppCompatActivity() {
 
         //닉네임 설정
         binding.myNickname.text = pref.getString("nickname", "").toString()
-
+        //binding.myNickname.setText(pref.getString("nickname", "").toString())
         //이름 설정
         binding.name.text = pref.getString("name", "").toString()
 
