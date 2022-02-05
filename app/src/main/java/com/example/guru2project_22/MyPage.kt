@@ -26,6 +26,10 @@ class MyPage : AppCompatActivity() {
         binding = ActivityMyPageBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        var parent: ViewGroup = findViewById(R.id.catLayout)
+        var pref = getSharedPreferences("user", 0)
+        var editor = pref.edit()
+
         //네비게이션 이미지 버튼
         binding.navday.setOnClickListener{
             val intent = Intent(this, DayActivity::class.java)
@@ -46,10 +50,6 @@ class MyPage : AppCompatActivity() {
         val shared = getSharedPreferences("coin", Context.MODE_PRIVATE)
         var coin = shared.getInt("mycoin",0)
         binding.mycoin.text=coin.toString()
-
-        var parent: ViewGroup = findViewById(R.id.catLayout)
-        var pref = getSharedPreferences("user", 0)
-        var editor = pref.edit()
 
         //닉네임 설정
         binding.myNickname.text = pref.getString("nickname", "").toString()
