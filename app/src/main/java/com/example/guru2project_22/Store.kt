@@ -72,15 +72,15 @@ class Store : AppCompatActivity() {
 
             val shared = getSharedPreferences("coin", Context.MODE_PRIVATE)
             var mycoin = shared.getInt("mycoin",0)
-            val editor = shared.edit()
+            val editor2 = shared.edit()
 
             when (activeRadioButton.id) {
                 R.id.catfood -> {
                     if(mycoin>=10){
                         mycoin -= 10
                         //shared 수정, 저장
-                        editor.putInt("mycoin", mycoin)
-                        editor.apply()
+                        editor2.putInt("mycoin", mycoin)
+                        editor2.apply()
                         Toast.makeText(this, "구매했다 냥", Toast.LENGTH_SHORT).show()
                     } else Toast.makeText(this, "코인이 부족하다 냥", Toast.LENGTH_SHORT).show()
                 }
