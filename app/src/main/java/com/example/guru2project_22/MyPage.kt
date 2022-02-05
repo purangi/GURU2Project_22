@@ -49,7 +49,7 @@ class MyPage : AppCompatActivity() {
         //coin 공유
         val shared = getSharedPreferences("coin", Context.MODE_PRIVATE)
         var coin = shared.getInt("mycoin",0)
-        binding.mycoin.text=coin.toString()
+        binding.mycoin.text = coin.toString()
 
         //닉네임 설정
         binding.myNickname.text = pref.getString("nickname", "").toString()
