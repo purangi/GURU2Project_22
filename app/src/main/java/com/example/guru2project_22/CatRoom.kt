@@ -1,5 +1,6 @@
 package com.example.guru2project_22
 
+import android.content.Context
 import android.content.Intent
 import android.media.Image
 import androidx.appcompat.app.AppCompatActivity
@@ -20,7 +21,7 @@ class CatRoom : AppCompatActivity() {
     lateinit var storebtn : ImageButton
     lateinit var mycoin : TextView
     lateinit var origincat : ImageView
-    lateinit var catwindow : ImageView
+    /*lateinit var catwindow : ImageView
     lateinit var catfood : ImageView
     lateinit var catbookshelf : ImageView
     lateinit var catsmallplant : ImageView
@@ -29,7 +30,7 @@ class CatRoom : AppCompatActivity() {
     lateinit var catbed : ImageView
     lateinit var catcircle : ImageView
     lateinit var cathome : ImageView
-    lateinit var catsofa : ImageView
+    lateinit var catsofa : ImageView*/
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,12 +53,6 @@ class CatRoom : AppCompatActivity() {
 
         loadCoin()
 
-        var type = intent.getStringExtra("number")
-        when(type){
-            "1" -> catfood.visibility = View.VISIBLE
-        }
-
-
 
         backbtn.setOnClickListener {
             var intent = Intent(this, MainActivity::class.java)
@@ -71,13 +66,11 @@ class CatRoom : AppCompatActivity() {
 
     }
 
+    //coin 받아오기
    private fun loadCoin() {
-        var pref = this.getPreferences(0)
-        var coin = pref.getInt("mycoin",0)
+        val shared = getSharedPreferences("mycoin", Context.MODE_PRIVATE)
+        var coin = shared.getInt("mycoin",0)
         mycoin.text=coin.toString()
     }
-
-
-
 
 }

@@ -1,5 +1,6 @@
 package com.example.guru2project_22
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -8,8 +9,6 @@ import androidx.appcompat.app.AppCompatActivity
 
 
 class Store : AppCompatActivity() {
-
-    private var mycoin = 300
 
     lateinit var backbtn : ImageButton
     lateinit var buybtn : Button
@@ -71,10 +70,17 @@ class Store : AppCompatActivity() {
 
         buybtn.setOnClickListener {
 
+            val shared = getSharedPreferences("coin", Context.MODE_PRIVATE)
+            var mycoin = shared.getInt("mycoin",0)
+            val editor = shared.edit()
+
             when (activeRadioButton.id) {
                 R.id.catfood -> {
                     if(mycoin>=10){
                         mycoin -= 10
+                        //shared 수정, 저장
+                        editor.putInt("mycoin", mycoin)
+                        editor.apply()
                         Toast.makeText(this, "구매했다 냥", Toast.LENGTH_SHORT).show()
                     } else Toast.makeText(this, "코인이 부족하다 냥", Toast.LENGTH_SHORT).show()
                 }
@@ -166,7 +172,6 @@ class Store : AppCompatActivity() {
                 else -> Toast.makeText(this, "아이템을 선택해라 냥", Toast.LENGTH_SHORT).show()
 
             }
-            saveCoin(mycoin.toString().toInt())
         }
 
         okbtn.setOnClickListener {
@@ -197,14 +202,6 @@ class Store : AppCompatActivity() {
 
 
     }
-
-   private fun saveCoin(coin:Int){
-        var pref = this.getPreferences(0)
-        var editor = pref.edit()
-
-        editor.putInt("mycoin", mycoin.toString().toInt()).apply()
-   }
-
 
     fun clickRB(view: View) {
         var radioButton = view as RadioButton
