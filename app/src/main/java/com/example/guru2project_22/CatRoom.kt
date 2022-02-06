@@ -5,6 +5,7 @@ import android.content.Intent
 import android.media.Image
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Gravity
 import android.view.View
 import android.widget.*
@@ -47,6 +48,6 @@ class CatRoom : AppCompatActivity() {
     //coin 받아오기
    private fun loadCoin() {
         val pref = getSharedPreferences("user", 0)
-        mycoin.text = pref.getString("coin","0").toString()
+        mycoin.text = pref.getString("coin","200").toString()
     }
 }

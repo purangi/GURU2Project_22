@@ -14,6 +14,7 @@
         android:layout_height="241dp"
         android:scaleType="fitXY"
         android:src="@drawable/window"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,6 +27,7 @@
         android:layout_marginTop="144dp"
         android:layout_marginEnd="132dp"
         android:src="@drawable/catcircle"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -36,6 +38,7 @@
         android:layout_height="341dp"
         android:layout_marginStart="8dp"
         android:src="@drawable/cathome"
+        android:visibility="invisible"
         app:layout_constraintStart_toEndOf="@+id/imageView1"
         app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
@@ -44,6 +47,7 @@
         android:layout_width="179dp"
         android:layout_height="176dp"
         android:src="@drawable/catbathroom"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/originCat" />
 
@@ -54,6 +58,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginBottom="32dp"
         android:src="@drawable/catfood"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 

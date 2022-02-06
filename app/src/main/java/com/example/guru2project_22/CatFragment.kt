@@ -28,23 +28,127 @@ class CatFragment : Fragment() {
 
 
         when(num){
-            "1" -> imageView1.setImageResource(R.drawable.catfood)
-            "2" -> imageView2.setImageResource(R.drawable.smallplant)
-            "3" -> imageView1.setImageResource(R.drawable.bigplant)
-            "4" -> imageView2.setImageResource(R.drawable.catbathroom)
-            "5" -> imageView1.setImageResource(R.drawable.catplaying)
-            "6" -> imageView2.setImageResource(R.drawable.light)
-            "7" -> imageView4.setImageResource(R.drawable.window)
-            "8" -> imageView5.setImageResource(R.drawable.cathome)
-            "9" -> imageView3.setImageResource(R.drawable.cattable)
-            "10" -> imageView5.setImageResource(R.drawable.bookshelf)
-            "11" -> imageView3.setImageResource(R.drawable.catcircle)
-            "12" -> imageView5.setImageResource(R.drawable.cattower)
-            "13" -> imageView5.setImageResource(R.drawable.catsofa)
-            "14" -> imageView3.setImageResource(R.drawable.catbed)
-            "15" -> imageView3.setImageResource(R.drawable.cattv)
+            "1" -> {
+                if(imageView1.visibility==View.INVISIBLE){
+                    imageView1.visibility=View.VISIBLE
+                    imageView1.setImageResource(R.drawable.catfood)
+                }else{
+                    imageView1.setImageResource(R.drawable.catfood)
+                }
+            }
+            "2" -> {
+                if(imageView1.visibility==View.INVISIBLE){
+                    imageView1.visibility=View.VISIBLE
+                    imageView2.setImageResource(R.drawable.smallplant)
+                }else{
+                    imageView2.setImageResource(R.drawable.smallplant)
+                }
+            }
+            "3" -> {
+                if(imageView1.visibility==View.INVISIBLE){
+                    imageView1.visibility=View.VISIBLE
+                    imageView1.setImageResource(R.drawable.bigplant)
+                }else{
+                    imageView1.setImageResource(R.drawable.bigplant)
+                }
+            }
+            "4" -> {
+                if(imageView1.visibility==View.INVISIBLE){
+                    imageView1.visibility=View.VISIBLE
+                    imageView2.setImageResource(R.drawable.catbathroom)
+                }else{
+                    imageView2.setImageResource(R.drawable.catbathroom)
+                }
+            }
+            "5" -> {
+                if(imageView1.visibility==View.INVISIBLE){
+                    imageView1.visibility=View.VISIBLE
+                    imageView1.setImageResource(R.drawable.catplaying)
+                }else{
+                    imageView1.setImageResource(R.drawable.catplaying)
+                }
+            }
+            "6" -> {
+                if(imageView1.visibility==View.INVISIBLE){
+                    imageView1.visibility=View.VISIBLE
+                    imageView2.setImageResource(R.drawable.light)
+                }else{
+                    imageView2.setImageResource(R.drawable.light)
+                }
+            }
+            "7" -> {
+                if(imageView1.visibility==View.INVISIBLE){
+                    imageView1.visibility=View.VISIBLE
+                    imageView4.setImageResource(R.drawable.window)
+                }else{
+                    imageView4.setImageResource(R.drawable.window)
+                }
+            }
+            "8" -> {
+                if(imageView1.visibility==View.INVISIBLE){
+                    imageView1.visibility=View.VISIBLE
+                    imageView5.setImageResource(R.drawable.cathome)
+                }else{
+                    imageView5.setImageResource(R.drawable.cathome)
+                }
+            }
+            "9" -> {
+                if(imageView1.visibility==View.INVISIBLE){
+                    imageView1.visibility=View.VISIBLE
+                    imageView3.setImageResource(R.drawable.cattable)
+                }else{
+                    imageView3.setImageResource(R.drawable.cattable)
+                }
+            }
+            "10" -> {
+                if(imageView1.visibility==View.INVISIBLE){
+                    imageView1.visibility=View.VISIBLE
+                    imageView5.setImageResource(R.drawable.bookshelf)
+                }else{
+                    imageView5.setImageResource(R.drawable.bookshelf)
+                }
+            }
+            "11" -> {
+                if(imageView1.visibility==View.INVISIBLE){
+                    imageView1.visibility=View.VISIBLE
+                    imageView3.setImageResource(R.drawable.catcircle)
+                }else{
+                    imageView3.setImageResource(R.drawable.catcircle)
+                }
+            }
+            "12" -> {
+                if(imageView1.visibility==View.INVISIBLE){
+                    imageView1.visibility=View.VISIBLE
+                    imageView5.setImageResource(R.drawable.cattower)
+                }else{
+                    imageView5.setImageResource(R.drawable.cattower)
+                }
+            }
+            "13" ->{
+                if(imageView1.visibility==View.INVISIBLE){
+                    imageView1.visibility=View.VISIBLE
+                    imageView5.setImageResource(R.drawable.catsofa)
+                }else{
+                    imageView5.setImageResource(R.drawable.catsofa)
+                }
+            }
+            "14" -> {
+                if(imageView1.visibility==View.INVISIBLE){
+                    imageView1.visibility=View.VISIBLE
+                    imageView3.setImageResource(R.drawable.catbed)
+                }else{
+                    imageView3.setImageResource(R.drawable.catbed)
+                }
+            }
+            "15" -> {
+                if(imageView1.visibility==View.INVISIBLE){
+                    imageView1.visibility=View.VISIBLE
+                    imageView3.setImageResource(R.drawable.cattv)
+                }else{
+                    imageView3.setImageResource(R.drawable.cattv)
+                }
+            }
         }
-
 
         return view
     }
