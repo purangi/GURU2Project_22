@@ -20,17 +20,6 @@ class CatRoom : AppCompatActivity() {
     lateinit var backbtn : ImageButton
     lateinit var storebtn : ImageButton
     lateinit var mycoin : TextView
-    lateinit var origincat : ImageView
-    /*lateinit var catwindow : ImageView
-    lateinit var catfood : ImageView
-    lateinit var catbookshelf : ImageView
-    lateinit var catsmallplant : ImageView
-    lateinit var catbigplant : ImageView
-    lateinit var catbathroom : ImageView
-    lateinit var catbed : ImageView
-    lateinit var catcircle : ImageView
-    lateinit var cathome : ImageView
-    lateinit var catsofa : ImageView*/
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,25 +28,16 @@ class CatRoom : AppCompatActivity() {
         backbtn = findViewById(R.id.backbtn)
         storebtn = findViewById(R.id.storebtn)
         mycoin = findViewById(R.id.mycoin)
-        origincat = findViewById(R.id.originCat)
-        /*catwindow = findViewById(R.id.cat_window)
-        catfood = findViewById(R.id.cat_catfood)
-        catbookshelf = findViewById(R.id.cat_bookshelf)
-        catsmallplant = findViewById(R.id.cat_smallplant)
-        catbigplant = findViewById(R.id.cat_bigplant)
-        catbathroom = findViewById(R.id.cat_catbathroom)
-        catbed = findViewById(R.id.cat_catbed)
-        catcircle =findViewById(R.id.cat_circle2)
-        cathome =findViewById(R.id.cat_home)
-        catsofa =findViewById(R.id.cat_sofa)*/
 
+        //coin 받아오기
         loadCoin()
 
-
+        //뒤로가기 버튼 클릭 시
         backbtn.setOnClickListener {
             onBackPressed()
         }
 
+        //store 버튼 클릭 시
         storebtn.setOnClickListener {
             var intent = Intent(this, Store::class.java)
             startActivity(intent)
@@ -71,5 +51,4 @@ class CatRoom : AppCompatActivity() {
         val pref = getSharedPreferences("user", 0)
         mycoin.text = pref.getString("coin","0").toString()
     }
-
 }

@@ -9,7 +9,7 @@
     tools:context=".CatFragment">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/floor"
         android:layout_width="0dp"
         android:layout_height="274dp"
         android:src="@drawable/floor"
@@ -23,7 +23,15 @@
         android:layout_height="186dp"
         android:layout_marginEnd="148dp"
         android:layout_marginBottom="88dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/floor"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/origincat" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="140dp"
+        android:layout_height="116dp"
+        android:src="@drawable/catfood"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

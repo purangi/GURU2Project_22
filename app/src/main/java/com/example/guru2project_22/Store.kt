@@ -2,6 +2,7 @@ package com.example.guru2project_22
 
 import android.content.Context
 import android.content.Intent
+import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import android.os.Bundle
@@ -39,6 +40,9 @@ class Store : AppCompatActivity() {
 
     lateinit var activeRadioButton : RadioButton
 
+    lateinit var itemManager : itemDBManager
+    lateinit var sqlDB : SQLiteDatabase
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -68,38 +72,91 @@ class Store : AppCompatActivity() {
 
         activeRadioButton.isChecked = true
 
+        itemManager = itemDBManager(this)
 
-
+        //뒤로가기 버튼
         backbtn.setOnClickListener {
             onBackPressed()
         }
 
-
+        //구매 버튼 클릭 시
         buybtn.setOnClickListener {
             //coin 받아오기
             val pref = getSharedPreferences("user", 0)
             val editor = pref.edit()
             mycoin = (pref.getString("coin","0"))!!.toInt()
 
+            sqlDB = itemManager.writableDatabase
+
+
+            //선택한 버튼의 id 받아서 price 처리
             when (activeRadioButton.id) {
-                R.id.catfood -> price =10
-                R.id.smallplant -> price =50
-                R.id.bigplant -> price =50
-                R.id.catbathroom -> price =80
-                R.id.catplaying -> price=100
-                R.id.light -> price =150
-                R.id.window -> price =200
-                R.id.cathome -> price =250
-                R.id.cattable -> price=300
-                R.id.bookshelf -> price =450
-                R.id.catcircle ->price =500
-                R.id.cattower -> price =600
-                R.id.catsofa -> price =700
-                R.id.catbed -> price =800
-                R.id.cattv -> price =1000
+                R.id.catfood -> {
+                    price =10
+                    sqlDB.execSQL("INSERT INTO itemTBL VALUES ('"+ "food"+"',"+1+","+0+");")
+                }
+                R.id.smallplant -> {
+                    price =50
+                    sqlDB.execSQL("INSERT INTO itemTBL VALUES ('"+ "small"+"',"+1+","+0+");")
+                }
+                R.id.bigplant -> {
+                    price =50
+                    sqlDB.execSQL("INSERT INTO itemTBL VALUES ('"+ "big" +"',"+1+","+0+");")
+                }
+                R.id.catbathroom -> {
+                    price =80
+                    sqlDB.execSQL("INSERT INTO itemTBL VALUES ('"+ "bathroom"+"',"+1+","+0+");")
+                }
+                R.id.catplaying -> {
+                    price=100
+                    sqlDB.execSQL("INSERT INTO itemTBL VALUES ('"+ "playing"+"',"+1+","+0+");")
+                }
+                R.id.light -> {
+                    price =150
+                    sqlDB.execSQL("INSERT INTO itemTBL VALUES ('"+ "light"+"',"+1+","+0+");")
+                }
+                R.id.window -> {
+                    price =200
+                    sqlDB.execSQL("INSERT INTO itemTBL VALUES ('"+ "window"+"',"+1+","+0+");")
+                }
+                R.id.cathome -> {
+                    price =250
+                    sqlDB.execSQL("INSERT INTO itemTBL VALUES ('"+ "home"+"',"+1+","+0+");")
+                }
+                R.id.cattable -> {
+                    price=300
+                    sqlDB.execSQL("INSERT INTO itemTBL VALUES ('"+ "table"+"',"+1+","+0+");")
+                }
+                R.id.bookshelf -> {
+                    price =450
+                    sqlDB.execSQL("INSERT INTO itemTBL VALUES ('"+ "bookshelf"+"',"+1+","+0+");")
+                }
+                R.id.catcircle ->{
+                    price =500
+                    sqlDB.execSQL("INSERT INTO itemTBL VALUES ('"+ "circle"+"',"+1+","+0+");")
+                }
+                R.id.cattower -> {
+                    price =600
+                    sqlDB.execSQL("INSERT INTO itemTBL VALUES ('"+ "tower"+"',"+1+","+0+");")
+                }
+                R.id.catsofa -> {
+                    price =700
+                    sqlDB.execSQL("INSERT INTO itemTBL VALUES ('"+ "sofa"+"',"+1+","+0+");")
+                }
+                R.id.catbed -> {
+                    price =800
+                    sqlDB.execSQL("INSERT INTO itemTBL VALUES ('"+"bed"+"',"+1+","+0+");")
+                }
+                R.id.cattv -> {
+                    price =1000
+                    sqlDB.execSQL("INSERT INTO itemTBL VALUES ('"+ "tv"+"', "+1+","+0+");")
+                }
                 else -> Toast.makeText(this, "아이템을 선택해라 냥", Toast.LENGTH_SHORT).show()
             }
 
+            sqlDB.close()
+
+            //아이템 구매 처리
             if(mycoin>=price){
                 mycoin -= price
                 //coin 수정, 저장
@@ -111,35 +168,71 @@ class Store : AppCompatActivity() {
             }
         }
 
+        // 꾸미기 버튼 클릭 시
         okbtn.setOnClickListener {
-            var intent = Intent(this, CatRoom::class.java)
+            var fragment = CatFragment()
+            var bundle = Bundle()
+
+            sqlDB = itemManager.readableDatabase
+
+            var cursor : Cursor = sqlDB.rawQuery("SELECT * FROM itemTBL",null )
+
+            while (cursor.moveToNext()){
+                var status = cursor.getInt(cursor.getColumnIndex("itemStatus"))
+            }
 
             when (activeRadioButton.id) {
-                R.id.catfood -> intent.putExtra("number","1")
-                R.id.smallplant ->intent.putExtra("number","2")
-                R.id.bigplant ->intent.putExtra("number","3")
-                R.id.catbathroom ->intent.putExtra("number","4")
-                R.id.catplaying ->intent.putExtra("number","5")
-                R.id.light ->intent.putExtra("number","6")
-                R.id.window ->intent.putExtra("number","7")
-                R.id.cathome ->intent.putExtra("number","8")
-                R.id.cattable ->intent.putExtra("number","9")
-                R.id.bookshelf ->intent.putExtra("number","10")
-                R.id.catcircle ->intent.putExtra("number","11")
-                R.id.cattower ->intent.putExtra("number","12")
-                R.id.catsofa ->intent.putExtra("number","13")
-                R.id.catbed ->intent.putExtra("number","14")
-                R.id.cattv ->intent.putExtra("number","15")
+                R.id.catfood -> {
+                    bundle.putInt("number",1)
+                }
+                R.id.smallplant ->{
+                    bundle.putInt("number",2)
+                }
+                R.id.bigplant ->{
+                    bundle.putInt("number",3)
+                }
+                R.id.catbathroom ->{
+                    bundle.putInt("number",4)
+                }
+                R.id.catplaying ->{
+                    bundle.putInt("number",5)
+                }
+                R.id.light ->{
+                    bundle.putInt("number",6)
+                }
+                R.id.window ->{
+                    bundle.putInt("number",7)
+                }
+                R.id.cathome ->{
+                    bundle.putInt("number",8)
+                }
+                R.id.cattable ->{
+                    bundle.putInt("number",9)
+                }
+                R.id.bookshelf ->{
+                    bundle.putInt("number",10)
+                }
+                R.id.catcircle ->{
+                    bundle.putInt("number",11)
+                }
+                R.id.cattower ->{
+                    bundle.putInt("number",12)
+                }
+                R.id.catsofa ->{
+                    bundle.putInt("number",13)
+                }
+                R.id.catbed ->{
+                    bundle.putInt("number",14)
+                }
+                R.id.cattv ->{
+                    bundle.putInt("number",15)
+                }
 
                 else -> Toast.makeText(this, "아이템을 선택해라 냥", Toast.LENGTH_SHORT).show()
             }
+            fragment.arguments = bundle
 
-            startActivity(intent)
         }
-    }
-
-    private fun loadCoin() {
-
     }
 
     fun clickRB(view: View) {
@@ -153,9 +246,9 @@ class Store : AppCompatActivity() {
     }
 
     //store, catroom에서 쓸 item DB
-    class itemDBHelper(context: Context) : SQLiteOpenHelper(context, "itemDB" , null,1){
+    class itemDBManager(context: Context) : SQLiteOpenHelper(context, "itemDB" , null,1){
         override fun onCreate(db: SQLiteDatabase?) {
-            db!!.execSQL("CREATE TABLE itemTBL (itemName CHAR(15) PRIMARY KEY, itemResource CHAR(40));")
+            db!!.execSQL("CREATE TABLE itemTBL (itemName CHAR(15) PRIMARY KEY, itemStatus Integer, itemCheck Integer);")
         }
 
         override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
