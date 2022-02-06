@@ -8,13 +8,14 @@ import android.os.Bundle
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 
 
 class Store : AppCompatActivity() {
 
     var price = 0
     var mycoin = 0
-
+    var mybuy =0
 
     lateinit var backbtn : ImageButton
     lateinit var buybtn : Button
@@ -37,9 +38,6 @@ class Store : AppCompatActivity() {
     lateinit var cattv : RadioButton
 
     lateinit var activeRadioButton : RadioButton
-
-    lateinit var itemManager : itemDBManager
-    lateinit var sqlDB : SQLiteDatabase
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -67,92 +65,162 @@ class Store : AppCompatActivity() {
         cattv = findViewById(R.id.cattv)
 
         activeRadioButton = findViewById(R.id.activeRadioButton)
-
         activeRadioButton.isChecked = true
-
-        itemManager = itemDBManager(this, "itemDB", null,1)
 
         //뒤로가기 버튼
         backbtn.setOnClickListener {
             onBackPressed()
         }
 
+        val pref = getSharedPreferences("user", 0)
+        val editor = pref.edit()
+
         //구매 버튼 클릭 시
         buybtn.setOnClickListener {
             //coin 받아오기
-            val pref = getSharedPreferences("user", 0)
-            val editor = pref.edit()
             mycoin = (pref.getString("coin","0"))!!.toInt()
-
-            sqlDB = itemManager.writableDatabase
-
+            mybuy = (pref.getString("buy","0"))!!.toInt()
 
             //선택한 버튼의 id 받아서 price 처리
             when (activeRadioButton.id) {
                 R.id.catfood -> {
-                    price =10
-                    sqlDB.execSQL("INSERT INTO itemTBL VALUES ('"+ "food"+"',"+1+","+0+",'"+activeRadioButton.id+"');")
+                    if(mybuy==1){
+                        price =0
+                        Toast.makeText(this, "갖고 있다 냥", Toast.LENGTH_SHORT).show()
+                    }else{
+                        price =10
+                        editor.putString("buy", "1")
+                    }
                 }
                 R.id.smallplant -> {
-                    price =50
-                    sqlDB.execSQL("INSERT INTO itemTBL VALUES ('"+ "small"+"',"+1+","+0+",'"+activeRadioButton.id+"');")
+                    if(mybuy==2){
+                        price =0
+                        Toast.makeText(this, "갖고 있다 냥", Toast.LENGTH_SHORT).show()
+                    }else{
+                        price =50
+                        editor.putString("buy", "2")
+                    }
                 }
                 R.id.bigplant -> {
-                    price =50
-                    sqlDB.execSQL("INSERT INTO itemTBL VALUES ('"+ "big" +"',"+1+","+0+",'"+activeRadioButton.id+"');")
+                    if(mybuy==3){
+                        price =0
+                        Toast.makeText(this, "갖고 있다 냥", Toast.LENGTH_SHORT).show()
+                    }else{
+                        price =50
+                        editor.putString("buy", "3")
+                    }
                 }
                 R.id.catbathroom -> {
-                    price =80
-                    sqlDB.execSQL("INSERT INTO itemTBL VALUES ('"+ "bathroom"+"',"+1+","+0+",'"+activeRadioButton.id+"');")
+                    if(mybuy==4){
+                        price =0
+                        Toast.makeText(this, "갖고 있다 냥", Toast.LENGTH_SHORT).show()
+                    }else{
+                        price =80
+                        editor.putString("buy", "4")
+                    }
                 }
                 R.id.catplaying -> {
-                    price=100
-                    sqlDB.execSQL("INSERT INTO itemTBL VALUES ('"+ "playing"+"',"+1+","+0+",'"+activeRadioButton.id+"');")
+                    if(mybuy==5){
+                        price =0
+                        Toast.makeText(this, "갖고 있다 냥", Toast.LENGTH_SHORT).show()
+                    }else{
+                        price =100
+                        editor.putString("buy", "5")
+                    }
                 }
                 R.id.light -> {
-                    price =150
-                    sqlDB.execSQL("INSERT INTO itemTBL VALUES ('"+ "light"+"',"+1+","+0+",'"+activeRadioButton.id+"');")
+                    if(mybuy==6){
+                        price =0
+                        Toast.makeText(this, "갖고 있다 냥", Toast.LENGTH_SHORT).show()
+                    }else{
+                        price =150
+                        editor.putString("buy", "6")
+                    }
                 }
                 R.id.window -> {
-                    price =200
-                    sqlDB.execSQL("INSERT INTO itemTBL VALUES ('"+ "window"+"',"+1+","+0+",'"+activeRadioButton.id+"');")
+                    if(mybuy==7){
+                        price =0
+                        Toast.makeText(this, "갖고 있다 냥", Toast.LENGTH_SHORT).show()
+                    }else{
+                        price =200
+                        editor.putString("buy", "7")
+                    }
                 }
                 R.id.cathome -> {
-                    price =250
-                    sqlDB.execSQL("INSERT INTO itemTBL VALUES ('"+ "home"+"',"+1+","+0+",'"+activeRadioButton.id+"');")
+                    if(mybuy==8){
+                        price =0
+                        Toast.makeText(this, "갖고 있다 냥", Toast.LENGTH_SHORT).show()
+                    }else{
+                        price =250
+                        editor.putString("buy", "8")
+                    }
                 }
                 R.id.cattable -> {
-                    price=300
-                    sqlDB.execSQL("INSERT INTO itemTBL VALUES ('"+ "table"+"',"+1+","+0+",'"+activeRadioButton.id+"');")
+                    if(mybuy==9){
+                        price =0
+                        Toast.makeText(this, "갖고 있다 냥", Toast.LENGTH_SHORT).show()
+                    }else{
+                        price =300
+                        editor.putString("buy", "9")
+                    }
                 }
                 R.id.bookshelf -> {
-                    price =450
-                    sqlDB.execSQL("INSERT INTO itemTBL VALUES ('"+ "bookshelf"+"',"+1+","+0+",'"+activeRadioButton.id+"');")
+                    if(mybuy==10){
+                        price =0
+                        Toast.makeText(this, "갖고 있다 냥", Toast.LENGTH_SHORT).show()
+                    }else{
+                        price =450
+                        editor.putString("buy", "10")
+                    }
                 }
-                R.id.catcircle ->{
-                    price =500
-                    sqlDB.execSQL("INSERT INTO itemTBL VALUES ('"+ "circle"+"',"+1+","+0+",'"+activeRadioButton.id+"');")
+                R.id.catcircle -> {
+                    if(mybuy==11){
+                        price =0
+                        Toast.makeText(this, "갖고 있다 냥", Toast.LENGTH_SHORT).show()
+                    }else{
+                        price =500
+                        editor.putString("buy", "11")
+                    }
                 }
                 R.id.cattower -> {
-                    price =600
-                    sqlDB.execSQL("INSERT INTO itemTBL VALUES ('"+ "tower"+"',"+1+","+0+",'"+activeRadioButton.id+"');")
+                    if(mybuy==12){
+                        price =0
+                        Toast.makeText(this, "갖고 있다 냥", Toast.LENGTH_SHORT).show()
+                    }else{
+                        price =600
+                        editor.putString("buy", "12")
+                    }
                 }
                 R.id.catsofa -> {
-                    price =700
-                    sqlDB.execSQL("INSERT INTO itemTBL VALUES ('"+ "sofa"+"',"+1+","+0+",'"+activeRadioButton.id+"');")
+                    if(mybuy==13){
+                        price =0
+                        Toast.makeText(this, "갖고 있다 냥", Toast.LENGTH_SHORT).show()
+                    }else{
+                        price =700
+                        editor.putString("buy", "13")
+                    }
                 }
                 R.id.catbed -> {
-                    price =800
-                    sqlDB.execSQL("INSERT INTO itemTBL VALUES ('"+"bed"+"',"+1+","+0+",'"+activeRadioButton.id+"');")
+                    if(mybuy==14){
+                        price =0
+                        Toast.makeText(this, "갖고 있다 냥", Toast.LENGTH_SHORT).show()
+                    }else{
+                        price =800
+                        editor.putString("buy", "14")
+                    }
                 }
                 R.id.cattv -> {
-                    price =1000
-                    sqlDB.execSQL("INSERT INTO itemTBL VALUES ('"+ "tv"+"', "+1+","+0+",'"+activeRadioButton.id+"');")
+                    if(mybuy==15){
+                        price =0
+                        Toast.makeText(this, "갖고 있다 냥", Toast.LENGTH_SHORT).show()
+                    }else{
+                        price =1000
+                        editor.putString("buy", "15")
+                    }
                 }
+
                 else -> Toast.makeText(this, "아이템을 선택해라 냥", Toast.LENGTH_SHORT).show()
             }
-
-            sqlDB.close()
 
             //아이템 구매 처리
             if(mycoin>=price){
@@ -168,19 +236,124 @@ class Store : AppCompatActivity() {
 
         // 꾸미기 버튼 클릭 시
         okbtn.setOnClickListener {
-            var intent = Intent(this, CatRoom::class.java)
 
-            sqlDB = itemManager.readableDatabase
+            mybuy = (pref.getString("buy","0"))!!.toInt()
 
-            var cursor : Cursor = sqlDB.rawQuery("SELECT * FROM itemTBL",null )
-
-            while (cursor.moveToNext()){
-                var status = cursor.getInt(cursor.getColumnIndex("itemStatus"))
+            //선택한 item의 id 받아서 item 꾸미기 처리
+            when (activeRadioButton.id) {
+                R.id.catfood -> {
+                    if(mybuy==1) {
+                        editor.putString("item", "1")
+                    }else{
+                        Toast.makeText(this, "아이템을 구매해라 냥", Toast.LENGTH_SHORT).show()
+                    }
+                }
+                R.id.smallplant -> {
+                    if(mybuy==2) {
+                        editor.putString("item", "2")
+                    }else{
+                        Toast.makeText(this, "아이템을 구매해라 냥", Toast.LENGTH_SHORT).show()
+                    }
+                }
+                R.id.bigplant -> {
+                    if(mybuy==3) {
+                        editor.putString("item", "3")
+                    }else{
+                        Toast.makeText(this, "아이템을 구매해라 냥", Toast.LENGTH_SHORT).show()
+                    }
+                }
+                R.id.catbathroom -> {
+                    if(mybuy==4) {
+                        editor.putString("item", "4")
+                    }else{
+                        Toast.makeText(this, "아이템을 구매해라 냥", Toast.LENGTH_SHORT).show()
+                    }
+                }
+                R.id.catplaying -> {
+                    if(mybuy==5) {
+                        editor.putString("item", "5")
+                    }else{
+                        Toast.makeText(this, "아이템을 구매해라 냥", Toast.LENGTH_SHORT).show()
+                    }
+                }
+                R.id.light -> {
+                    if(mybuy==6) {
+                        editor.putString("item", "6")
+                    }else{
+                        Toast.makeText(this, "아이템을 구매해라 냥", Toast.LENGTH_SHORT).show()
+                    }
+                }
+                R.id.window -> {
+                    if(mybuy==7) {
+                        editor.putString("item", "7")
+                    }else{
+                        Toast.makeText(this, "아이템을 구매해라 냥", Toast.LENGTH_SHORT).show()
+                    }
+                }
+                R.id.cathome -> {
+                    if(mybuy==8) {
+                        editor.putString("item", "8")
+                    }else{
+                        Toast.makeText(this, "아이템을 구매해라 냥", Toast.LENGTH_SHORT).show()
+                    }
+                }
+                R.id.cattable -> {
+                    if(mybuy==9) {
+                        editor.putString("item", "9")
+                    }else{
+                        Toast.makeText(this, "아이템을 구매해라 냥", Toast.LENGTH_SHORT).show()
+                    }
+                }
+                R.id.bookshelf -> {
+                    if(mybuy==10) {
+                        editor.putString("item", "10")
+                    }else{
+                        Toast.makeText(this, "아이템을 구매해라 냥", Toast.LENGTH_SHORT).show()
+                    }
+                }
+                R.id.catcircle -> {
+                    if(mybuy==11) {
+                        editor.putString("item", "11")
+                    }else{
+                        Toast.makeText(this, "아이템을 구매해라 냥", Toast.LENGTH_SHORT).show()
+                    }
+                }
+                R.id.cattower -> {
+                    if(mybuy==12) {
+                        editor.putString("item", "12")
+                    }else{
+                        Toast.makeText(this, "아이템을 구매해라 냥", Toast.LENGTH_SHORT).show()
+                    }
+                }
+                R.id.catsofa -> {
+                    if(mybuy==13) {
+                        editor.putString("item", "13")
+                    }else{
+                        Toast.makeText(this, "아이템을 구매해라 냥", Toast.LENGTH_SHORT).show()
+                    }
+                }
+                R.id.catbed -> {
+                    if(mybuy==14) {
+                        editor.putString("item", "14")
+                    }else{
+                        Toast.makeText(this, "아이템을 구매해라 냥", Toast.LENGTH_SHORT).show()
+                    }
+                }
+                R.id.cattv -> {
+                    if(mybuy==15) {
+                        editor.putString("item", "15")
+                    }else{
+                        Toast.makeText(this, "아이템을 구매해라 냥", Toast.LENGTH_SHORT).show()
+                    }
+                }
+                else -> Toast.makeText(this, "아이템을 선택해라 냥", Toast.LENGTH_SHORT).show()
             }
 
+            editor.apply()
 
+            //CatRoom 으로 전환
+            var intent = Intent(this, CatRoom::class.java)
             startActivity(intent)
-
         }
     }
 

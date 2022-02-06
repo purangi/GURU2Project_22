@@ -48,7 +48,7 @@ class MyPage : AppCompatActivity() {
         }
 
         //coin 설정
-        editor.putString("coin", "300")
+        editor.putString("coin", "100")
         editor.apply()
         
         binding.mycoin.text = pref.getString("coin","").toString()

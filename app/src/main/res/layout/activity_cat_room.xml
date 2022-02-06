@@ -65,8 +65,8 @@
     <fragment
         android:id="@+id/catFrag"
         android:name="com.example.guru2project_22.CatFragment"
-        android:layout_width="418dp"
-        android:layout_height="587dp"
+        android:layout_width="0dp"
+        android:layout_height="597dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

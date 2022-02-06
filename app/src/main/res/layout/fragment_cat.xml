@@ -5,33 +5,66 @@
     android:id="@+id/catcat"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/main_beige"
+    android:background="@drawable/catroom"
     tools:context=".CatFragment">
 
     <ImageView
-        android:id="@+id/floor"
-        android:layout_width="0dp"
-        android:layout_height="274dp"
-        android:src="@drawable/floor"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/imageView4"
+        android:layout_width="359dp"
+        android:layout_height="241dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/window"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="351dp"
+        android:layout_height="370dp"
+        android:layout_marginTop="144dp"
+        android:layout_marginEnd="132dp"
+        android:src="@drawable/catcircle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="301dp"
+        android:layout_height="341dp"
+        android:layout_marginStart="8dp"
+        android:src="@drawable/cathome"
+        app:layout_constraintStart_toEndOf="@+id/imageView1"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="179dp"
+        android:layout_height="176dp"
+        android:src="@drawable/catbathroom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/originCat" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="140dp"
+        android:layout_height="116dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="32dp"
+        android:src="@drawable/catfood"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/originCat"
-        android:layout_width="175dp"
-        android:layout_height="186dp"
-        android:layout_marginEnd="148dp"
-        android:layout_marginBottom="88dp"
-        app:layout_constraintBottom_toBottomOf="@+id/floor"
+        android:layout_width="159dp"
+        android:layout_height="179dp"
+        android:layout_marginEnd="156dp"
+        android:layout_marginBottom="84dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/origincat" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="140dp"
-        android:layout_height="116dp"
-        android:src="@drawable/catfood"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
