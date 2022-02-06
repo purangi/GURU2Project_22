@@ -108,24 +108,26 @@
                 android:background="@drawable/rounded_corner">
 
                 <ImageButton
-                    android:id="@+id/water"
+                    android:id="@+id/iconimg"
                     android:adjustViewBounds="true"
                     android:layout_width="33dp"
                     android:layout_height="33dp"
                     android:layout_marginLeft="26dp"
                     android:layout_marginTop="8dp"
-                    app:srcCompat="@drawable/water" />
+                    android:src="@drawable/water"
+                    android:scaleType="fitEnd"/>
 
                 <TextView
+                    android:id="@+id/textview3"
                     android:layout_width="99dp"
                     android:layout_height="16dp"
                     android:layout_gravity="center"
                     android:layout_marginLeft="46dp"
                     android:fontFamily="@font/zzanggu"
-                    android:text="물 한 잔 마시기"
                     android:textColor="@color/black" />
 
                 <CheckBox
+                    android:id="@+id/checkbox"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="70dp"
