@@ -1,16 +1,12 @@
 package com.example.guru2project_22
 
 import android.content.Intent
-import android.graphics.Bitmap
-import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.RadioButton
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.graphics.drawable.toDrawable
-import java.io.ByteArrayOutputStream
 
 
 class IconSelect : AppCompatActivity() {
@@ -21,7 +17,7 @@ class IconSelect : AppCompatActivity() {
     lateinit var rbBed : RadioButton
     lateinit var rbComputer : RadioButton
     lateinit var rbExercise : RadioButton
-    lateinit var rbExercise2 : RadioButton
+    lateinit var rbSleep : RadioButton
     lateinit var rbStudy : RadioButton
     lateinit var rbReading : RadioButton
     lateinit var rbPill : RadioButton
@@ -42,7 +38,7 @@ class IconSelect : AppCompatActivity() {
         rbBed = findViewById(R.id.rbBed)
         rbComputer = findViewById(R.id.rbComputer)
         rbExercise = findViewById(R.id.rbExercise)
-        rbExercise2 = findViewById(R.id.rbExercise2)
+        rbSleep = findViewById(R.id.rbSleep)
         rbStudy = findViewById(R.id.rbStudy)
         rbReading = findViewById(R.id.rbReading)
         rbPill = findViewById(R.id.rbPill)
@@ -68,7 +64,7 @@ class IconSelect : AppCompatActivity() {
                 R.id.rbBed -> iconIntent.putExtra("icon", "bed")
                 R.id.rbComputer -> iconIntent.putExtra("icon", "computer")
                 R.id.rbExercise -> iconIntent.putExtra("icon", "exercise")
-                R.id.rbExercise2 -> iconIntent.putExtra("icon", "exercise2")
+                R.id.rbSleep -> iconIntent.putExtra("icon", "sleep")
                 R.id.rbStudy -> iconIntent.putExtra("icon", "study")
                 R.id.rbReading -> iconIntent.putExtra("icon", "reading")
                 R.id.rbPill -> iconIntent.putExtra("icon", "pill")

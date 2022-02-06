@@ -187,11 +187,11 @@
         <TableRow>
 
             <RadioButton
-                android:id="@+id/rbWater"
+                android:id="@+id/rbSleep"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_margin="10dp"
-                android:background="@drawable/radio_water"
+                android:background="@drawable/radio_moon"
                 android:button="@null"
                 android:onClick="clickRB"/>
 
@@ -226,11 +226,11 @@
                 android:onClick="clickRB"/>
 
             <RadioButton
-                android:id="@+id/rbExercise2"
+                android:id="@+id/rbWater"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_margin="10dp"
-                android:background="@drawable/radio_exercise2"
+                android:background="@drawable/radio_water"
                 android:button="@null"
                 android:onClick="clickRB"/>
 

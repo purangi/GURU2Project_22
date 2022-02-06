@@ -66,43 +66,85 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.github.mikephil.charting.charts.PieChart
-        android:id="@+id/dailyPie"
-        android:layout_width="355dp"
-        android:layout_height="519dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnHabit"
         android:layout_width="208dp"
         android:layout_height="40dp"
-        android:layout_marginTop="460dp"
+        android:layout_marginBottom="30dp"
         android:background="@drawable/solid_button"
         android:fontFamily="@font/zzanggu"
-        android:text="나의 습관"
+        android:text="습관 추가하기"
         android:textColor="@color/black"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.978" />
+
+    <TextView
+        android:id="@+id/tvClock6"
+        android:layout_width="wrap_content"
+        android:layout_height="23dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/zzanggu"
+        android:text="6"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dailyPie"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/dailyPie" />
+
+    <TextView
+        android:id="@+id/tvClock18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:fontFamily="@font/zzanggu"
+        android:text="18"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btnHabit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/dailyPie" />
+
+    <TextView
+        android:id="@+id/tvClock12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:fontFamily="@font/zzanggu"
+        android:text="12"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnHabit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvClock0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="330dp"
+        android:fontFamily="@font/zzanggu"
+        android:text="0"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnHabit"
+        app:layout_constraintEnd_toEndOf="@+id/tvClock12"
+        app:layout_constraintStart_toStartOf="@+id/tvClock12"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnSleep"
-        android:layout_width="208dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="520dp"
-        android:background="@drawable/solid_button"
-        android:fontFamily="@font/zzanggu"
-        android:text="수면 시간"
-        android:textColor="@color/black"
-        android:textSize="24sp"
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/dailyPie"
+        android:layout_width="355dp"
+        android:layout_height="519dp"
+        android:layout_marginBottom="108dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent">
+
+    </com.github.mikephil.charting.charts.PieChart>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

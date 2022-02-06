@@ -11,6 +11,7 @@ import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
 import java.text.DecimalFormat
 import java.text.SimpleDateFormat
 import java.util.*
@@ -178,12 +179,12 @@ class HabitActivity : AppCompatActivity() {
 
                     if(btnSun.isSelected) {
                         var i = 0
-                        while(((8 - dayNum) + 7 * i) <= term) {
-                            cal.add(Calendar.DATE, (8 - dayNum) + 7 * i)
+                        while(((1 - dayNum) + 7 * i) <= term) {
+                            cal.add(Calendar.DATE, (1 - dayNum) + 7 * i)
                             dateText = dateFormat.format(cal.time)
                             sqlitedb.execSQL("INSERT INTO scheduleDB VALUES ('" + dateText + "', '" + iconText + "', '" + habitText + "', '"
                                     + startTime + "' , '" + endTime + "' , " + alarm + ")")
-                            cal.add(Calendar.DATE, -((8 - dayNum) + 7 * i))
+                            cal.add(Calendar.DATE, -((1 - dayNum) + 7 * i))
                             i++
                         }
                     }
@@ -315,13 +316,12 @@ class HabitActivity : AppCompatActivity() {
                     }
                 }
 
-
-
                 //입력 후 인텐트 이동 및 토스트
                 sqlitedb.close()
                 dbManager.close()
                 Toast.makeText(this, "습관을 입력했습니다.", Toast.LENGTH_SHORT).show()
                 val dayIntent = Intent(this, DayActivity::class.java)
+                finishAffinity()
                 startActivity(dayIntent)
                 finish()
             }
@@ -342,7 +342,7 @@ class HabitActivity : AppCompatActivity() {
                         "bed" -> btnIcon.setImageDrawable(getDrawable(R.drawable.bed))
                         "computer" -> btnIcon.setImageDrawable(getDrawable(R.drawable.computer))
                         "exercise" -> btnIcon.setImageDrawable(getDrawable(R.drawable.exercise))
-                        "exercise2" -> btnIcon.setImageDrawable(getDrawable(R.drawable.exercise2))
+                        "sleep" -> btnIcon.setImageDrawable(getDrawable(R.drawable.moon))
                         "study" -> btnIcon.setImageDrawable(getDrawable(R.drawable.study))
                         "reading" -> btnIcon.setImageDrawable(getDrawable(R.drawable.reading))
                         "pill" -> btnIcon.setImageDrawable(getDrawable(R.drawable.pill))
