@@ -73,9 +73,9 @@ class Store : AppCompatActivity() {
             onBackPressed()
         }
 
-        val shared = getSharedPreferences("mycoin", 0)
+        val shared = getSharedPreferences("coin", 0)
         val editor = shared.edit()
-        mycoin = shared.getInt("coin",0)
+        mycoin = shared.getInt("mycoin",0)
 
         buybtn.setOnClickListener {
 

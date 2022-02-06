@@ -67,7 +67,7 @@ class MyPage : AppCompatActivity() {
         //고양이 창 나타내기
         LayoutInflater.from(this).inflate(R.layout.fragment_cat, parent, true)
 
-        //연필 버튼 누를 시
+        //닉네임 연필 버튼 누를 시
         binding.pencilButton.setOnClickListener {
 
             //Dialog 만들기

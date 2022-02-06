@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 
 class Login : AppCompatActivity() {
     lateinit var editNickname: EditText
@@ -27,9 +28,17 @@ class Login : AppCompatActivity() {
             editor.putString("nickname", editNickname.text.toString())
             editor.apply()
 
-            //화면전환(메인 액티비티로)
-            var intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+            //입력 안하면 토스트
+            if (sharedPreference.getString("nickname", "").isNullOrBlank())
+            {
+                Toast.makeText(this@Login, "닉네임을 입력해주세요", Toast.LENGTH_SHORT).show()
+            }
+            else //화면전환(메인 액티비티로)
+            {
+                var intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+            }
+
         }
     }
 }
