@@ -12,13 +12,13 @@
         <activity android:name=".SleepActivity" />
         <activity android:name=".IconSelect" />
         <activity android:name=".MyPage" />
-        <activity android:name=".Loading" />
+        <activity android:name=".DayActivity" />
         <activity android:name=".Login" />
         <activity android:name=".MainActivity" />
         <activity android:name=".Store" />
         <activity android:name=".CatRoom"/>
         <activity android:name=".HabitActivity"/>
-        <activity android:name=".DayActivity">
+        <activity android:name=".Loading">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

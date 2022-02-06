@@ -68,7 +68,7 @@ class HabitActivity : AppCompatActivity() {
         btnThur = findViewById(R.id.btnThur)
         btnFri = findViewById(R.id.btnFri)
         btnSat = findViewById(R.id.btnSat)
-        //rgAlarm = findViewById(R.id.rgAlarm)
+        rgAlarm = findViewById(R.id.rgAlarm)
         rbOn = findViewById(R.id.rbOn)
         rbOff = findViewById(R.id.rbOff)
         btnComplete = findViewById(R.id.btnComplete)

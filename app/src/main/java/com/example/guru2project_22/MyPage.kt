@@ -11,6 +11,7 @@ import android.view.ViewGroup.LayoutParams.WRAP_CONTENT
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.example.guru2project_22.databinding.ActivityMyPageBinding
 
@@ -66,7 +67,7 @@ class MyPage : AppCompatActivity() {
         //고양이 창 나타내기
         LayoutInflater.from(this).inflate(R.layout.fragment_cat, parent, true)
 
-        //연필 버튼 누를 시
+        //닉네임 연필 버튼 누를 시
         binding.pencilButton.setOnClickListener {
 
             //Dialog 만들기
@@ -78,15 +79,22 @@ class MyPage : AppCompatActivity() {
             mAlertDialog.window!!.setLayout(MATCH_PARENT, WRAP_CONTENT)
 
             var changeButton = mDialogView.findViewById<Button>(R.id.changeButton)
-            var editName = mDialogView.findViewById<EditText>(R.id.editEmail)
+            var editNickname = mDialogView.findViewById<EditText>(R.id.editNickname)
 
             //변경 버튼 누를 시
             changeButton.setOnClickListener {
-                binding.myNickname.text = editName.text.toString()
-                mAlertDialog.dismiss()
-                //SharedPreferences 값 수정
-                editor.remove("nickname").apply()
-                editor.putString("nickname", binding.myNickname.text.toString()).apply()
+                if (editNickname.text.isNullOrBlank())
+                {
+                    Toast.makeText(this, "닉네임을 입력해주세요", Toast.LENGTH_SHORT).show()
+                }
+                else
+                {
+                    binding.myNickname.text = editNickname.text.toString()
+                    mAlertDialog.dismiss()
+                    //SharedPreferences 값 수정
+                    editor.remove("nickname").apply()
+                    editor.putString("nickname", binding.myNickname.text.toString()).apply()
+                }
             }
         }
 
@@ -102,7 +110,7 @@ class MyPage : AppCompatActivity() {
             mAlertDialog.window!!.setLayout(MATCH_PARENT, WRAP_CONTENT)
 
             var nameOKButton = mDialogView.findViewById<Button>(R.id.nameOKButton)
-            var editName = mDialogView.findViewById<EditText>(R.id.editEmail)
+            var editName = mDialogView.findViewById<EditText>(R.id.editName)
 
             //확인 버튼 누를 시
             nameOKButton.setOnClickListener {

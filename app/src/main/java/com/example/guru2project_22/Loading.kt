@@ -1,12 +1,13 @@
 package com.example.guru2project_22
 
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 
 class Loading : AppCompatActivity() {
-    val DURATION:Long = 3000 //로딩 페이지 나오는 시간 3초
+    val DURATION:Long = 2000 //로딩 페이지 나오는 시간 2초
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,5 +37,4 @@ class Loading : AppCompatActivity() {
     override fun onBackPressed() {
         super.onBackPressed()
     }
-
 }
