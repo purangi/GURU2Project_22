@@ -140,45 +140,5 @@ class DayActivity : AppCompatActivity() {
         dbManager.close()
         cursor.close()
     }
-//
-//    fun setPieChart()
-//    {
-//
-//        // colors
-//        val colorsItems = ArrayList<Int>()
-//        val pieColors = intArrayOf(
-//            Color.rgb(192, 255, 140), Color.rgb(233,232,232),
-//            Color.rgb(255, 247, 140), Color.rgb(233,232,232),
-//            Color.rgb(255, 208, 140), Color.rgb(233,232,232),
-//            Color.rgb(140, 234, 255), Color.rgb(233,232,232),
-//            Color.rgb(255, 140, 157),Color.rgb(233,232,232)
-//        )
-//        for (c in pieColors) colorsItems.add(c)
-//
-//        // fill the chart
-//        val piedataset = PieDataSet(entries, "")
-//        piedataset.apply {
-//            colors = colorsItems
-//            valueTextColor = Color.TRANSPARENT
-//            valueTextSize = 16f
-//        }
-//
-//        val pieData = PieData(piedataset)
-//
-//        dailyPie.apply {
-//            rotationAngle = pieStartAngle
-//            data = pieData
-//            description.isEnabled = false
-//            isRotationEnabled = false
-//            isDrawHoleEnabled = false
-//            legend.isEnabled = false
-//
-//            setEntryLabelColor(Color.BLACK)
-//            animateY(1400, Easing.EaseInOutQuad)
-//            animate()
-//        }
-//
-//
-//    }
 
 }
