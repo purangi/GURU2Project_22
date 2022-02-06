@@ -55,11 +55,11 @@ class HabitActivity : AppCompatActivity() {
         editHabit = findViewById(R.id.editHabit)
         btnStart = findViewById(R.id.btnStart)
         btnEnd = findViewById(R.id.btnEnd)
-        //rgRepeat = findViewById(R.id.rgRepeat)
-        //rbOneMonth = findViewById(R.id.rbOneMonth)
-        //rbTwoMonth = findViewById(R.id.rbTwoMonth)
-        //rbThreeMonth = findViewById(R.id.rbThreeMonth)
-        //rbDays = findViewById(R.id.rbDays)
+        rgRepeat = findViewById(R.id.rgRepeat)
+        rbOneMonth = findViewById(R.id.rbOneMonth)
+        rbTwoMonth = findViewById(R.id.rbTwoMonth)
+        rbThreeMonth = findViewById(R.id.rbThreeMonth)
+        rbDays = findViewById(R.id.rbDays)
         btnSun = findViewById(R.id.btnSun)
         btnMon = findViewById(R.id.btnMon)
         btnTues = findViewById(R.id.btnTues)
@@ -319,14 +319,13 @@ class HabitActivity : AppCompatActivity() {
 
                 //입력 후 인텐트 이동 및 토스트
                 sqlitedb.close()
+                dbManager.close()
                 Toast.makeText(this, "습관을 입력했습니다.", Toast.LENGTH_SHORT).show()
                 val dayIntent = Intent(this, DayActivity::class.java)
                 startActivity(dayIntent)
                 finish()
             }
         }
-
-
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
