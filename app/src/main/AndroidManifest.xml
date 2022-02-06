@@ -9,21 +9,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GURU2Project_22">
-        <activity android:name=".SleepActivity"></activity>
+        <activity android:name=".SleepActivity" />
         <activity android:name=".IconSelect" />
         <activity android:name=".MyPage" />
-        <activity android:name=".HabitActivity" />
+        <activity android:name=".Loading" />
         <activity android:name=".Login" />
         <activity android:name=".MainActivity" />
         <activity android:name=".Store" />
-        <activity android:name=".Loading">
+        <activity android:name=".CatRoom"/>
+        <activity android:name=".HabitActivity"/>
+        <activity android:name=".DayActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CatRoom"></activity>
     </application>
 
 </manifest>

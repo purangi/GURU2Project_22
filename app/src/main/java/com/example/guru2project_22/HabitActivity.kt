@@ -77,16 +77,6 @@ class HabitActivity : AppCompatActivity() {
         dbManager = DBManager(this, "scheduleDB", null, 1)
         sqlitedb = dbManager.writableDatabase
 
-        // 현재 시간을 가져오기
-        val now = System.currentTimeMillis()
-        val date = Date(now)
-        val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale("ko", "KR"))
-        val str_date = dateFormat.format(date)
-
-        var cal : Calendar = Calendar.getInstance();
-        cal.setTime(date);
-        var dayNum = cal.get(Calendar.DAY_OF_WEEK) //요일 (1:일 ~ 7:토)
-
         btnBack.setOnClickListener {
             onBackPressed()
         }
@@ -135,44 +125,10 @@ class HabitActivity : AppCompatActivity() {
         btnComplete.setOnClickListener {
             //필수 선택지들이 입력되지 않았을 시 완료 선택 불가
             //scheduleDB (date text, icon text, habit text, startTime text, endTime text, days text, alarm INTEGER)
-            var dateText = str_date
             var iconText = iconName //안쓰고 직접 넣어도..?
             var habitText = editHabit.text.toString()
             var startTime = btnStart.text
             var endTime = btnEnd.text
-            //days, alarm 입력
-//            var days = ""//각 요일이 선택되었으면 0, 아니면 1
-//
-//            //days 설정
-//            when(btnSun.isSelected) {
-//                true -> days += "1"
-//                false -> days += "2"
-//            }
-//            when(btnMon.isSelected) {
-//                true -> days += "1"
-//                false -> days += "2"
-//            }
-//            when(btnTues.isSelected) {
-//                true -> days += "1"
-//                false -> days += "2"
-//            }
-//            when(btnWed.isSelected) {
-//                true -> days += "1"
-//                false -> days += "2"
-//            }
-//            when(btnThur.isSelected) {
-//                true -> days += "1"
-//                false -> days += "2"
-//            }
-//            when(btnFri.isSelected) {
-//                true -> days += "1"
-//                false -> days += "2"
-//            }
-//            when(btnSat.isSelected) {
-//                true -> days += "1"
-//                false -> days += "2"
-//            }
-
             //알람 설정
             var alarm : Int //꺼져있으면 0, 켜져있으면 1
 
@@ -180,6 +136,13 @@ class HabitActivity : AppCompatActivity() {
                 true -> alarm = 0
                 false -> alarm = 1
             }
+
+            // 현재 시간을 가져오기
+            var cal : Calendar = Calendar.getInstance()
+            var date = cal.time
+            val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale("ko", "KR"))
+            var dateText = dateFormat.format(date)
+            val dayNum = cal.get(Calendar.DAY_OF_WEEK) //요일 (1:일 ~ 7:토)
 
             //입력값 확인
             if(dateText.isEmpty()) {
@@ -194,29 +157,175 @@ class HabitActivity : AppCompatActivity() {
                 Toast.makeText(this@HabitActivity, "반복할 요일을 선택해주세요", Toast.LENGTH_SHORT).show()
             } else if(!(rbOneMonth.isChecked || rbTwoMonth.isChecked || rbThreeMonth.isChecked) && (btnSun.isSelected || btnMon.isSelected || btnTues.isSelected || btnWed.isSelected || btnThur.isSelected || btnFri.isSelected || btnSat.isSelected)) {
                 Toast.makeText(this@HabitActivity, "반복할 기간을 선택해주세요", Toast.LENGTH_SHORT).show()
-            } else if(rgAlarm.isSelected == null) {
-                Toast.makeText(this@HabitActivity, "알람 설정 여부를 확인해주세요", Toast.LENGTH_SHORT).show()
             } else { //전부 입력되었으면 데이터 베이스 입력 & day로 인텐트
-
                 //반복 설정 없을 시
                 if(!(rbOneMonth.isChecked || rbTwoMonth.isChecked || rbThreeMonth.isChecked) && !(btnSun.isSelected ||
                             btnMon.isSelected || btnTues.isSelected || btnWed.isSelected || btnThur.isSelected || btnFri.isSelected || btnSat.isSelected)){
                     sqlitedb.execSQL("INSERT INTO scheduleDB VALUES ('" + dateText + "', '" + iconText + "', '" + habitText + "', '"
                     + startTime + "' , '" + endTime + "' , " + alarm + ")")
                 } else { //반복 설정에 따라 db 추가
-                    sqlitedb.execSQL("INSERT INTO scheduleDB VALUES ('" + dateText + "', '" + iconText + "', '" + habitText + "', '"
-                            + startTime + "' , '" + endTime + "' , " + alarm + ")")
+                    //기간
+                    var term : Int
+                    if(rbOneMonth.isChecked) {
+                        term = 30
+                    } else if(rbTwoMonth.isChecked) {
+                        term = 60
+                    } else if(rbThreeMonth.isChecked){
+                        term = 90
+                    } else {
+                        term = 0
+                    }
+
+                    if(btnSun.isSelected) {
+                        var i = 0
+                        while(((8 - dayNum) + 7 * i) <= term) {
+                            cal.add(Calendar.DATE, (8 - dayNum) + 7 * i)
+                            dateText = dateFormat.format(cal.time)
+                            sqlitedb.execSQL("INSERT INTO scheduleDB VALUES ('" + dateText + "', '" + iconText + "', '" + habitText + "', '"
+                                    + startTime + "' , '" + endTime + "' , " + alarm + ")")
+                            cal.add(Calendar.DATE, -((8 - dayNum) + 7 * i))
+                            i++
+                        }
+                    }
+                    if(btnMon.isSelected) {
+                        if(2 < dayNum) {
+                            var i = 0
+                            while(((9 - dayNum) + 7 * i ) <= term) {
+                                cal.add(Calendar.DATE, (9 - dayNum) + 7 * i)
+                                dateText = dateFormat.format(cal.time)
+                                sqlitedb.execSQL("INSERT INTO scheduleDB VALUES ('" + dateText + "', '" + iconText + "', '" + habitText + "', '"
+                                        + startTime + "' , '" + endTime + "' , " + alarm + ")")
+                                cal.add(Calendar.DATE, -((9 - dayNum) + 7 * i))
+                                i++
+                            }
+                        } else {
+                            var i = 0
+                            while(((2 - dayNum) + 7 * i) <= term) {
+                                cal.add(Calendar.DATE, (2 - dayNum) + 7 * i)
+                                dateText = dateFormat.format(cal.time)
+                                sqlitedb.execSQL("INSERT INTO scheduleDB VALUES ('" + dateText + "', '" + iconText + "', '" + habitText + "', '"
+                                        + startTime + "' , '" + endTime + "' , " + alarm + ")")
+                                cal.add(Calendar.DATE, -((2 - dayNum) + 7 * i))
+                                i++
+                            }
+                        }
+                    }
+                    if(btnTues.isSelected) {
+                        if(3 < dayNum) {
+                            var i = 0
+                            while(((10 - dayNum) + 7 * i ) <= term) {
+                                cal.add(Calendar.DATE, (10 - dayNum) + 7 * i)
+                                dateText = dateFormat.format(cal.time)
+                                sqlitedb.execSQL("INSERT INTO scheduleDB VALUES ('" + dateText + "', '" + iconText + "', '" + habitText + "', '"
+                                        + startTime + "' , '" + endTime + "' , " + alarm + ")")
+                                cal.add(Calendar.DATE, -((10 - dayNum) + 7 * i))
+                                i++
+                            }
+                        } else {
+                            var i = 0
+                            while(((3 - dayNum) + 7 * i) <= term) {
+                                cal.add(Calendar.DATE, (3 - dayNum) + 7 * i)
+                                dateText = dateFormat.format(cal.time)
+                                sqlitedb.execSQL("INSERT INTO scheduleDB VALUES ('" + dateText + "', '" + iconText + "', '" + habitText + "', '"
+                                        + startTime + "' , '" + endTime + "' , " + alarm + ")")
+                                cal.add(Calendar.DATE, -((3 - dayNum) + 7 * i))
+                                i++
+                            }
+                        }
+                    }
+                    if(btnWed.isSelected) {
+                        if(4 < dayNum) {
+                            var i = 0
+                            while(((11 - dayNum) + 7 * i ) <= term) {
+                                cal.add(Calendar.DATE, (11 - dayNum) + 7 * i)
+                                dateText = dateFormat.format(cal.time)
+                                sqlitedb.execSQL("INSERT INTO scheduleDB VALUES ('" + dateText + "', '" + iconText + "', '" + habitText + "', '"
+                                        + startTime + "' , '" + endTime + "' , " + alarm + ")")
+                                cal.add(Calendar.DATE, -((11 - dayNum) + 7 * i))
+                                i++
+                            }
+                        } else {
+                            var i = 0
+                            while(((4 - dayNum) + 7 * i) <= term) {
+                                cal.add(Calendar.DATE, (4 - dayNum) + 7 * i)
+                                dateText = dateFormat.format(cal.time)
+                                sqlitedb.execSQL("INSERT INTO scheduleDB VALUES ('" + dateText + "', '" + iconText + "', '" + habitText + "', '"
+                                        + startTime + "' , '" + endTime + "' , " + alarm + ")")
+                                cal.add(Calendar.DATE, -((4 - dayNum) + 7 * i))
+                                i++
+                            }
+                        }
+                    }
+                    if(btnThur.isSelected) {
+                        if(5 < dayNum) {
+                            var i = 0
+                            while(((12 - dayNum) + 7 * i ) <= term) {
+                                cal.add(Calendar.DATE, (12 - dayNum) + 7 * i)
+                                dateText = dateFormat.format(cal.time)
+                                sqlitedb.execSQL("INSERT INTO scheduleDB VALUES ('" + dateText + "', '" + iconText + "', '" + habitText + "', '"
+                                        + startTime + "' , '" + endTime + "' , " + alarm + ")")
+                                cal.add(Calendar.DATE, -((12 - dayNum) + 7 * i))
+                                i++
+                            }
+                        } else {
+                            var i = 0
+                            while(((5 - dayNum) + 7 * i) <= term) {
+                                cal.add(Calendar.DATE, (5 - dayNum) + 7 * i)
+                                dateText = dateFormat.format(cal.time)
+                                sqlitedb.execSQL("INSERT INTO scheduleDB VALUES ('" + dateText + "', '" + iconText + "', '" + habitText + "', '"
+                                        + startTime + "' , '" + endTime + "' , " + alarm + ")")
+                                cal.add(Calendar.DATE, -((5 - dayNum) + 7 * i))
+                                i++
+                            }
+                        }
+                    }
+                    if(btnFri.isSelected) {
+                        if(6 < dayNum) {
+                            var i = 0
+                            while(((13 - dayNum) + 7 * i ) <= term) {
+                                cal.add(Calendar.DATE, (13 - dayNum) + 7 * i)
+                                dateText = dateFormat.format(cal.time)
+                                sqlitedb.execSQL("INSERT INTO scheduleDB VALUES ('" + dateText + "', '" + iconText + "', '" + habitText + "', '"
+                                        + startTime + "' , '" + endTime + "' , " + alarm + ")")
+                                cal.add(Calendar.DATE, -((13 - dayNum) + 7 * i))
+                                i++
+                            }
+                        } else {
+                            var i = 0
+                            while(((6 - dayNum) + 7 * i) <= term) {
+                                cal.add(Calendar.DATE, (6 - dayNum) + 7 * i)
+                                dateText = dateFormat.format(cal.time)
+                                sqlitedb.execSQL("INSERT INTO scheduleDB VALUES ('" + dateText + "', '" + iconText + "', '" + habitText + "', '"
+                                        + startTime + "' , '" + endTime + "' , " + alarm + ")")
+                                cal.add(Calendar.DATE, -((6 - dayNum) + 7 * i))
+                                i++
+                            }
+                        }
+                    }
+                    if(btnSat.isSelected) {
+                        var i = 0
+                        while(((7 - dayNum) + 7 * i) <= term) {
+                            cal.add(Calendar.DATE, (7 - dayNum) + 7 * i)
+                            dateText = dateFormat.format(cal.time)
+                            sqlitedb.execSQL("INSERT INTO scheduleDB VALUES ('" + dateText + "', '" + iconText + "', '" + habitText + "', '"
+                                    + startTime + "' , '" + endTime + "' , " + alarm + ")")
+                            cal.add(Calendar.DATE, -((7 - dayNum) + 7 * i))
+                            i++
+                        }
+                    }
                 }
 
 
 
                 //입력 후 인텐트 이동 및 토스트
                 sqlitedb.close()
+                dbManager.close()
                 Toast.makeText(this, "습관을 입력했습니다.", Toast.LENGTH_SHORT).show()
+                val dayIntent = Intent(this, DayActivity::class.java)
+                startActivity(dayIntent)
+                finish()
             }
         }
-
-
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

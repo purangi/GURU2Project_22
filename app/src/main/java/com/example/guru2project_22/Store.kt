@@ -39,6 +39,7 @@ class Store : AppCompatActivity() {
 
     lateinit var activeRadioButton : RadioButton
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_store)
@@ -73,11 +74,12 @@ class Store : AppCompatActivity() {
             onBackPressed()
         }
 
-        val shared = getSharedPreferences("coin", 0)
-        val editor = shared.edit()
-        mycoin = shared.getInt("mycoin",0)
 
         buybtn.setOnClickListener {
+            //coin 받아오기
+            val pref = getSharedPreferences("user", 0)
+            val editor = pref.edit()
+            mycoin = (pref.getString("coin","0"))!!.toInt()
 
             when (activeRadioButton.id) {
                 R.id.catfood -> price =10
@@ -100,10 +102,13 @@ class Store : AppCompatActivity() {
 
             if(mycoin>=price){
                 mycoin -= price
-                //shared 수정, 저장
-                editor.putString("coin", mycoin.toString()).apply()
+                //coin 수정, 저장
+                editor.putString("coin", mycoin.toString())
+                editor.apply()
                 Toast.makeText(this, "구매했다 냥", Toast.LENGTH_SHORT).show()
-            } else Toast.makeText(this, "코인이 부족하다 냥", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(this, "코인이 부족하다 냥", Toast.LENGTH_SHORT).show()
+            }
         }
 
         okbtn.setOnClickListener {
@@ -131,7 +136,9 @@ class Store : AppCompatActivity() {
 
             startActivity(intent)
         }
+    }
 
+    private fun loadCoin() {
 
     }
 
@@ -148,7 +155,7 @@ class Store : AppCompatActivity() {
     //store, catroom에서 쓸 item DB
     class itemDBHelper(context: Context) : SQLiteOpenHelper(context, "itemDB" , null,1){
         override fun onCreate(db: SQLiteDatabase?) {
-            db!!.execSQL("CREATE TABLE itemTBL (itemName CHAR(15) PRIMARY KEY, itemResource String);")
+            db!!.execSQL("CREATE TABLE itemTBL (itemName CHAR(15) PRIMARY KEY, itemResource CHAR(40));")
         }
 
         override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
