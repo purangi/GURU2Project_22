@@ -12,6 +12,7 @@ import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
+import androidx.core.app.NotificationCompat
 import java.text.DecimalFormat
 import java.text.SimpleDateFormat
 import java.util.*
@@ -359,7 +360,6 @@ class HabitActivity : AppCompatActivity() {
     fun clickBtn(view: View) {
         var button = view as Button
         button.isSelected = button.isSelected != true
-
     }
 
     class DBManager(context: Context, name: String?, factory: SQLiteDatabase.CursorFactory?, version: Int) : SQLiteOpenHelper(context, name, factory, version) {
@@ -372,4 +372,5 @@ class HabitActivity : AppCompatActivity() {
             //아직 필요성x
         }
     }
+
 }
