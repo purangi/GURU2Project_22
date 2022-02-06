@@ -32,15 +32,11 @@ class CatFragment : Fragment() {
                 if(imageView1.visibility==View.INVISIBLE){
                     imageView1.visibility=View.VISIBLE
                     imageView1.setImageResource(R.drawable.catfood)
-                }else{
-                    imageView1.setImageResource(R.drawable.catfood)
                 }
             }
             "2" -> {
-                if(imageView1.visibility==View.INVISIBLE){
-                    imageView1.visibility=View.VISIBLE
-                    imageView2.setImageResource(R.drawable.smallplant)
-                }else{
+                if(imageView2.visibility==View.INVISIBLE){
+                    imageView2.visibility=View.VISIBLE
                     imageView2.setImageResource(R.drawable.smallplant)
                 }
             }
@@ -53,8 +49,8 @@ class CatFragment : Fragment() {
                 }
             }
             "4" -> {
-                if(imageView1.visibility==View.INVISIBLE){
-                    imageView1.visibility=View.VISIBLE
+                if(imageView2.visibility==View.INVISIBLE){
+                    imageView2.visibility=View.VISIBLE
                     imageView2.setImageResource(R.drawable.catbathroom)
                 }else{
                     imageView2.setImageResource(R.drawable.catbathroom)
@@ -69,80 +65,80 @@ class CatFragment : Fragment() {
                 }
             }
             "6" -> {
-                if(imageView1.visibility==View.INVISIBLE){
-                    imageView1.visibility=View.VISIBLE
+                if(imageView2.visibility==View.INVISIBLE){
+                    imageView2.visibility=View.VISIBLE
                     imageView2.setImageResource(R.drawable.light)
                 }else{
                     imageView2.setImageResource(R.drawable.light)
                 }
             }
             "7" -> {
-                if(imageView1.visibility==View.INVISIBLE){
-                    imageView1.visibility=View.VISIBLE
+                if(imageView4.visibility==View.INVISIBLE){
+                    imageView4.visibility=View.VISIBLE
                     imageView4.setImageResource(R.drawable.window)
                 }else{
                     imageView4.setImageResource(R.drawable.window)
                 }
             }
             "8" -> {
-                if(imageView1.visibility==View.INVISIBLE){
-                    imageView1.visibility=View.VISIBLE
+                if(imageView5.visibility==View.INVISIBLE){
+                    imageView5.visibility=View.VISIBLE
                     imageView5.setImageResource(R.drawable.cathome)
                 }else{
                     imageView5.setImageResource(R.drawable.cathome)
                 }
             }
             "9" -> {
-                if(imageView1.visibility==View.INVISIBLE){
-                    imageView1.visibility=View.VISIBLE
+                if(imageView3.visibility==View.INVISIBLE){
+                    imageView3.visibility=View.VISIBLE
                     imageView3.setImageResource(R.drawable.cattable)
                 }else{
                     imageView3.setImageResource(R.drawable.cattable)
                 }
             }
             "10" -> {
-                if(imageView1.visibility==View.INVISIBLE){
-                    imageView1.visibility=View.VISIBLE
+                if(imageView5.visibility==View.INVISIBLE){
+                    imageView5.visibility=View.VISIBLE
                     imageView5.setImageResource(R.drawable.bookshelf)
                 }else{
                     imageView5.setImageResource(R.drawable.bookshelf)
                 }
             }
             "11" -> {
-                if(imageView1.visibility==View.INVISIBLE){
-                    imageView1.visibility=View.VISIBLE
+                if(imageView3.visibility==View.INVISIBLE){
+                    imageView3.visibility=View.VISIBLE
                     imageView3.setImageResource(R.drawable.catcircle)
                 }else{
                     imageView3.setImageResource(R.drawable.catcircle)
                 }
             }
             "12" -> {
-                if(imageView1.visibility==View.INVISIBLE){
-                    imageView1.visibility=View.VISIBLE
+                if(imageView5.visibility==View.INVISIBLE){
+                    imageView5.visibility=View.VISIBLE
                     imageView5.setImageResource(R.drawable.cattower)
                 }else{
                     imageView5.setImageResource(R.drawable.cattower)
                 }
             }
             "13" ->{
-                if(imageView1.visibility==View.INVISIBLE){
-                    imageView1.visibility=View.VISIBLE
+                if(imageView5.visibility==View.INVISIBLE){
+                    imageView5.visibility=View.VISIBLE
                     imageView5.setImageResource(R.drawable.catsofa)
                 }else{
                     imageView5.setImageResource(R.drawable.catsofa)
                 }
             }
             "14" -> {
-                if(imageView1.visibility==View.INVISIBLE){
-                    imageView1.visibility=View.VISIBLE
+                if(imageView3.visibility==View.INVISIBLE){
+                    imageView3.visibility=View.VISIBLE
                     imageView3.setImageResource(R.drawable.catbed)
                 }else{
                     imageView3.setImageResource(R.drawable.catbed)
                 }
             }
             "15" -> {
-                if(imageView1.visibility==View.INVISIBLE){
-                    imageView1.visibility=View.VISIBLE
+                if(imageView3.visibility==View.INVISIBLE){
+                    imageView3.visibility=View.VISIBLE
                     imageView3.setImageResource(R.drawable.cattv)
                 }else{
                     imageView3.setImageResource(R.drawable.cattv)
