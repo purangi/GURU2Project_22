@@ -8,6 +8,7 @@ import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.github.mikephil.charting.animation.Easing
@@ -24,6 +25,9 @@ class DayActivity : AppCompatActivity() {
     private lateinit var dailyPie: PieChart
     lateinit var btnHabit : Button
     lateinit var tvDay : TextView
+    lateinit var navday: ImageButton
+    lateinit var navhome: ImageButton
+    lateinit var navmypage: ImageButton
 
     lateinit var dbManager : HabitActivity.DBManager
     lateinit var sqlitedb : SQLiteDatabase
@@ -41,6 +45,22 @@ class DayActivity : AppCompatActivity() {
         dbManager = HabitActivity.DBManager(this, "scheduleDB", null, 1)
         sqlitedb = dbManager.readableDatabase
         var cursor : Cursor
+
+        //네비게이션 버튼
+        navday.setOnClickListener {
+            val intent = Intent(this, DayActivity::class.java)
+            startActivity(intent)
+        }
+
+        navhome.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+
+        navmypage.setOnClickListener {
+            val intent = Intent(this, MyPage::class.java)
+            startActivity(intent)
+        }
 
 
         var today = Calendar.getInstance().time
