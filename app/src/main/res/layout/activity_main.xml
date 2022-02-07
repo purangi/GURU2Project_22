@@ -96,10 +96,42 @@
         <ListView
             android:id="@+id/listview"
             android:layout_marginTop="461dp"
-            android:layout_marginLeft="36dp"
-            android:layout_width="330dp"
+            android:layout_marginLeft="10dp"
+            android:layout_width="385dp"
+            android:layout_height="130dp"
+            android:background="@drawable/rounded_corner">
+
+
+        </ListView>
+        <CheckBox
+            android:id="@+id/checkBox1"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/rounded_corner"
-            android:choiceMode="multipleChoice" />
+            android:layout_marginTop="450dp"
+            android:layout_marginLeft="320dp"/>
+        <CheckBox
+            android:id="@+id/checkBox2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="474dp"
+            android:layout_marginLeft="320dp"/>
+        <CheckBox
+            android:id="@+id/checkBox3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="498dp"
+            android:layout_marginLeft="320dp"/>
+        <CheckBox
+            android:id="@+id/checkBox4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="522dp"
+            android:layout_marginLeft="320dp"/>
+        <CheckBox
+            android:id="@+id/checkBox5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="320dp"
+            android:layout_marginTop="546dp" />
     </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

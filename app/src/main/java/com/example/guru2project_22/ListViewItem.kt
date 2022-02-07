@@ -6,7 +6,7 @@ import android.graphics.drawable.Drawable
 class ListViewItem {
     private var iconimg: Drawable? = null
     private var textview3: String? = null
-    private var checkbox: Boolean = false
+    private var checkBox: Boolean = false
 
     fun setIcon(icon: Drawable?) {
         this.iconimg = icon
@@ -16,7 +16,6 @@ class ListViewItem {
         this.textview3 = text
     }
 
-
     fun getIcon(): Drawable? {
         return iconimg
     }
@@ -24,4 +23,5 @@ class ListViewItem {
     fun getText(): String? {
         return textview3
     }
+
 }
