@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var checkbox: CheckBox
     var mycoin = 0
     var iconName = ""
-    var iconimg = intent.getIntExtra("icon", 0)
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,6 +28,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val listview: ListView
         val adapter: CustomChoiceListViewAdapter
+        var iconimg = intent.getIntExtra("icon", 0)
 
         //intent값 받아오기
         var Intent = getIntent()
