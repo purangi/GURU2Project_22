@@ -22,7 +22,6 @@ class MainActivity : AppCompatActivity() {
     lateinit var calendarView: CalendarView
     lateinit var checkbox: CheckBox
     var mycoin = 0
-    var iconName = ""
 
     lateinit var dbManager: HabitActivity.DBManager
     lateinit var sqlitedb: SQLiteDatabase
@@ -31,6 +30,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        var catbutton: ImageButton = findViewById(R.id.catbutton)
+        var navday: ImageButton = findViewById(R.id.navday)
+        var navhome: ImageButton = findViewById(R.id.navhome)
+        var navmypage: ImageButton = findViewById(R.id.navmypage)
+        var calendarView: CalendarView = findViewById((R.id.calendarView))
+        var checkBox:CheckBox = findViewById(R.id.checkBox)
 
         val listview: ListView
         val adapter: CustomChoiceListViewAdapter
@@ -44,11 +49,10 @@ class MainActivity : AppCompatActivity() {
         val pref = getSharedPreferences("user", 0)
         val editor = pref.edit()
         mycoin = (pref.getString("coin", "0"))!!.toInt()
-        mycoin = findViewById(R.id.mycoin)
 
         //고양이 방 이동
         catbutton.setOnClickListener {
-            val intent = Intent(this, CatRoom::class.java)
+            val intent = Intent(this, com.example.guru2project_22.CatRoom::class.java)
             startActivity(intent)
         }
 
