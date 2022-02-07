@@ -8,8 +8,10 @@ import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.guru2project_22.databinding.ActivityMyPageBinding
 import com.github.mikephil.charting.animation.Easing
 import com.github.mikephil.charting.charts.PieChart
 import com.github.mikephil.charting.data.PieData
@@ -21,9 +23,13 @@ import kotlin.collections.ArrayList
 
 
 class DayActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMyPageBinding
     private lateinit var dailyPie: PieChart
     lateinit var btnHabit : Button
     lateinit var tvDay : TextView
+    lateinit var navday: ImageButton
+    lateinit var navhome: ImageButton
+    lateinit var navmypage: ImageButton
 
     lateinit var dbManager : HabitActivity.DBManager
     lateinit var sqlitedb : SQLiteDatabase
@@ -41,6 +47,22 @@ class DayActivity : AppCompatActivity() {
         dbManager = HabitActivity.DBManager(this, "scheduleDB", null, 1)
         sqlitedb = dbManager.readableDatabase
         var cursor : Cursor
+
+        //네비게이션 이미지 버튼
+        binding.navday.setOnClickListener{
+            val intent = Intent(this, DayActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.navhome.setOnClickListener{
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.navmypage.setOnClickListener{
+            val intent = Intent(this, MyPage::class.java)
+            startActivity(intent)
+        }
 
 
         var today = Calendar.getInstance().time
@@ -72,8 +94,8 @@ class DayActivity : AppCompatActivity() {
             var pieValue = (endArray[0].toFloat() * 60 + endArray[1].toFloat()) - (startArray[0].toFloat() * 60 + startArray[1].toFloat())
 
             entries.add(PieEntry(pieValue, habit)) //기본 일정 추가
-            Log.v("test", habit + " " + startTime + " " + endTime)
-            Log.v("value", pieValue.toString())
+//            Log.v("test", habit + " " + startTime + " " + endTime) //로그찍어봄
+//            Log.v("value", pieValue.toString())
 
             sum += pieValue
 

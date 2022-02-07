@@ -18,32 +18,32 @@ import java.util.*
 
 
 class HabitActivity : AppCompatActivity() {
-    lateinit var btnBack : ImageButton
-    lateinit var btnIcon : ImageButton
-    lateinit var editHabit : EditText
-    lateinit var btnStart : Button
-    lateinit var btnEnd : Button
-    lateinit var rgRepeat : RadioGroup
-    lateinit var rbOneMonth : RadioButton
-    lateinit var rbTwoMonth : RadioButton
-    lateinit var rbThreeMonth : RadioButton
-    lateinit var rbDays : RadioButton
-    lateinit var btnSun : Button
-    lateinit var btnMon : Button
-    lateinit var btnTues : Button
-    lateinit var btnWed : Button
-    lateinit var btnThur : Button
-    lateinit var btnFri : Button
-    lateinit var btnSat : Button
-    lateinit var rgAlarm : RadioGroup
-    lateinit var rbOn : RadioButton
-    lateinit var rbOff : RadioButton
-    lateinit var btnComplete : Button
+    lateinit var btnBack: ImageButton
+    lateinit var btnIcon: ImageButton
+    lateinit var editHabit: EditText
+    lateinit var btnStart: Button
+    lateinit var btnEnd: Button
+    lateinit var rgRepeat: RadioGroup
+    lateinit var rbOneMonth: RadioButton
+    lateinit var rbTwoMonth: RadioButton
+    lateinit var rbThreeMonth: RadioButton
+    lateinit var rbDays: RadioButton
+    lateinit var btnSun: Button
+    lateinit var btnMon: Button
+    lateinit var btnTues: Button
+    lateinit var btnWed: Button
+    lateinit var btnThur: Button
+    lateinit var btnFri: Button
+    lateinit var btnSat: Button
+    lateinit var rgAlarm: RadioGroup
+    lateinit var rbOn: RadioButton
+    lateinit var rbOff: RadioButton
+    lateinit var btnComplete: Button
     var timeString = ""
     var iconName = ""
 
-    lateinit var dbManager : DBManager
-    lateinit var sqlitedb : SQLiteDatabase
+    lateinit var dbManager: DBManager
+    lateinit var sqlitedb: SQLiteDatabase
 
     val ICONSELECT_REQUEST_CODE = 0
 
@@ -82,7 +82,7 @@ class HabitActivity : AppCompatActivity() {
             onBackPressed()
         }
 
-        btnIcon.setOnClickListener{
+        btnIcon.setOnClickListener {
             val iconIntent = Intent(this, IconSelect::class.java)
             startActivityForResult(iconIntent, ICONSELECT_REQUEST_CODE)
         }
@@ -92,7 +92,9 @@ class HabitActivity : AppCompatActivity() {
             val timeSetListener = TimePickerDialog.OnTimeSetListener { view, hourOfDay, minute ->
                 val hourFormat = DecimalFormat("00")
                 val minuteFormat = DecimalFormat("00")
-                timeString = hourFormat.format(hourOfDay).toString() + " : " +  minuteFormat.format(minute).toString()
+                timeString =
+                    hourFormat.format(hourOfDay).toString() + " : " + minuteFormat.format(minute)
+                        .toString()
                 btnStart.text = timeString
 
             }
@@ -110,7 +112,9 @@ class HabitActivity : AppCompatActivity() {
             val timeSetListener = TimePickerDialog.OnTimeSetListener { view, hourOfDay, minute ->
                 val hourFormat = DecimalFormat("00")
                 val minuteFormat = DecimalFormat("00")
-                timeString = hourFormat.format(hourOfDay).toString() + " : " +  minuteFormat.format(minute).toString()
+                timeString =
+                    hourFormat.format(hourOfDay).toString() + " : " + minuteFormat.format(minute)
+                        .toString()
                 btnEnd.text = timeString
 
             }
@@ -131,190 +135,218 @@ class HabitActivity : AppCompatActivity() {
             var startTime = btnStart.text
             var endTime = btnEnd.text
             //알람 설정
-            var alarm : Int //꺼져있으면 0, 켜져있으면 1
+            var alarm: Int //꺼져있으면 0, 켜져있으면 1
 
             var Intent = Intent(this, MainActivity::class.java)
             Intent.putExtra("icon", iconName)
             Intent.putExtra("text", editHabit.text.toString())
             startActivity(Intent)
 
-            when(rbOff.isChecked) { //알람 Int 설정
+            when (rbOff.isChecked) { //알람 Int 설정
                 true -> alarm = 0
                 false -> alarm = 1
             }
 
             // 현재 시간을 가져오기
-            var cal : Calendar = Calendar.getInstance()
+            var cal: Calendar = Calendar.getInstance()
             var date = cal.time
             val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale("ko", "KR"))
             var dateText = dateFormat.format(date)
             val dayNum = cal.get(Calendar.DAY_OF_WEEK) //요일 (1:일 ~ 7:토)
 
             //입력값 확인
-            if(dateText.isEmpty()) {
-                Toast.makeText(this@HabitActivity, "잘못된 접근입니다", Toast.LENGTH_SHORT).show() //나중에는 그냥 오늘 시간 할당으로
-            } else if(iconName.isEmpty()) {
+            if (dateText.isEmpty()) {
+                Toast.makeText(this@HabitActivity, "잘못된 접근입니다", Toast.LENGTH_SHORT)
+                    .show() //나중에는 그냥 오늘 시간 할당으로
+            } else if (iconName.isEmpty()) {
                 Toast.makeText(this@HabitActivity, "아이콘을 선택해주세요", Toast.LENGTH_SHORT).show()
-            } else if(habitText.isEmpty()) {
+            } else if (habitText.isEmpty()) {
                 Toast.makeText(this@HabitActivity, "가지고 싶은 습관을 입력해주세요", Toast.LENGTH_SHORT).show()
-            } else if(startTime==endTime) {
+            } else if (startTime == endTime) {
                 Toast.makeText(this@HabitActivity, "시작 시간과 끝나는 시간이 같습니다", Toast.LENGTH_SHORT).show()
-            } else if((rbOneMonth.isChecked || rbTwoMonth.isChecked || rbThreeMonth.isChecked) && !(btnSun.isSelected || btnMon.isSelected || btnTues.isSelected || btnWed.isSelected || btnThur.isSelected || btnFri.isSelected || btnSat.isSelected)) {
+            } else if ((rbOneMonth.isChecked || rbTwoMonth.isChecked || rbThreeMonth.isChecked) && !(btnSun.isSelected || btnMon.isSelected || btnTues.isSelected || btnWed.isSelected || btnThur.isSelected || btnFri.isSelected || btnSat.isSelected)) {
                 Toast.makeText(this@HabitActivity, "반복할 요일을 선택해주세요", Toast.LENGTH_SHORT).show()
-            } else if(!(rbOneMonth.isChecked || rbTwoMonth.isChecked || rbThreeMonth.isChecked) && (btnSun.isSelected || btnMon.isSelected || btnTues.isSelected || btnWed.isSelected || btnThur.isSelected || btnFri.isSelected || btnSat.isSelected)) {
+            } else if (!(rbOneMonth.isChecked || rbTwoMonth.isChecked || rbThreeMonth.isChecked) && (btnSun.isSelected || btnMon.isSelected || btnTues.isSelected || btnWed.isSelected || btnThur.isSelected || btnFri.isSelected || btnSat.isSelected)) {
                 Toast.makeText(this@HabitActivity, "반복할 기간을 선택해주세요", Toast.LENGTH_SHORT).show()
             } else { //전부 입력되었으면 데이터 베이스 입력 & day로 인텐트
                 //반복 설정 없을 시
-                if(!(rbOneMonth.isChecked || rbTwoMonth.isChecked || rbThreeMonth.isChecked) && !(btnSun.isSelected ||
-                            btnMon.isSelected || btnTues.isSelected || btnWed.isSelected || btnThur.isSelected || btnFri.isSelected || btnSat.isSelected)){
-                    sqlitedb.execSQL("INSERT INTO scheduleDB VALUES ('" + dateText + "', '" + iconText + "', '" + habitText + "', '"
-                    + startTime + "' , '" + endTime + "' , " + alarm + ")")
+                if (!(rbOneMonth.isChecked || rbTwoMonth.isChecked || rbThreeMonth.isChecked) && !(btnSun.isSelected ||
+                            btnMon.isSelected || btnTues.isSelected || btnWed.isSelected || btnThur.isSelected || btnFri.isSelected || btnSat.isSelected)
+                ) {
+                    sqlitedb.execSQL(
+                        "INSERT INTO scheduleDB VALUES ('" + dateText + "', '" + iconText + "', '" + habitText + "', '"
+                                + startTime + "' , '" + endTime + "' , " + alarm + ")"
+                    )
                 } else { //반복 설정에 따라 db 추가
                     //기간
-                    var term : Int
-                    if(rbOneMonth.isChecked) {
+                    var term: Int
+                    if (rbOneMonth.isChecked) {
                         term = 30
-                    } else if(rbTwoMonth.isChecked) {
+                    } else if (rbTwoMonth.isChecked) {
                         term = 60
-                    } else if(rbThreeMonth.isChecked){
+                    } else if (rbThreeMonth.isChecked) {
                         term = 90
                     } else {
                         term = 0
                     }
 
-                    if(btnSun.isSelected) {
+                    if (btnSun.isSelected) {
                         var i = 0
-                        while(((1 - dayNum) + 7 * i) <= term) {
+                        while (((1 - dayNum) + 7 * i) <= term) {
                             cal.add(Calendar.DATE, (1 - dayNum) + 7 * i)
                             dateText = dateFormat.format(cal.time)
-                            sqlitedb.execSQL("INSERT INTO scheduleDB VALUES ('" + dateText + "', '" + iconText + "', '" + habitText + "', '"
-                                    + startTime + "' , '" + endTime + "' , " + alarm + ")")
+                            sqlitedb.execSQL(
+                                "INSERT INTO scheduleDB VALUES ('" + dateText + "', '" + iconText + "', '" + habitText + "', '"
+                                        + startTime + "' , '" + endTime + "' , " + alarm + ")"
+                            )
                             cal.add(Calendar.DATE, -((1 - dayNum) + 7 * i))
                             i++
                         }
                     }
-                    if(btnMon.isSelected) {
-                        if(2 < dayNum) {
+                    if (btnMon.isSelected) {
+                        if (2 < dayNum) {
                             var i = 0
-                            while(((9 - dayNum) + 7 * i ) <= term) {
+                            while (((9 - dayNum) + 7 * i) <= term) {
                                 cal.add(Calendar.DATE, (9 - dayNum) + 7 * i)
                                 dateText = dateFormat.format(cal.time)
-                                sqlitedb.execSQL("INSERT INTO scheduleDB VALUES ('" + dateText + "', '" + iconText + "', '" + habitText + "', '"
-                                        + startTime + "' , '" + endTime + "' , " + alarm + ")")
+                                sqlitedb.execSQL(
+                                    "INSERT INTO scheduleDB VALUES ('" + dateText + "', '" + iconText + "', '" + habitText + "', '"
+                                            + startTime + "' , '" + endTime + "' , " + alarm + ")"
+                                )
                                 cal.add(Calendar.DATE, -((9 - dayNum) + 7 * i))
                                 i++
                             }
                         } else {
                             var i = 0
-                            while(((2 - dayNum) + 7 * i) <= term) {
+                            while (((2 - dayNum) + 7 * i) <= term) {
                                 cal.add(Calendar.DATE, (2 - dayNum) + 7 * i)
                                 dateText = dateFormat.format(cal.time)
-                                sqlitedb.execSQL("INSERT INTO scheduleDB VALUES ('" + dateText + "', '" + iconText + "', '" + habitText + "', '"
-                                        + startTime + "' , '" + endTime + "' , " + alarm + ")")
+                                sqlitedb.execSQL(
+                                    "INSERT INTO scheduleDB VALUES ('" + dateText + "', '" + iconText + "', '" + habitText + "', '"
+                                            + startTime + "' , '" + endTime + "' , " + alarm + ")"
+                                )
                                 cal.add(Calendar.DATE, -((2 - dayNum) + 7 * i))
                                 i++
                             }
                         }
                     }
-                    if(btnTues.isSelected) {
-                        if(3 < dayNum) {
+                    if (btnTues.isSelected) {
+                        if (3 < dayNum) {
                             var i = 0
-                            while(((10 - dayNum) + 7 * i ) <= term) {
+                            while (((10 - dayNum) + 7 * i) <= term) {
                                 cal.add(Calendar.DATE, (10 - dayNum) + 7 * i)
                                 dateText = dateFormat.format(cal.time)
-                                sqlitedb.execSQL("INSERT INTO scheduleDB VALUES ('" + dateText + "', '" + iconText + "', '" + habitText + "', '"
-                                        + startTime + "' , '" + endTime + "' , " + alarm + ")")
+                                sqlitedb.execSQL(
+                                    "INSERT INTO scheduleDB VALUES ('" + dateText + "', '" + iconText + "', '" + habitText + "', '"
+                                            + startTime + "' , '" + endTime + "' , " + alarm + ")"
+                                )
                                 cal.add(Calendar.DATE, -((10 - dayNum) + 7 * i))
                                 i++
                             }
                         } else {
                             var i = 0
-                            while(((3 - dayNum) + 7 * i) <= term) {
+                            while (((3 - dayNum) + 7 * i) <= term) {
                                 cal.add(Calendar.DATE, (3 - dayNum) + 7 * i)
                                 dateText = dateFormat.format(cal.time)
-                                sqlitedb.execSQL("INSERT INTO scheduleDB VALUES ('" + dateText + "', '" + iconText + "', '" + habitText + "', '"
-                                        + startTime + "' , '" + endTime + "' , " + alarm + ")")
+                                sqlitedb.execSQL(
+                                    "INSERT INTO scheduleDB VALUES ('" + dateText + "', '" + iconText + "', '" + habitText + "', '"
+                                            + startTime + "' , '" + endTime + "' , " + alarm + ")"
+                                )
                                 cal.add(Calendar.DATE, -((3 - dayNum) + 7 * i))
                                 i++
                             }
                         }
                     }
-                    if(btnWed.isSelected) {
-                        if(4 < dayNum) {
+                    if (btnWed.isSelected) {
+                        if (4 < dayNum) {
                             var i = 0
-                            while(((11 - dayNum) + 7 * i ) <= term) {
+                            while (((11 - dayNum) + 7 * i) <= term) {
                                 cal.add(Calendar.DATE, (11 - dayNum) + 7 * i)
                                 dateText = dateFormat.format(cal.time)
-                                sqlitedb.execSQL("INSERT INTO scheduleDB VALUES ('" + dateText + "', '" + iconText + "', '" + habitText + "', '"
-                                        + startTime + "' , '" + endTime + "' , " + alarm + ")")
+                                sqlitedb.execSQL(
+                                    "INSERT INTO scheduleDB VALUES ('" + dateText + "', '" + iconText + "', '" + habitText + "', '"
+                                            + startTime + "' , '" + endTime + "' , " + alarm + ")"
+                                )
                                 cal.add(Calendar.DATE, -((11 - dayNum) + 7 * i))
                                 i++
                             }
                         } else {
                             var i = 0
-                            while(((4 - dayNum) + 7 * i) <= term) {
+                            while (((4 - dayNum) + 7 * i) <= term) {
                                 cal.add(Calendar.DATE, (4 - dayNum) + 7 * i)
                                 dateText = dateFormat.format(cal.time)
-                                sqlitedb.execSQL("INSERT INTO scheduleDB VALUES ('" + dateText + "', '" + iconText + "', '" + habitText + "', '"
-                                        + startTime + "' , '" + endTime + "' , " + alarm + ")")
+                                sqlitedb.execSQL(
+                                    "INSERT INTO scheduleDB VALUES ('" + dateText + "', '" + iconText + "', '" + habitText + "', '"
+                                            + startTime + "' , '" + endTime + "' , " + alarm + ")"
+                                )
                                 cal.add(Calendar.DATE, -((4 - dayNum) + 7 * i))
                                 i++
                             }
                         }
                     }
-                    if(btnThur.isSelected) {
-                        if(5 < dayNum) {
+                    if (btnThur.isSelected) {
+                        if (5 < dayNum) {
                             var i = 0
-                            while(((12 - dayNum) + 7 * i ) <= term) {
+                            while (((12 - dayNum) + 7 * i) <= term) {
                                 cal.add(Calendar.DATE, (12 - dayNum) + 7 * i)
                                 dateText = dateFormat.format(cal.time)
-                                sqlitedb.execSQL("INSERT INTO scheduleDB VALUES ('" + dateText + "', '" + iconText + "', '" + habitText + "', '"
-                                        + startTime + "' , '" + endTime + "' , " + alarm + ")")
+                                sqlitedb.execSQL(
+                                    "INSERT INTO scheduleDB VALUES ('" + dateText + "', '" + iconText + "', '" + habitText + "', '"
+                                            + startTime + "' , '" + endTime + "' , " + alarm + ")"
+                                )
                                 cal.add(Calendar.DATE, -((12 - dayNum) + 7 * i))
                                 i++
                             }
                         } else {
                             var i = 0
-                            while(((5 - dayNum) + 7 * i) <= term) {
+                            while (((5 - dayNum) + 7 * i) <= term) {
                                 cal.add(Calendar.DATE, (5 - dayNum) + 7 * i)
                                 dateText = dateFormat.format(cal.time)
-                                sqlitedb.execSQL("INSERT INTO scheduleDB VALUES ('" + dateText + "', '" + iconText + "', '" + habitText + "', '"
-                                        + startTime + "' , '" + endTime + "' , " + alarm + ")")
+                                sqlitedb.execSQL(
+                                    "INSERT INTO scheduleDB VALUES ('" + dateText + "', '" + iconText + "', '" + habitText + "', '"
+                                            + startTime + "' , '" + endTime + "' , " + alarm + ")"
+                                )
                                 cal.add(Calendar.DATE, -((5 - dayNum) + 7 * i))
                                 i++
                             }
                         }
                     }
-                    if(btnFri.isSelected) {
-                        if(6 < dayNum) {
+                    if (btnFri.isSelected) {
+                        if (6 < dayNum) {
                             var i = 0
-                            while(((13 - dayNum) + 7 * i ) <= term) {
+                            while (((13 - dayNum) + 7 * i) <= term) {
                                 cal.add(Calendar.DATE, (13 - dayNum) + 7 * i)
                                 dateText = dateFormat.format(cal.time)
-                                sqlitedb.execSQL("INSERT INTO scheduleDB VALUES ('" + dateText + "', '" + iconText + "', '" + habitText + "', '"
-                                        + startTime + "' , '" + endTime + "' , " + alarm + ")")
+                                sqlitedb.execSQL(
+                                    "INSERT INTO scheduleDB VALUES ('" + dateText + "', '" + iconText + "', '" + habitText + "', '"
+                                            + startTime + "' , '" + endTime + "' , " + alarm + ")"
+                                )
                                 cal.add(Calendar.DATE, -((13 - dayNum) + 7 * i))
                                 i++
                             }
                         } else {
                             var i = 0
-                            while(((6 - dayNum) + 7 * i) <= term) {
+                            while (((6 - dayNum) + 7 * i) <= term) {
                                 cal.add(Calendar.DATE, (6 - dayNum) + 7 * i)
                                 dateText = dateFormat.format(cal.time)
-                                sqlitedb.execSQL("INSERT INTO scheduleDB VALUES ('" + dateText + "', '" + iconText + "', '" + habitText + "', '"
-                                        + startTime + "' , '" + endTime + "' , " + alarm + ")")
+                                sqlitedb.execSQL(
+                                    "INSERT INTO scheduleDB VALUES ('" + dateText + "', '" + iconText + "', '" + habitText + "', '"
+                                            + startTime + "' , '" + endTime + "' , " + alarm + ")"
+                                )
                                 cal.add(Calendar.DATE, -((6 - dayNum) + 7 * i))
                                 i++
                             }
                         }
                     }
-                    if(btnSat.isSelected) {
+                    if (btnSat.isSelected) {
                         var i = 0
-                        while(((7 - dayNum) + 7 * i) <= term) {
+                        while (((7 - dayNum) + 7 * i) <= term) {
                             cal.add(Calendar.DATE, (7 - dayNum) + 7 * i)
                             dateText = dateFormat.format(cal.time)
-                            sqlitedb.execSQL("INSERT INTO scheduleDB VALUES ('" + dateText + "', '" + iconText + "', '" + habitText + "', '"
-                                    + startTime + "' , '" + endTime + "' , " + alarm + ")")
+                            sqlitedb.execSQL(
+                                "INSERT INTO scheduleDB VALUES ('" + dateText + "', '" + iconText + "', '" + habitText + "', '"
+                                        + startTime + "' , '" + endTime + "' , " + alarm + ")"
+                            )
                             cal.add(Calendar.DATE, -((7 - dayNum) + 7 * i))
                             i++
                         }
@@ -336,25 +368,74 @@ class HabitActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        if(resultCode == Activity.RESULT_OK) {
-            when(requestCode) {
+        if (resultCode == Activity.RESULT_OK) {
+            when (requestCode) {
                 ICONSELECT_REQUEST_CODE -> { //아이콘 셀렉터 전달 받았을 시
                     var icon = data?.getStringExtra("icon")
                     iconName = icon.toString()
 
-                    when(icon) {
-                        "water" -> btnIcon.setImageDrawable(getDrawable(R.drawable.water))
-                        "bed" -> btnIcon.setImageDrawable(getDrawable(R.drawable.bed))
-                        "computer" -> btnIcon.setImageDrawable(getDrawable(R.drawable.computer))
-                        "exercise" -> btnIcon.setImageDrawable(getDrawable(R.drawable.exercise))
-                        "sleep" -> btnIcon.setImageDrawable(getDrawable(R.drawable.moon))
-                        "study" -> btnIcon.setImageDrawable(getDrawable(R.drawable.study))
-                        "reading" -> btnIcon.setImageDrawable(getDrawable(R.drawable.reading))
-                        "pill" -> btnIcon.setImageDrawable(getDrawable(R.drawable.pill))
-                        "meal" -> btnIcon.setImageDrawable(getDrawable(R.drawable.meal))
-                        "shopping" -> btnIcon.setImageDrawable(getDrawable(R.drawable.shopping))
-                        "bath" -> btnIcon.setImageDrawable(getDrawable(R.drawable.bath))
-                        "cleanup" -> btnIcon.setImageDrawable(getDrawable(R.drawable.cleanup))
+                    when (icon) {
+                        "water" -> {
+                            btnIcon.setImageDrawable(getDrawable(R.drawable.water))
+                            intent.putExtra("water", icon.toString())
+                            startActivity(intent)
+                        }
+                        "bed" -> {
+                            btnIcon.setImageDrawable(getDrawable(R.drawable.bed))
+                            intent.putExtra("bed", icon.toString())
+                            startActivity (intent)
+
+                        }
+                        "computer" -> {
+                            btnIcon.setImageDrawable(getDrawable(R.drawable.computer))
+                            intent.putExtra("computer", icon.toString())
+                            startActivity(intent)
+                        }
+                        "exercise" -> {
+                            btnIcon.setImageDrawable(getDrawable(R.drawable.exercise))
+                            intent.putExtra("exercise", icon.toString())
+                            startActivity(intent)
+                        }
+                        "sleep" -> {
+                            btnIcon.setImageDrawable(getDrawable(R.drawable.moon))
+                            intent.putExtra("sleep", icon.toString())
+                            startActivity(intent)
+                        }
+                        "study" -> {
+                            btnIcon.setImageDrawable(getDrawable(R.drawable.study))
+                            intent.putExtra("study", icon.toString())
+                            startActivity(intent)
+                        }
+                        "reading" -> {
+                            btnIcon.setImageDrawable(getDrawable(R.drawable.reading))
+                            intent.putExtra("reading", icon.toString())
+                            startActivity(intent)
+                        }
+                        "pill" -> {
+                            btnIcon.setImageDrawable(getDrawable(R.drawable.pill))
+                            intent.putExtra("pill", icon.toString())
+                            startActivity(intent)
+                        }
+                        "meal" -> {
+                            btnIcon.setImageDrawable(getDrawable(R.drawable.meal))
+                            intent.putExtra("meal", icon.toString())
+                            startActivity(intent)
+                        }
+                        "shopping" -> {
+                            btnIcon.setImageDrawable(getDrawable(R.drawable.shopping))
+                            intent.putExtra("shopping", icon.toString())
+                            startActivity(intent)
+                        }
+                        "bath" -> {
+                            btnIcon.setImageDrawable(getDrawable(R.drawable.bath))
+                            intent.putExtra("bath", icon.toString())
+                            startActivity(intent)
+                        }
+                        "cleanup" -> {
+                            btnIcon.setImageDrawable(getDrawable(R.drawable.cleanup))
+                            intent.putExtra("cleanup", icon.toString())
+                            startActivity(intent)
+                        }
                     }
                 }
             }
@@ -367,7 +448,12 @@ class HabitActivity : AppCompatActivity() {
 
     }
 
-    class DBManager(context: Context, name: String?, factory: SQLiteDatabase.CursorFactory?, version: Int) : SQLiteOpenHelper(context, name, factory, version) {
+    class DBManager(
+        context: Context,
+        name: String?,
+        factory: SQLiteDatabase.CursorFactory?,
+        version: Int
+    ) : SQLiteOpenHelper(context, name, factory, version) {
         override fun onCreate(db: SQLiteDatabase?) {
             //날짜, 아이콘 id, 습관 이름, 시작시간, 끝시간, 요일, 알람 여부
             db!!.execSQL("CREATE TABLE scheduleDB (date text, icon text, habit text, startTime text, endTime text, alarm INTEGER)")
