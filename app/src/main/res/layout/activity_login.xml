@@ -51,6 +51,7 @@
         android:fontFamily="@font/zzanggu"
         android:shadowDy="1.0"
         android:shadowRadius="5.0"
+        android:background="@drawable/roundorange"
         android:text="완료"
         android:textColor="@color/black"
         android:textSize="20sp"
