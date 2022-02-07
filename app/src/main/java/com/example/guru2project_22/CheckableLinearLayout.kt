@@ -10,17 +10,17 @@ import android.widget.Checkable
 
 class CheckableLinearLayout(context: Context?, attrs: AttributeSet?) : LinearLayout(context, attrs),
     Checkable {
-    // 만약 CheckBox가 아닌 View를 추가한다면 아래의 변수 사용 가능.
     private val mIsChecked = false
     override fun isChecked(): Boolean {
         val checkbox = findViewById(R.id.checkbox) as CheckBox
         return checkbox.isChecked
-        //return mIsChecked
+        return mIsChecked
     }
 
     override fun toggle() {
         val cb = findViewById<View>(R.id.checkbox) as CheckBox
         isChecked = if (cb.isChecked) false else true
+        isChecked = if (mIsChecked) false else true
     }
 
     override fun setChecked(checked: Boolean) {

@@ -9,7 +9,7 @@
         android:id="@+id/iconimg"
         android:layout_width="33dp"
         android:layout_height="33dp"
-        android:layout_marginLeft="62dp"
+        android:layout_marginLeft="90dp"
         android:layout_marginTop="469dp"
         android:adjustViewBounds="true"
         android:scaleType="fitEnd" />
@@ -30,7 +30,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="467dp"
-        android:layout_marginLeft="70dp"
+        android:layout_marginLeft="40dp"
         android:button="@drawable/check_todolist" />
 
 </com.example.guru2project_22.CheckableLinearLayout>

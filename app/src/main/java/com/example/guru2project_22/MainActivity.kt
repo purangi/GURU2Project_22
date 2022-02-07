@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var navmypage: ImageButton
     lateinit var textview3: TextView
     lateinit var calendarView: CalendarView
-    lateinit var checkbox: CheckBox
+    lateinit var checkBox: CheckBox
     var mycoin = 0
 
     lateinit var dbManager: HabitActivity.DBManager
@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
         var navhome: ImageButton = findViewById(R.id.navhome)
         var navmypage: ImageButton = findViewById(R.id.navmypage)
         var calendarView: CalendarView = findViewById((R.id.calendarView))
-        var checkBox:CheckBox = findViewById(R.id.checkBox)
+
 
         val listview: ListView
         val adapter: CustomChoiceListViewAdapter
@@ -52,7 +52,7 @@ class MainActivity : AppCompatActivity() {
 
         //고양이 방 이동
         catbutton.setOnClickListener {
-            val intent = Intent(this, com.example.guru2project_22.CatRoom::class.java)
+            val intent = Intent(this, CatRoom::class.java)
             startActivity(intent)
         }
 
@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         navhome.setOnClickListener {
-            val intent = Intent(this, com.example.guru2project_22.MainActivity::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
 
@@ -124,6 +124,7 @@ class MainActivity : AppCompatActivity() {
                 "bath" -> iconimg = R.drawable.bath
                 "cleanup" -> iconimg = R.drawable.cleanup
             }
+
             adapter.addItem(
                 ContextCompat.getDrawable(this, iconimg),
                 habit.toString()
@@ -166,7 +167,7 @@ class MainActivity : AppCompatActivity() {
                     R.id.checkBox -> {
                         //토스트 메시지 출력
                         Toast.makeText(this@MainActivity, "10코인 적립!", Toast.LENGTH_LONG).show()
-                        checkbox.setChecked(false)
+                        checkBox.setChecked(false)
                         //코인 받아와서 +10한 후 반환
                         val pref = getSharedPreferences("user", 0)
                         val editor = pref.edit()
