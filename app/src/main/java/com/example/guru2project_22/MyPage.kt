@@ -34,16 +34,19 @@ class MyPage : AppCompatActivity() {
         //네비게이션 이미지 버튼
         binding.navday.setOnClickListener{
             val intent = Intent(this, DayActivity::class.java)
+            finish()
             startActivity(intent)
         }
 
         binding.navhome.setOnClickListener{
             val intent = Intent(this, MainActivity::class.java)
+            finish()
             startActivity(intent)
         }
 
         binding.navmypage.setOnClickListener{
             val intent = Intent(this, MyPage::class.java)
+            finish()
             startActivity(intent)
         }
 
