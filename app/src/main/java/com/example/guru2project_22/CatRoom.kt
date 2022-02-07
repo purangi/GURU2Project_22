@@ -48,6 +48,6 @@ class CatRoom : AppCompatActivity() {
     //coin 받아오기
    private fun loadCoin() {
         val pref = getSharedPreferences("user", 0)
-        mycoin.text = pref.getString("coin","500").toString()
+        mycoin.text = pref.getString("coin","1000").toString()
     }
 }

@@ -80,7 +80,7 @@ class Store : AppCompatActivity() {
         buybtn.setOnClickListener {
 
             //coin 받아오기
-            mycoin = (pref.getString("coin","500"))!!.toInt()
+            mycoin = (pref.getString("coin","1000"))!!.toInt()
 
             //구매 목록 받아오기
             var mybuy1 = (pref.getString("buy1","0")).toString()

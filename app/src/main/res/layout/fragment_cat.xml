@@ -67,7 +67,7 @@
         android:layout_width="159dp"
         android:layout_height="179dp"
         android:layout_marginEnd="156dp"
-        android:layout_marginBottom="84dp"
+        android:layout_marginBottom="64dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/origincat" />
