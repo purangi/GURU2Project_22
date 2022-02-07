@@ -119,6 +119,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.checkBox -> {
                 //토스트 메시지 출력
                 Toast.makeText(this@MainActivity, "10코인 적립!", Toast.LENGTH_LONG).show()
+                    checkbox.setChecked(false)
                 //코인 받아와서 +10한 후 반환
                 val pref = getSharedPreferences("user", 0)
                 val editor = pref.edit()
