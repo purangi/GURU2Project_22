@@ -28,8 +28,8 @@ class MyPage : AppCompatActivity() {
         setContentView(binding.root)
 
         var parent: ViewGroup = findViewById(R.id.catLayout)
-        var pref = getSharedPreferences("user", 0)
-        var editor = pref.edit()
+        val pref = getSharedPreferences("user", 0)
+        val editor = pref.edit()
 
         //네비게이션 이미지 버튼
         binding.navday.setOnClickListener{
@@ -48,7 +48,7 @@ class MyPage : AppCompatActivity() {
         }
 
         //coin 설정
-        editor.putString("coin", "200")
+        editor.putString("coin", "500")
         editor.apply()
         binding.mycoin.text = pref.getString("coin","").toString()
 

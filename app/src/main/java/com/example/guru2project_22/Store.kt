@@ -5,6 +5,7 @@ import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
@@ -74,12 +75,13 @@ class Store : AppCompatActivity() {
 
         val pref = getSharedPreferences("user", 0)
         val editor = pref.edit()
+        mycoin = (pref.getString("coin","500"))!!.toInt()
 
         //구매 버튼 클릭 시
         buybtn.setOnClickListener {
             //coin 받아오기
-            mycoin = (pref.getString("coin","0"))!!.toInt()
             mybuy = (pref.getString("buy","0")).toString()
+            Log.v("mybuy", mycoin.toString())
 
             //선택한 버튼의 id 받아서 price 처리
             when (activeRadioButton.id) {
@@ -238,12 +240,13 @@ class Store : AppCompatActivity() {
         okbtn.setOnClickListener {
 
             mybuy = (pref.getString("buy","0")).toString()
+            Log.v("mybuy",mybuy)
 
             //선택한 item의 id 받아서 item 꾸미기 처리
             when (activeRadioButton.id) {
                 R.id.catfood -> {
                     if(mybuy=="1") {
-                        editor.putString("item", "1")
+                        editor.putString("item1", "1")
                         Toast.makeText(this, "꾸며보자 냥", Toast.LENGTH_SHORT).show()
                     }else{
                         Toast.makeText(this, "아이템을 구매해라 냥", Toast.LENGTH_SHORT).show()
@@ -251,7 +254,7 @@ class Store : AppCompatActivity() {
                 }
                 R.id.smallplant -> {
                     if(mybuy=="2") {
-                        editor.putString("item", "2")
+                        editor.putString("item2", "2")
                         Toast.makeText(this, "꾸며보자 냥", Toast.LENGTH_SHORT).show()
                     }else{
                         Toast.makeText(this, "아이템을 구매해라 냥", Toast.LENGTH_SHORT).show()
@@ -259,7 +262,7 @@ class Store : AppCompatActivity() {
                 }
                 R.id.bigplant -> {
                     if(mybuy=="3") {
-                        editor.putString("item", "3")
+                        editor.putString("item3", "3")
                         Toast.makeText(this, "꾸며보자 냥", Toast.LENGTH_SHORT).show()
                     }else{
                         Toast.makeText(this, "아이템을 구매해라 냥", Toast.LENGTH_SHORT).show()
@@ -267,7 +270,7 @@ class Store : AppCompatActivity() {
                 }
                 R.id.catbathroom -> {
                     if(mybuy=="4") {
-                        editor.putString("item", "4")
+                        editor.putString("item4", "4")
                         Toast.makeText(this, "꾸며보자 냥", Toast.LENGTH_SHORT).show()
                     }else{
                         Toast.makeText(this, "아이템을 구매해라 냥", Toast.LENGTH_SHORT).show()
@@ -275,7 +278,7 @@ class Store : AppCompatActivity() {
                 }
                 R.id.catplaying -> {
                     if(mybuy=="5") {
-                        editor.putString("item", "5")
+                        editor.putString("item5", "5")
                         Toast.makeText(this, "꾸며보자 냥", Toast.LENGTH_SHORT).show()
                     }else{
                         Toast.makeText(this, "아이템을 구매해라 냥", Toast.LENGTH_SHORT).show()
@@ -283,7 +286,7 @@ class Store : AppCompatActivity() {
                 }
                 R.id.light -> {
                     if(mybuy=="6") {
-                        editor.putString("item", "6")
+                        editor.putString("item6", "6")
                         Toast.makeText(this, "꾸며보자 냥", Toast.LENGTH_SHORT).show()
                     }else{
                         Toast.makeText(this, "아이템을 구매해라 냥", Toast.LENGTH_SHORT).show()
@@ -291,7 +294,7 @@ class Store : AppCompatActivity() {
                 }
                 R.id.window -> {
                     if(mybuy=="7") {
-                        editor.putString("item", "7")
+                        editor.putString("item7", "7")
                         Toast.makeText(this, "꾸며보자 냥", Toast.LENGTH_SHORT).show()
                     }else{
                         Toast.makeText(this, "아이템을 구매해라 냥", Toast.LENGTH_SHORT).show()
@@ -299,7 +302,7 @@ class Store : AppCompatActivity() {
                 }
                 R.id.cathome -> {
                     if(mybuy=="8") {
-                        editor.putString("item", "8")
+                        editor.putString("item8", "8")
                         Toast.makeText(this, "꾸며보자 냥", Toast.LENGTH_SHORT).show()
                     }else{
                         Toast.makeText(this, "아이템을 구매해라 냥", Toast.LENGTH_SHORT).show()
@@ -307,7 +310,7 @@ class Store : AppCompatActivity() {
                 }
                 R.id.cattable -> {
                     if(mybuy=="9") {
-                        editor.putString("item", "9")
+                        editor.putString("item9", "9")
                         Toast.makeText(this, "꾸며보자 냥", Toast.LENGTH_SHORT).show()
                     }else{
                         Toast.makeText(this, "아이템을 구매해라 냥", Toast.LENGTH_SHORT).show()
@@ -315,7 +318,7 @@ class Store : AppCompatActivity() {
                 }
                 R.id.bookshelf -> {
                     if(mybuy=="10") {
-                        editor.putString("item", "10")
+                        editor.putString("item10", "10")
                         Toast.makeText(this, "꾸며보자 냥", Toast.LENGTH_SHORT).show()
                     }else{
                         Toast.makeText(this, "아이템을 구매해라 냥", Toast.LENGTH_SHORT).show()
@@ -323,7 +326,7 @@ class Store : AppCompatActivity() {
                 }
                 R.id.catcircle -> {
                     if(mybuy=="11") {
-                        editor.putString("item", "11")
+                        editor.putString("item11", "11")
                         Toast.makeText(this, "꾸며보자 냥", Toast.LENGTH_SHORT).show()
                     }else{
                         Toast.makeText(this, "아이템을 구매해라 냥", Toast.LENGTH_SHORT).show()
@@ -331,7 +334,7 @@ class Store : AppCompatActivity() {
                 }
                 R.id.cattower -> {
                     if(mybuy=="12") {
-                        editor.putString("item", "12")
+                        editor.putString("item12", "12")
                         Toast.makeText(this, "꾸며보자 냥", Toast.LENGTH_SHORT).show()
                     }else{
                         Toast.makeText(this, "아이템을 구매해라 냥", Toast.LENGTH_SHORT).show()
@@ -339,7 +342,7 @@ class Store : AppCompatActivity() {
                 }
                 R.id.catsofa -> {
                     if(mybuy=="13") {
-                        editor.putString("item", "13")
+                        editor.putString("item13", "13")
                         Toast.makeText(this, "꾸며보자 냥", Toast.LENGTH_SHORT).show()
                     }else{
                         Toast.makeText(this, "아이템을 구매해라 냥", Toast.LENGTH_SHORT).show()
@@ -347,7 +350,7 @@ class Store : AppCompatActivity() {
                 }
                 R.id.catbed -> {
                     if(mybuy=="14") {
-                        editor.putString("item", "14")
+                        editor.putString("item14", "14")
                         Toast.makeText(this, "꾸며보자 냥", Toast.LENGTH_SHORT).show()
                     }else{
                         Toast.makeText(this, "아이템을 구매해라 냥", Toast.LENGTH_SHORT).show()
@@ -355,7 +358,7 @@ class Store : AppCompatActivity() {
                 }
                 R.id.cattv -> {
                     if(mybuy=="15") {
-                        editor.putString("item", "15")
+                        editor.putString("item15", "15")
                         Toast.makeText(this, "꾸며보자 냥", Toast.LENGTH_SHORT).show()
                     }else{
                         Toast.makeText(this, "아이템을 구매해라 냥", Toast.LENGTH_SHORT).show()
