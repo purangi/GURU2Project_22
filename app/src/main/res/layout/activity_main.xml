@@ -115,12 +115,12 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="476dp"
             android:layout_marginLeft="320dp"/>
-<!--        <CheckBox-->
-<!--            android:id="@+id/checkBox3"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginTop="502dp"-->
-<!--            android:layout_marginLeft="320dp"/>-->
+        <CheckBox
+            android:id="@+id/checkBox3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="502dp"
+            android:layout_marginLeft="320dp"/>
 <!--        <CheckBox-->
 <!--            android:id="@+id/checkBox4"-->
 <!--            android:layout_width="wrap_content"-->
