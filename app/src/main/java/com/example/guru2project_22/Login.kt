@@ -36,6 +36,7 @@ class Login : AppCompatActivity() {
             else //화면전환(메인 액티비티로)
             {
                 var intent = Intent(this, MainActivity::class.java)
+                finish()
                 startActivity(intent)
             }
 
