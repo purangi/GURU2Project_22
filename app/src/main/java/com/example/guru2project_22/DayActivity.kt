@@ -46,6 +46,10 @@ class DayActivity : AppCompatActivity() {
         sqlitedb = dbManager.readableDatabase
         var cursor : Cursor
 
+        navday = findViewById(R.id.navday)
+        navhome = findViewById(R.id.navhome)
+        navmypage = findViewById(R.id.navmypage)
+
         //네비게이션 이미지 버튼
         navday.setOnClickListener{
             val intent = Intent(this, DayActivity::class.java)
