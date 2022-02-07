@@ -35,7 +35,6 @@ class MainActivity : AppCompatActivity() {
         var navhome: ImageButton = findViewById(R.id.navhome)
         var navmypage: ImageButton = findViewById(R.id.navmypage)
         var calendarView: CalendarView = findViewById((R.id.calendarView))
-        var checkBox:CheckBox = findViewById(R.id.checkBox)
 
         val listview: ListView
         val adapter: CustomChoiceListViewAdapter
@@ -50,35 +49,35 @@ class MainActivity : AppCompatActivity() {
         val editor = pref.edit()
         mycoin = (pref.getString("coin", "0"))!!.toInt()
 
-        //고양이 방 이동
-        catbutton.setOnClickListener {
+//고양이 방 이동
+        catbutton.setOnClickListener{
             val intent = Intent(this, com.example.guru2project_22.CatRoom::class.java)
             startActivity(intent)
         }
 
-        //네비게이션 이미지 버튼
-        navday.setOnClickListener {
+//네비게이션 이미지 버튼
+        navday.setOnClickListener{
             val intent = Intent(this, DayActivity::class.java)
             startActivity(intent)
         }
 
-        navhome.setOnClickListener {
+        navhome.setOnClickListener{
             val intent = Intent(this, com.example.guru2project_22.MainActivity::class.java)
             startActivity(intent)
         }
 
-        navmypage.setOnClickListener {
+        navmypage.setOnClickListener{
             val intent = Intent(this, MyPage::class.java)
             startActivity(intent)
         }
 
-        //오늘 날짜
+//오늘 날짜
         var cal: Calendar = Calendar.getInstance()
         var date = cal.time
         val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale("ko", "KR"))
         var dateText = dateFormat.format(date)
 
-        //dbManager
+//dbManager
         dbManager = HabitActivity.DBManager(this, "scheduleDB", null, 1)
         sqlitedb = dbManager.readableDatabase
         var cursor: Cursor
@@ -88,22 +87,22 @@ class MainActivity : AppCompatActivity() {
             null
         )
 
-        //캘린더 날짜 선택 시
-        //일정 표시
-        calendarView.setOnDateChangeListener { view, year, month, dayOfMonth ->
+//캘린더 날짜 선택 시
+//일정 표시
+        calendarView.setOnDateChangeListener{view, year, month, dayOfMonth->
 
-            //DayActivity로 이동
+//DayActivity로 이동
             val intent = Intent(this, DayActivity::class.java)
             startActivity(intent)
         }
 
 
-        // Adapter 생성
+// Adapter생성
         adapter = CustomChoiceListViewAdapter()
 
-        // 리스트뷰 참조 및 Adapter달기
+//리스트뷰 참조 및 Adapter달기
         listview = findViewById<View>(R.id.listview) as ListView
-        listview.adapter = adapter
+        listview.adapter= adapter
 
         while (cursor.moveToNext()) {
             var habit = cursor.getString(cursor.getColumnIndex("habit")).toString()
@@ -129,27 +128,27 @@ class MainActivity : AppCompatActivity() {
                 habit.toString()
             )
         }
-//        // 첫 번째 아이템 추가.
+//        //첫 번째 아이템 추가.
 //        adapter.addItem(
 //            ContextCompat.getDrawable(this, iconimg),
 //            editHabit.toString()
 //        )
-//        // 두 번째 아이템 추가.
+//        //두 번째 아이템 추가.
 //        adapter.addItem(
 //            ContextCompat.getDrawable(this, iconimg),
 //            editHabit.toString()
 //        )
-//        // 세 번째 아이템 추가.
+//        //세 번째 아이템 추가.
 //        adapter.addItem(
 //            ContextCompat.getDrawable(this, iconimg),
 //            editHabit.toString()
 //        )
-//        // 네 번째 아이템 추가.
+//        //네 번째 아이템 추가.
 //        adapter.addItem(
 //            ContextCompat.getDrawable(this, iconimg),
 //            editHabit.toString()
 //        )
-//        // 다섯 번째 아이템 추가.
+//        //다섯 번째 아이템 추가.
 //        adapter.addItem(
 //            ContextCompat.getDrawable(this, iconimg),
 //            editHabit.toString()
@@ -163,11 +162,11 @@ class MainActivity : AppCompatActivity() {
                 val checked: Boolean = view.isChecked
 
                 when (view.id) {
-                    R.id.checkBox -> {
-                        //토스트 메시지 출력
+                    R.id.checkBox-> {
+//토스트 메시지 출력
                         Toast.makeText(this@MainActivity, "10코인 적립!", Toast.LENGTH_LONG).show()
                         checkbox.setChecked(false)
-                        //코인 받아와서 +10한 후 반환
+//코인 받아와서 +10한 후 반환
                         val pref = getSharedPreferences("user", 0)
                         val editor = pref.edit()
                         mycoin = (pref.getString("coin", "100"))!!.toInt()
