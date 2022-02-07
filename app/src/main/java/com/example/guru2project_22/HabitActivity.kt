@@ -142,11 +142,18 @@ class HabitActivity : AppCompatActivity() {
                 false -> alarm = 1
             }
 
-            // 현재 시간을 가져오기
+            // 해당 날짜 가져오기
             var cal: Calendar = Calendar.getInstance()
             var date = cal.time
             val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale("ko", "KR"))
             var dateText = dateFormat.format(date)
+
+            if(intent.hasExtra("dateonDay")) {
+                dateText = intent.getStringExtra("dateonDay")
+            }
+
+            cal.time = dateFormat.parse(dateText)
+
             val dayNum = cal.get(Calendar.DAY_OF_WEEK) //요일 (1:일 ~ 7:토)
 
             //입력값 확인

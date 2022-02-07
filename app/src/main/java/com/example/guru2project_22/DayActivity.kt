@@ -70,11 +70,26 @@ class DayActivity : AppCompatActivity() {
         }
 
 
-        var today = Calendar.getInstance().time
+        var cal = Calendar.getInstance()
+        var realDate = cal.time
         var textDayFormat = SimpleDateFormat("MM월 dd일")
-        tvDay.text = textDayFormat.format(today) //날짜 표시용
         var dateFormat = SimpleDateFormat("yyyy-MM-dd")
-        val dateText = dateFormat.format(today) //데이터 비교용
+        var dateText = dateFormat.format(realDate) //데이터 비교용
+
+        if(intent.hasExtra("date")) {
+            dateText = intent.getStringExtra("date")
+            realDate = dateFormat.parse(dateText)
+            cal.time = realDate
+            cal.add(Calendar.MONTH, +1)
+
+            realDate = cal.time
+
+            tvDay.text = textDayFormat.format(realDate) //날짜 표시용
+
+            dateText = dateFormat.format(realDate)
+        }
+        tvDay.text = textDayFormat.format(realDate)
+
         //시작 시간 순 정렬
         cursor = sqlitedb.rawQuery(
             "SELECT * FROM scheduleDB WHERE date = '" + dateText + "' ORDER BY startTime",
@@ -160,6 +175,7 @@ class DayActivity : AppCompatActivity() {
 
         btnHabit.setOnClickListener{
             val habitIntent = Intent(this, HabitActivity::class.java)
+            habitIntent.putExtra("dateonDay", dateText)
             startActivity(habitIntent)
         }
 
