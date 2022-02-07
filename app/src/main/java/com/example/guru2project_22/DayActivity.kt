@@ -11,7 +11,6 @@ import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.example.guru2project_22.databinding.ActivityMyPageBinding
 import com.github.mikephil.charting.animation.Easing
 import com.github.mikephil.charting.charts.PieChart
 import com.github.mikephil.charting.data.PieData
@@ -23,7 +22,6 @@ import kotlin.collections.ArrayList
 
 
 class DayActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMyPageBinding
     private lateinit var dailyPie: PieChart
     lateinit var btnHabit : Button
     lateinit var tvDay : TextView
@@ -49,17 +47,17 @@ class DayActivity : AppCompatActivity() {
         var cursor : Cursor
 
         //네비게이션 이미지 버튼
-        binding.navday.setOnClickListener{
+        navday.setOnClickListener{
             val intent = Intent(this, DayActivity::class.java)
             startActivity(intent)
         }
 
-        binding.navhome.setOnClickListener{
+        navhome.setOnClickListener{
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
 
-        binding.navmypage.setOnClickListener{
+        navmypage.setOnClickListener{
             val intent = Intent(this, MyPage::class.java)
             startActivity(intent)
         }
