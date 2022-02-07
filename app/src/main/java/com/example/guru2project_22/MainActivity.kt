@@ -180,6 +180,10 @@ class MainActivity : AppCompatActivity() {
                 if (view is CheckBox) {
                     val checked: Boolean = view.isChecked
 
+                    val pref = getSharedPreferences("user", 0)
+                    val editor = pref.edit()
+                    mycoin = (pref.getString("coin", "500"))!!.toInt()
+
                     when (view.id) {
                         R.id.checkBox1 -> {
                             if (checked) {
@@ -187,9 +191,6 @@ class MainActivity : AppCompatActivity() {
                                     .show()
                                 checkBox1.setChecked(false)
                                 //코인 받아와서 +10한 후 반환
-                                val pref = getSharedPreferences("user", 0)
-                                val editor = pref.edit()
-                                mycoin = (pref.getString("coin", "500"))!!.toInt()
                                 mycoin += 10
                                 editor.putString("coin", mycoin.toString())
                                 editor.apply()
@@ -201,9 +202,6 @@ class MainActivity : AppCompatActivity() {
                                     .show()
                                 checkBox2.setChecked(false)
                                 //코인 받아와서 +10한 후 반환
-                                val pref = getSharedPreferences("user", 0)
-                                val editor = pref.edit()
-                                mycoin = (pref.getString("coin", "500"))!!.toInt()
                                 mycoin += 10
                                 editor.putString("coin", mycoin.toString())
                                 editor.apply()
@@ -215,9 +213,6 @@ class MainActivity : AppCompatActivity() {
                                     .show()
                                 checkBox3.setChecked(false)
                                 //코인 받아와서 +10한 후 반환
-                                val pref = getSharedPreferences("user", 0)
-                                val editor = pref.edit()
-                                mycoin = (pref.getString("coin", "500"))!!.toInt()
                                 mycoin += 10
                                 editor.putString("coin", mycoin.toString())
                                 editor.apply()
