@@ -88,6 +88,7 @@ class DayActivity : AppCompatActivity() {
 
             dateText = dateFormat.format(realDate)
         }
+        tvDay.text = textDayFormat.format(realDate)
 
         //시작 시간 순 정렬
         cursor = sqlitedb.rawQuery(
