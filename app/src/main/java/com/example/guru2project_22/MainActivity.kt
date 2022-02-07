@@ -40,7 +40,6 @@ class MainActivity : AppCompatActivity() {
         var navmypage: ImageButton = findViewById(R.id.navmypage)
         var calendarView: CalendarView = findViewById((R.id.calendarView))
 
-
         val listview: ListView
         val adapter: CustomChoiceListViewAdapter
 
@@ -201,17 +200,6 @@ class MainActivity : AppCompatActivity() {
                                 Toast.makeText(this@MainActivity, "10코인 적립!", Toast.LENGTH_LONG)
                                     .show()
                                 checkBox2.setChecked(false)
-                                //코인 받아와서 +10한 후 반환
-                                mycoin += 10
-                                editor.putString("coin", mycoin.toString())
-                                editor.apply()
-                            }
-                        }
-                        R.id.checkBox3 -> {
-                            if (checked) {
-                                Toast.makeText(this@MainActivity, "10코인 적립!", Toast.LENGTH_LONG)
-                                    .show()
-                                checkBox3.setChecked(false)
                                 //코인 받아와서 +10한 후 반환
                                 mycoin += 10
                                 editor.putString("coin", mycoin.toString())
