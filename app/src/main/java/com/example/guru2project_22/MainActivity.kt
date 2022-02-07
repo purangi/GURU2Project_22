@@ -6,13 +6,10 @@ import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import com.example.guru2project_22.databinding.ActivityMyPageBinding
 
 
 class MainActivity : AppCompatActivity() {
     private val DayActivity = DayActivity()
-    private val MainActivity = MainActivity()
-    private lateinit var binding: ActivityMyPageBinding
     lateinit var catbutton: ImageButton
     lateinit var navday: ImageButton
     lateinit var navhome: ImageButton
@@ -51,17 +48,17 @@ class MainActivity : AppCompatActivity() {
         }
 
         //네비게이션 이미지 버튼
-        binding.navday.setOnClickListener{
+        navday.setOnClickListener{
             val intent = Intent(this, DayActivity::class.java)
             startActivity(intent)
         }
 
-        binding.navhome.setOnClickListener{
+        navhome.setOnClickListener{
             val intent = Intent(this, com.example.guru2project_22.MainActivity::class.java)
             startActivity(intent)
         }
 
-        binding.navmypage.setOnClickListener{
+        navmypage.setOnClickListener{
             val intent = Intent(this, MyPage::class.java)
             startActivity(intent)
         }
