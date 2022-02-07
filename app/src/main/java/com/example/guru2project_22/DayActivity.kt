@@ -92,8 +92,8 @@ class DayActivity : AppCompatActivity() {
             var pieValue = (endArray[0].toFloat() * 60 + endArray[1].toFloat()) - (startArray[0].toFloat() * 60 + startArray[1].toFloat())
 
             entries.add(PieEntry(pieValue, habit)) //기본 일정 추가
-            Log.v("test", habit + " " + startTime + " " + endTime)
-            Log.v("value", pieValue.toString())
+//            Log.v("test", habit + " " + startTime + " " + endTime) //로그찍어봄
+//            Log.v("value", pieValue.toString())
 
             sum += pieValue
 

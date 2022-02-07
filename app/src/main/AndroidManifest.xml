@@ -17,8 +17,8 @@
         <activity android:name=".Login" />
         <activity android:name=".MainActivity" />
         <activity android:name=".Store" />
-        <activity android:name=".CatRoom"/>
-        <activity android:name=".HabitActivity"/>
+        <activity android:name=".CatRoom" />
+        <activity android:name=".HabitActivity" />
         <activity android:name=".Loading">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
