@@ -137,11 +137,6 @@ class HabitActivity : AppCompatActivity() {
             //알람 설정
             var alarm: Int //꺼져있으면 0, 켜져있으면 1
 
-            var Intent = Intent(this, MainActivity::class.java)
-            Intent.putExtra("icon", iconName)
-            Intent.putExtra("text", editHabit.text.toString())
-            startActivity(Intent)
-
             when (rbOff.isChecked) { //알람 Int 설정
                 true -> alarm = 0
                 false -> alarm = 1
@@ -377,64 +372,39 @@ class HabitActivity : AppCompatActivity() {
                     when (icon) {
                         "water" -> {
                             btnIcon.setImageDrawable(getDrawable(R.drawable.water))
-                            intent.putExtra("water", icon.toString())
-                            startActivity(intent)
                         }
                         "bed" -> {
                             btnIcon.setImageDrawable(getDrawable(R.drawable.bed))
-                            intent.putExtra("bed", icon.toString())
-                            startActivity (intent)
-
                         }
                         "computer" -> {
                             btnIcon.setImageDrawable(getDrawable(R.drawable.computer))
-                            intent.putExtra("computer", icon.toString())
-                            startActivity(intent)
                         }
                         "exercise" -> {
                             btnIcon.setImageDrawable(getDrawable(R.drawable.exercise))
-                            intent.putExtra("exercise", icon.toString())
-                            startActivity(intent)
                         }
                         "sleep" -> {
                             btnIcon.setImageDrawable(getDrawable(R.drawable.moon))
-                            intent.putExtra("sleep", icon.toString())
-                            startActivity(intent)
                         }
                         "study" -> {
                             btnIcon.setImageDrawable(getDrawable(R.drawable.study))
-                            intent.putExtra("study", icon.toString())
-                            startActivity(intent)
                         }
                         "reading" -> {
                             btnIcon.setImageDrawable(getDrawable(R.drawable.reading))
-                            intent.putExtra("reading", icon.toString())
-                            startActivity(intent)
                         }
                         "pill" -> {
                             btnIcon.setImageDrawable(getDrawable(R.drawable.pill))
-                            intent.putExtra("pill", icon.toString())
-                            startActivity(intent)
                         }
                         "meal" -> {
                             btnIcon.setImageDrawable(getDrawable(R.drawable.meal))
-                            intent.putExtra("meal", icon.toString())
-                            startActivity(intent)
                         }
                         "shopping" -> {
                             btnIcon.setImageDrawable(getDrawable(R.drawable.shopping))
-                            intent.putExtra("shopping", icon.toString())
-                            startActivity(intent)
                         }
                         "bath" -> {
                             btnIcon.setImageDrawable(getDrawable(R.drawable.bath))
-                            intent.putExtra("bath", icon.toString())
-                            startActivity(intent)
                         }
                         "cleanup" -> {
                             btnIcon.setImageDrawable(getDrawable(R.drawable.cleanup))
-                            intent.putExtra("cleanup", icon.toString())
-                            startActivity(intent)
                         }
                     }
                 }
