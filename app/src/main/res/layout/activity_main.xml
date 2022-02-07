@@ -113,25 +113,25 @@
             android:id="@+id/checkBox2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="474dp"
+            android:layout_marginTop="476dp"
             android:layout_marginLeft="320dp"/>
         <CheckBox
             android:id="@+id/checkBox3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="498dp"
+            android:layout_marginTop="502dp"
             android:layout_marginLeft="320dp"/>
-        <CheckBox
-            android:id="@+id/checkBox4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="522dp"
-            android:layout_marginLeft="320dp"/>
-        <CheckBox
-            android:id="@+id/checkBox5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="320dp"
-            android:layout_marginTop="546dp" />
+<!--        <CheckBox-->
+<!--            android:id="@+id/checkBox4"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="528dp"-->
+<!--            android:layout_marginLeft="320dp"/>-->
+<!--        <CheckBox-->
+<!--            android:id="@+id/checkBox5"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="320dp"-->
+<!--            android:layout_marginTop="558dp" />-->
     </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

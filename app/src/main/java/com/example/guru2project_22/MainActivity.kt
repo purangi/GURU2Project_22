@@ -183,70 +183,44 @@ class MainActivity : AppCompatActivity() {
                 if (view is CheckBox) {
                     val checked: Boolean = view.isChecked
 
+                    val pref = getSharedPreferences("user", 0)
+                    val editor = pref.edit()
+                    mycoin = (pref.getString("coin", "500"))!!.toInt()
+
                     when (view.id) {
                         R.id.checkBox1 -> {
                             if (checked) {
-                            Toast.makeText(this@MainActivity, "10코인 적립!", Toast.LENGTH_LONG).show()
-                            checkBox1.setChecked(false)
-                            //코인 받아와서 +10한 후 반환
-                            val pref = getSharedPreferences("user", 0)
-                            val editor = pref.edit()
-                            mycoin = (pref.getString("coin", "500"))!!.toInt()
-                            mycoin += 10
-                            editor.putString("coin", mycoin.toString())
-                            editor.apply()}
-                        }
-                        R.id.checkBox2 -> {
-                            if (checked) {
-                            Toast.makeText(this@MainActivity, "10코인 적립!", Toast.LENGTH_LONG).show()
-                            checkBox2.setChecked(false)
-                            //코인 받아와서 +10한 후 반환
-                            val pref = getSharedPreferences("user", 0)
-                            val editor = pref.edit()
-                            mycoin = (pref.getString("coin", "500"))!!.toInt()
-                            mycoin += 10
-                            editor.putString("coin", mycoin.toString())
-                            editor.apply()}
-                        }
-                        R.id.checkBox3 -> {
-                            if (checked) {
-                            Toast.makeText(this@MainActivity, "10코인 적립!", Toast.LENGTH_LONG).show()
-                            checkBox3.setChecked(false)
-                            //코인 받아와서 +10한 후 반환
-                            val pref = getSharedPreferences("user", 0)
-                            val editor = pref.edit()
-                            mycoin = (pref.getString("coin", "500"))!!.toInt()
-                            mycoin += 10
-                            editor.putString("coin", mycoin.toString())
-                            editor.apply()}
-                        }
-                        R.id.checkBox4 -> {
-                            if (checked) {
-                            Toast.makeText(this@MainActivity, "10코인 적립!", Toast.LENGTH_LONG).show()
-                            checkBox4.setChecked(false)
-                            //코인 받아와서 +10한 후 반환
-                            val pref = getSharedPreferences("user", 0)
-                            val editor = pref.edit()
-                            mycoin = (pref.getString("coin", "500"))!!.toInt()
-                            mycoin += 10
-                            editor.putString("coin", mycoin.toString())
-                            editor.apply()}
-                        }
-                        R.id.checkBox5 -> {
-                            if (checked) {
                                 Toast.makeText(this@MainActivity, "10코인 적립!", Toast.LENGTH_LONG)
                                     .show()
-                                checkBox5.setChecked(false)
+                                checkBox1.setChecked(false)
                                 //코인 받아와서 +10한 후 반환
-                                val pref = getSharedPreferences("user", 0)
-                                val editor = pref.edit()
-                                mycoin = (pref.getString("coin", "500"))!!.toInt()
                                 mycoin += 10
                                 editor.putString("coin", mycoin.toString())
                                 editor.apply()
                             }
                         }
-
+                        R.id.checkBox2 -> {
+                            if (checked) {
+                                Toast.makeText(this@MainActivity, "10코인 적립!", Toast.LENGTH_LONG)
+                                    .show()
+                                checkBox2.setChecked(false)
+                                //코인 받아와서 +10한 후 반환
+                                mycoin += 10
+                                editor.putString("coin", mycoin.toString())
+                                editor.apply()
+                            }
+                        }
+                        R.id.checkBox3 -> {
+                            if (checked) {
+                                Toast.makeText(this@MainActivity, "10코인 적립!", Toast.LENGTH_LONG)
+                                    .show()
+                                checkBox3.setChecked(false)
+                                //코인 받아와서 +10한 후 반환
+                                mycoin += 10
+                                editor.putString("coin", mycoin.toString())
+                                editor.apply()
+                            }
+                        }
                     }
                 }
             }

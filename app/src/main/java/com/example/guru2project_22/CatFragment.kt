@@ -26,9 +26,9 @@ class CatFragment : Fragment() {
 
         val cat : ImageView = view.findViewById(R.id.originCat)
 
-        val data = listOf("R.drawable.sitcat", "R.drawable.sleepcat", "R.drawable.liecat", "R.drawable.origincat")
+        //val data = listOf("R.drawable.sitcat", "R.drawable.sleepcat", "R.drawable.liecat", "R.drawable.origincat")
 
-        cat.setImageResource(data.random().toInt())
+        //cat.setImageResource(data.random().toInt())
 
         val pref = this.activity?.getSharedPreferences("user", 0)
 
@@ -64,9 +64,9 @@ class CatFragment : Fragment() {
         return view
     }
 
-    fun <T> List<T>.random() : T {
+    /*fun <T> List<T>.random() : T {
         val random = Random().nextInt((size))
         return get(random)
-    }
+    }*/
 
 }
