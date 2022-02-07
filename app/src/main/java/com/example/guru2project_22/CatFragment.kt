@@ -23,127 +23,35 @@ class CatFragment : Fragment() {
         val imageView4 : ImageView = view.findViewById(R.id.imageView4)
         val imageView5 : ImageView = view.findViewById(R.id.imageView5)
 
-        var pref = this.activity?.getSharedPreferences("user", 0)
-        val num = pref?.getString("item","").toString()
+        val pref = this.activity?.getSharedPreferences("user", 0)
 
 
-        when(num){
-            "1" -> {
-                if(imageView1.visibility==View.INVISIBLE){
-                    imageView1.visibility=View.VISIBLE
-                    imageView1.setImageResource(R.drawable.catfood)
-                }
-            }
-            "2" -> {
-                if(imageView2.visibility==View.INVISIBLE){
-                    imageView2.visibility=View.VISIBLE
-                    imageView2.setImageResource(R.drawable.smallplant)
-                }
-            }
-            "3" -> {
-                if(imageView1.visibility==View.INVISIBLE){
-                    imageView1.visibility=View.VISIBLE
-                    imageView1.setImageResource(R.drawable.bigplant)
-                }else{
-                    imageView1.setImageResource(R.drawable.bigplant)
-                }
-            }
-            "4" -> {
-                if(imageView2.visibility==View.INVISIBLE){
-                    imageView2.visibility=View.VISIBLE
-                    imageView2.setImageResource(R.drawable.catbathroom)
-                }else{
-                    imageView2.setImageResource(R.drawable.catbathroom)
-                }
-            }
-            "5" -> {
-                if(imageView1.visibility==View.INVISIBLE){
-                    imageView1.visibility=View.VISIBLE
-                    imageView1.setImageResource(R.drawable.catplaying)
-                }else{
-                    imageView1.setImageResource(R.drawable.catplaying)
-                }
-            }
-            "6" -> {
-                if(imageView2.visibility==View.INVISIBLE){
-                    imageView2.visibility=View.VISIBLE
-                    imageView2.setImageResource(R.drawable.light)
-                }else{
-                    imageView2.setImageResource(R.drawable.light)
-                }
-            }
-            "7" -> {
-                if(imageView4.visibility==View.INVISIBLE){
-                    imageView4.visibility=View.VISIBLE
-                    imageView4.setImageResource(R.drawable.window)
-                }else{
-                    imageView4.setImageResource(R.drawable.window)
-                }
-            }
-            "8" -> {
-                if(imageView5.visibility==View.INVISIBLE){
-                    imageView5.visibility=View.VISIBLE
-                    imageView5.setImageResource(R.drawable.cathome)
-                }else{
-                    imageView5.setImageResource(R.drawable.cathome)
-                }
-            }
-            "9" -> {
-                if(imageView3.visibility==View.INVISIBLE){
-                    imageView3.visibility=View.VISIBLE
-                    imageView3.setImageResource(R.drawable.cattable)
-                }else{
-                    imageView3.setImageResource(R.drawable.cattable)
-                }
-            }
-            "10" -> {
-                if(imageView5.visibility==View.INVISIBLE){
-                    imageView5.visibility=View.VISIBLE
-                    imageView5.setImageResource(R.drawable.bookshelf)
-                }else{
-                    imageView5.setImageResource(R.drawable.bookshelf)
-                }
-            }
-            "11" -> {
-                if(imageView3.visibility==View.INVISIBLE){
-                    imageView3.visibility=View.VISIBLE
-                    imageView3.setImageResource(R.drawable.catcircle)
-                }else{
-                    imageView3.setImageResource(R.drawable.catcircle)
-                }
-            }
-            "12" -> {
-                if(imageView5.visibility==View.INVISIBLE){
-                    imageView5.visibility=View.VISIBLE
-                    imageView5.setImageResource(R.drawable.cattower)
-                }else{
-                    imageView5.setImageResource(R.drawable.cattower)
-                }
-            }
-            "13" ->{
-                if(imageView5.visibility==View.INVISIBLE){
-                    imageView5.visibility=View.VISIBLE
-                    imageView5.setImageResource(R.drawable.catsofa)
-                }else{
-                    imageView5.setImageResource(R.drawable.catsofa)
-                }
-            }
-            "14" -> {
-                if(imageView3.visibility==View.INVISIBLE){
-                    imageView3.visibility=View.VISIBLE
-                    imageView3.setImageResource(R.drawable.catbed)
-                }else{
-                    imageView3.setImageResource(R.drawable.catbed)
-                }
-            }
-            "15" -> {
-                if(imageView3.visibility==View.INVISIBLE){
-                    imageView3.visibility=View.VISIBLE
-                    imageView3.setImageResource(R.drawable.cattv)
-                }else{
-                    imageView3.setImageResource(R.drawable.cattv)
-                }
-            }
+        when(pref?.getString("item1","").toString()){
+            "1"-> imageView1.setImageResource(R.drawable.catfood)
+            "3"-> imageView1.setImageResource(R.drawable.bigplant)
+            "5"-> imageView1.setImageResource(R.drawable.catplaying)
+        }
+
+        when(pref?.getString("item2","").toString()){
+            "2"->imageView2.setImageResource(R.drawable.smallplant)
+            "4"->imageView2.setImageResource(R.drawable.catbathroom)
+        }
+
+        when(pref?.getString("item3","").toString()){
+            "9"-> imageView3.setImageResource(R.drawable.cattable)
+            "11"->  imageView3.setImageResource(R.drawable.catcircle)
+            "14"-> imageView3.setImageResource(R.drawable.catbed)
+            "15"-> imageView3.setImageResource(R.drawable.cattv)
+        }
+
+        if (pref?.getString("item4","").toString()=="7") imageView4.setImageResource(R.drawable.window)
+
+        when(pref?.getString("item5","").toString()){
+            "6"-> imageView5.setImageResource(R.drawable.light)
+            "8"-> imageView5.setImageResource(R.drawable.cathome)
+            "10"-> imageView5.setImageResource(R.drawable.bookshelf)
+            "12"-> imageView5.setImageResource(R.drawable.cattower)
+            "13"-> imageView5.setImageResource(R.drawable.catsofa)
         }
 
         return view
