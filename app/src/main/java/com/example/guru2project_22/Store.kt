@@ -407,6 +407,7 @@ class Store : AppCompatActivity() {
             //CatRoom 으로 전환
             var intent = Intent(this, CatRoom::class.java)
             startActivity(intent)
+            finish()
         }
     }
 

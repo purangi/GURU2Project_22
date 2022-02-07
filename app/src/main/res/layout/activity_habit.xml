@@ -41,10 +41,11 @@
         android:layout_marginTop="148dp"
         android:fontFamily="@font/zzanggu"
         android:hint="어떤 습관을 가져볼까요?"
+        android:inputType="textShortMessage|text"
+        android:privateImeOptions="defaultInputmode=korean"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:privateImeOptions="defaultInputmode=korean"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageClock"
