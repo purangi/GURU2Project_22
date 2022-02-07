@@ -70,7 +70,9 @@ class Store : AppCompatActivity() {
 
         //뒤로가기 버튼
         backbtn.setOnClickListener {
-            onBackPressed()
+            var intent = Intent(this, CatRoom::class.java)
+            startActivity(intent)
+            finish()
         }
 
         val pref = getSharedPreferences("user", 0)
@@ -80,7 +82,7 @@ class Store : AppCompatActivity() {
         buybtn.setOnClickListener {
 
             //coin 받아오기
-            mycoin = (pref.getString("coin","500"))!!.toInt()
+            mycoin = (pref.getString("coin","530"))!!.toInt()
 
             //구매 목록 받아오기
             var mybuy1 = (pref.getString("buy1","0")).toString()

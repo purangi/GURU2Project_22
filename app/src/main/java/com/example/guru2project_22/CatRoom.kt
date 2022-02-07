@@ -33,13 +33,16 @@ class CatRoom : AppCompatActivity() {
 
         //뒤로가기 버튼 클릭 시
         backbtn.setOnClickListener {
-            onBackPressed()
+            var intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
         }
 
         //store 버튼 클릭 시
         storebtn.setOnClickListener {
             var intent = Intent(this, Store::class.java)
             startActivity(intent)
+            finish()
         }
 
 
@@ -48,6 +51,6 @@ class CatRoom : AppCompatActivity() {
     //coin 받아오기
    private fun loadCoin() {
         val pref = getSharedPreferences("user", 0)
-        mycoin.text = pref.getString("coin","500").toString()
+        mycoin.text = pref.getString("coin","530").toString()
     }
 }

@@ -51,9 +51,10 @@ class MyPage : AppCompatActivity() {
         }
 
         //coin 설정
-        editor.putString("coin", "500")
-        editor.apply()
-        binding.mycoin.text = pref.getString("coin","").toString()
+        //editor.putString("coin", "500")
+        //editor.apply()
+
+        binding.mycoin.text = pref.getString("coin","530").toString()
 
         //닉네임 설정
         binding.myNickname.text = pref.getString("nickname", "").toString()
