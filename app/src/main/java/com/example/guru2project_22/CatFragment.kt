@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import java.util.*
 
 class CatFragment : Fragment() {
 
@@ -22,6 +23,12 @@ class CatFragment : Fragment() {
         val imageView3 : ImageView = view.findViewById(R.id.imageView3)
         val imageView4 : ImageView = view.findViewById(R.id.imageView4)
         val imageView5 : ImageView = view.findViewById(R.id.imageView5)
+
+        val cat : ImageView = view.findViewById(R.id.originCat)
+
+        val data = listOf("R.drawable.sitcat", "R.drawable.sleepcat", "R.drawable.liecat", "R.drawable.origincat")
+
+        cat.setImageResource(data.random().toInt())
 
         val pref = this.activity?.getSharedPreferences("user", 0)
 
@@ -56,4 +63,10 @@ class CatFragment : Fragment() {
 
         return view
     }
+
+    fun <T> List<T>.random() : T {
+        val random = Random().nextInt((size))
+        return get(random)
+    }
+
 }
