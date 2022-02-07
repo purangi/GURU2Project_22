@@ -12,7 +12,6 @@ import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
-import androidx.core.app.NotificationCompat
 import java.text.DecimalFormat
 import java.text.SimpleDateFormat
 import java.util.*
@@ -133,6 +132,11 @@ class HabitActivity : AppCompatActivity() {
             var endTime = btnEnd.text
             //알람 설정
             var alarm : Int //꺼져있으면 0, 켜져있으면 1
+
+            var Intent = Intent(this, MainActivity::class.java)
+            Intent.putExtra("icon", iconName)
+            Intent.putExtra("text", editHabit.text.toString())
+            startActivity(Intent)
 
             when(rbOff.isChecked) { //알람 Int 설정
                 true -> alarm = 0
@@ -360,6 +364,7 @@ class HabitActivity : AppCompatActivity() {
     fun clickBtn(view: View) {
         var button = view as Button
         button.isSelected = button.isSelected != true
+
     }
 
     class DBManager(context: Context, name: String?, factory: SQLiteDatabase.CursorFactory?, version: Int) : SQLiteOpenHelper(context, name, factory, version) {
@@ -372,5 +377,4 @@ class HabitActivity : AppCompatActivity() {
             //아직 필요성x
         }
     }
-
 }

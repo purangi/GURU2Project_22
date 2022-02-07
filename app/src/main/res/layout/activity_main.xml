@@ -14,19 +14,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#FFB78E"
+        app:labelVisibilityMode="unlabeled"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintLeft_toRightOf="parent"
-        app:labelVisibilityMode="unlabeled"
         app:menu="@menu/menu">
 
         <ImageButton
             android:id="@+id/navday"
-            android:layout_gravity="clip_horizontal"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_marginTop="4dp"
+            android:layout_gravity="clip_horizontal"
             android:layout_marginLeft="57dp"
+            android:layout_marginTop="4dp"
             android:adjustViewBounds="true"
             android:background="#FFB78E"
             android:scaleType="fitEnd"
@@ -36,8 +36,8 @@
             android:id="@+id/navhome"
             android:layout_width="43dp"
             android:layout_height="43dp"
-            android:layout_marginTop="5dp"
             android:layout_marginLeft="185dp"
+            android:layout_marginTop="5dp"
             android:adjustViewBounds="true"
             android:background="#FFB78E"
             android:scaleType="fitCenter"
@@ -47,8 +47,8 @@
             android:id="@+id/navmypage"
             android:layout_width="44dp"
             android:layout_height="45dp"
-            android:layout_marginTop="2dp"
             android:layout_marginLeft="320dp"
+            android:layout_marginTop="2dp"
             android:adjustViewBounds="true"
             android:background="#FFB78E"
             android:scaleType="fitEnd"
@@ -96,44 +96,11 @@
             android:textColor="@color/black"
             android:textSize="18dp" />
 
-        <ScrollView
+        <ListView
+            android:id="@+id/listview"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:choiceMode="multipleChoice" />
 
-            <LinearLayout
-                android:layout_width="350dp"
-                android:layout_height="49dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="461dp"
-                android:background="@drawable/rounded_corner">
-
-                <ImageButton
-                    android:id="@+id/iconimg"
-                    android:adjustViewBounds="true"
-                    android:layout_width="33dp"
-                    android:layout_height="33dp"
-                    android:layout_marginLeft="26dp"
-                    android:layout_marginTop="8dp"
-                    android:src="@drawable/water"
-                    android:scaleType="fitEnd"/>
-
-                <TextView
-                    android:id="@+id/textview3"
-                    android:layout_width="99dp"
-                    android:layout_height="16dp"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="46dp"
-                    android:fontFamily="@font/zzanggu"
-                    android:textColor="@color/black" />
-
-                <CheckBox
-                    android:id="@+id/checkbox"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="70dp"
-                    android:button="@drawable/check_todolist" />
-
-            </LinearLayout>
-        </ScrollView>
     </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
