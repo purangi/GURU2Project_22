@@ -84,6 +84,7 @@ class MainActivity : AppCompatActivity() {
         val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale("ko", "KR"))
         var dateText = dateFormat.format(date)
 
+
         //dbManager
         dbManager = HabitActivity.DBManager(this, "scheduleDB", null, 1)
         sqlitedb = dbManager.readableDatabase
@@ -97,9 +98,11 @@ class MainActivity : AppCompatActivity() {
         //캘린더 날짜 선택 시
         //일정 표시
         calendarView.setOnDateChangeListener { view, year, month, dayOfMonth ->
+            var date = year.toString() + "-" + month.toString() + "-" + dayOfMonth.toString()
 
             //DayActivity로 이동
             val intent = Intent(this, DayActivity::class.java)
+            intent.putExtra("date", date)
             startActivity(intent)
         }
 
