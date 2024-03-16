@@ -20,15 +20,24 @@
 - 원형 그래프를 활용하여 일정표 구현
 
 ## 화면 설명 (김유원)
-### 1) 일정표 화면
+### 1) 일정표 화면 
+🔗 : https://github.com/purangi/GURU2Project_22/blob/master/app/src/main/java/com/example/guru2project_22/DayActivity.kt
+
 ![image](https://github.com/purangi/GURU2Project_22/assets/68212670/14e5e7ae-bd75-45b5-b453-55bab97c7de1)
+
 - 저장된 일정표 확인
 - 습관 추가하기 버튼 입력 시 2)로 이동
-### 2) 습관 추가하기 화면
+### 2) 습관 추가하기 화면 
+🔗 : https://github.com/purangi/GURU2Project_22/blob/master/app/src/main/java/com/example/guru2project_22/HabitActivity.kt
+
 ![image](https://github.com/purangi/GURU2Project_22/assets/68212670/c58a5d28-d50f-4618-80d9-a03872113cc5)
+
 -  일정의 아이콘, 습관 만들기 활동 시간, 날짜 반복 등을 설정하여 저장
 -  아이콘 버튼 클릭 시 3) 으로 이동
 ### 3) 아이콘 선택 화면
+🔗 : https://github.com/purangi/GURU2Project_22/blob/master/app/src/main/java/com/example/guru2project_22/IconSelect.kt
+
 ![image](https://github.com/purangi/GURU2Project_22/assets/68212670/2e1e9280-ca09-47cc-8016-9f6c2363b323)
+
 - 일정에 맞는 다양한 아이콘 선택 가능
 - 해당 아이콘은 메인 화면에서 확인 가능
